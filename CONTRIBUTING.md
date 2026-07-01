@@ -8,17 +8,17 @@ more starred. Here's how to contribute well.
 
 An entry qualifies if it is **all** of the following:
 
-1. **Open source** — a real, public GitHub repository with an OSI-approved (or
+1. **AI-native** — an LLM or an AI agent is at the tool's core; it does the work
+   with AI. Legacy software with an "AI" add-on bolted on does **not** qualify
+   (no generic CRMs, ERPs, helpdesks, or BI tools — Veska covers the back office).
+2. **Open source** — a real, public GitHub repository with an OSI-approved (or
    source-available) license. No closed SaaS, no "open core" that is useless
    without the paid tier.
-2. **Self-hostable** — a team can run it on their own infrastructure.
-3. **Department-grade** — it replaces or dramatically automates the work of a
+3. **Self-hostable** — a team can run it on their own infrastructure.
+4. **Department-grade** — it replaces or dramatically automates the work of a
    real role or department, not a toy demo.
-4. **Shippable fast** — a competent person can get a working deployment in
+5. **Shippable fast** — a competent person can get a working deployment in
    roughly a day or less (ideally an afternoon).
-
-If it's an AI-native app, even better. Great self-hostable tools that pair with
-an LLM (helpdesks, CRMs, BI, workflow engines) are welcome too.
 
 ## How to add an app
 

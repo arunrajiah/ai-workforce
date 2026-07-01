@@ -1,0 +1,94 @@
+# Executive / Assistant — the whole department in one command.
+#
+#   Khoj (personal AI "second brain": chat + semantic search over your docs)
+#   +  Caddy (automatic HTTPS)  +  Postgres/pgvector  +  SearXNG  +  Terrarium
+#
+# Bring everything up:
+#   docker compose up -d
+#
+# See GO-LIVE.md for the full walkthrough (domain, DNS, first login, indexing docs,
+# and pointing Khoj at a local/private LLM).
+
+services:
+  database:
+    image: pgvector/pgvector:pg15
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-khoj}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - khoj_db:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  search:
+    image: searxng/searxng:latest
+    restart: unless-stopped
+    environment:
+      SEARXNG_BASE_URL: http://localhost:8080/
+    volumes:
+      - khoj_search:/etc/searxng
+
+  sandbox:
+    image: ghcr.io/khoj-ai/terrarium:latest
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 2
+
+  server:
+    image: ghcr.io/khoj-ai/khoj:latest
+    restart: unless-stopped
+    command: --host=0.0.0.0 --port=42110 -vv --non-interactive
+    expose:
+      - "42110"
+    environment:
+      # Database
+      POSTGRES_DB: ${POSTGRES_DB:-khoj}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_HOST: database
+      POSTGRES_PORT: 5432
+      # Khoj core
+      KHOJ_DJANGO_SECRET_KEY: ${KHOJ_DJANGO_SECRET_KEY:?set KHOJ_DJANGO_SECRET_KEY in .env}
+      KHOJ_DEBUG: "False"
+      KHOJ_ADMIN_EMAIL: ${KHOJ_ADMIN_EMAIL:?set KHOJ_ADMIN_EMAIL in .env}
+      KHOJ_ADMIN_PASSWORD: ${KHOJ_ADMIN_PASSWORD:?set KHOJ_ADMIN_PASSWORD in .env}
+      # Internal services
+      KHOJ_TERRARIUM_URL: http://sandbox:8080
+      KHOJ_SEARXNG_URL: http://search:8080
+      # LLM: leave blank for the admin-UI flow, or point at any OpenAI-compatible
+      # endpoint (a local Ollama, etc.). See GO-LIVE.md Step 6.
+      OPENAI_BASE_URL: ${LLM_BASE_URL:-}
+      OPENAI_API_KEY: ${LLM_API_KEY:-}
+    depends_on:
+      database:
+        condition: service_healthy
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - server
+
+volumes:
+  khoj_db:
+  khoj_search:
+  caddy_data:
+  caddy_config:

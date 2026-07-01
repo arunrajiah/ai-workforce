@@ -1,10 +1,10 @@
 # Automatic HTTPS via Let's Encrypt. Caddy reads DOMAIN and ACME_EMAIL from the
-# environment (set in .env). Websockets (Chatwoot's /cable) pass through automatically.
+# environment (set in .env). OpenHands' websocket connection passes through automatically.
 
 {
 	email {$ACME_EMAIL}
 }
 
 {$DOMAIN} {
-	reverse_proxy rails:3000
+	reverse_proxy openhands:3000
 }

@@ -7,41 +7,36 @@ from a policy library, generate compliance artifacts, and collect signatures. A
 private RAG stack over your documents plus e-signature covers the bulk of it —
 and keeps confidential material on your own servers.
 
-**Recommended starter stack:** AnythingLLM or Onyx (contract Q&A over your docs) + Documenso/DocuSeal (signatures) + Comply/Probo (compliance). Keep it fully local with Ollama for confidential matters.
+**Recommended starter stack:** AnythingLLM or Onyx (contract Q&A over your docs) + PrivateGPT for on-prem-only material. Keep it fully local with Ollama for confidential matters.
 
 > ⚠️ **Not legal advice.** These tools assist review; a qualified lawyer must sign off on anything that matters.
 
+## ⚡ One-click deploy (recommended)
+
+**Run the core legal department with one command** — AnythingLLM (private
+chat-with-your-contracts Q&A) + Caddy for automatic HTTPS, pre-wired together.
+Provider-neutral LLM; defaults to a local Ollama so confidential material never
+leaves your network.
+
+```bash
+git clone https://github.com/arunrajiah/ai-workforce.git
+cd ai-workforce/departments/legal/deploy
+cp .env.example .env      # set DOMAIN, ACME_EMAIL, and JWT_SECRET
+docker compose up -d
+```
+
+👉 **Full go-live walkthrough (server, DNS, HTTPS, wiring the LLM): [deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live on your domain in ~30–60 min.
+
 ---
 
-### [DocuSeal](https://github.com/docusealco/docuseal)
+## 🧩 Swap a component
 
-> Create PDF forms and collect legally-binding signatures — a DocuSign alternative.
+The one-click stack above is the fast path. Prefer to assemble your own? Every
+piece below is a strong, self-hostable option — the "recommended starter stack"
+is AnythingLLM/Onyx (contract Q&A) + PrivateGPT for on-prem-only material. Keep
+it fully local with Ollama for confidential matters.
 
-| | |
-|---|---|
-| **Stars** | ~17k |
-| **Replaces** | DocuSign / PandaDoc |
-| **Self-host** | Easy — single `docker run` |
-| **Ship in** | 30–60 min |
-| **Stack** | Ruby on Rails + Vue |
-| **License** | AGPL-3.0 (additional terms) |
-
-**Why it's on the list:** the fastest self-hosted signing setup. One command to a working signature portal.
-
-### [Documenso](https://github.com/documenso/documenso)
-
-> Open-source e-signature platform with signing certificates.
-
-| | |
-|---|---|
-| **Stars** | ~14k |
-| **Replaces** | DocuSign / Adobe Sign |
-| **Self-host** | Easy — official Docker + compose |
-| **Ship in** | 1–2 hours |
-| **Stack** | TypeScript / Prisma |
-| **License** | AGPL-3.0 |
-
-**Why it's on the list:** the most polished open e-signature product, with real audit certificates.
+---
 
 ### [Onyx](https://github.com/onyx-dot-app/onyx)
 
@@ -87,36 +82,6 @@ and keeps confidential material on your own servers.
 | **License** | Apache-2.0 |
 
 **Why it's on the list:** when confidentiality is absolute — nothing leaves your network.
-
-### [Probo](https://github.com/getprobo/probo)
-
-> Open-source GRC: controls, vendor risk, access reviews, audit programs, document workflows.
-
-| | |
-|---|---|
-| **Stars** | ~1.2k |
-| **Replaces** | Vanta / Drata / OneTrust (broader GRC) |
-| **Self-host** | Medium — multi-service compose |
-| **Ship in** | 2–3 hours |
-| **Stack** | Go + TypeScript |
-| **License** | ISC |
-
-**Why it's on the list:** a genuine open GRC platform, not just policy templates. Good for growing compliance needs.
-
-### [Comply](https://github.com/strongdm/comply)
-
-> SOC2 compliance automation: policy generator, SOC2 templates, ticketing integration.
-
-| | |
-|---|---|
-| **Stars** | ~1.6k |
-| **Replaces** | Vanta / Drata (lightweight, SOC2 policy generation) |
-| **Self-host** | Easy — Docker, static-site output |
-| **Ship in** | 1–2 hours |
-| **Stack** | Go |
-| **License** | Apache-2.0 |
-
-**Why it's on the list:** get SOC2 policies published fast. Less actively maintained — good for the policy layer.
 
 ---
 

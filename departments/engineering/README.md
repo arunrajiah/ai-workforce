@@ -6,24 +6,34 @@ Autonomous coding agents now take a ticket to a pull request; low-code builders
 ship internal tools in an afternoon; automation engines replace integration glue.
 This is where AI most directly does the work, not just assists it.
 
-**Recommended starter stack:** OpenHands or Aider (autonomous/pair coding) + Appsmith or Budibase (internal tools) + n8n (automation) + Frappe Helpdesk (IT tickets).
+## ⚡ One-click deploy (recommended)
+
+**Run an autonomous coding agent with one command** — OpenHands (turns issues into
+pull requests) + Caddy for automatic HTTPS, pre-wired together.
+
+```bash
+git clone https://github.com/arunrajiah/ai-workforce.git
+cd ai-workforce/departments/engineering/deploy
+cp .env.example .env      # set DOMAIN, ACME_EMAIL, and (optionally) your LLM endpoint
+docker compose up -d
+```
+
+👉 **Full go-live walkthrough (server, DNS, HTTPS, connecting an LLM, running your
+first task): [deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live on your domain in ~30–60 min.
+
+> ⚠️ OpenHands mounts the host Docker socket to run the agent's code in sandbox
+> containers — effectively root on the host. Keep the box dedicated and
+> access-restricted; see the security note in the go-live guide.
 
 ---
 
-### [n8n](https://github.com/n8n-io/n8n)
+## 🧩 Swap a component
 
-> Fair-code workflow automation with 400+ integrations and native AI/agent nodes.
+The one-click stack above is the fast path. Prefer to assemble your own? Every
+piece below is a strong, self-hostable, AI-native option — the **recommended starter stack**
+is OpenHands or Aider (autonomous/pair coding).
 
-| | |
-|---|---|
-| **Stars** | ~195k |
-| **Replaces** | Zapier + an integrations engineer |
-| **Self-host** | Easy — `docker run` |
-| **Ship in** | ~1 hour |
-| **Stack** | TypeScript + Vue |
-| **License** | Sustainable Use (fair-code) |
-
-**Why it's on the list:** the automation backbone for every department. If you self-host one thing, start here.
+---
 
 ### [OpenHands](https://github.com/All-Hands-AI/OpenHands)
 
@@ -54,66 +64,6 @@ This is where AI most directly does the work, not just assists it.
 | **License** | Apache-2.0 |
 
 **Why it's on the list:** the fastest ROI in this whole repo — installed and productive in minutes.
-
-### [Appsmith](https://github.com/appsmithorg/appsmith)
-
-> Low-code platform for internal tools, admin panels, and dashboards — a Retool alternative.
-
-| | |
-|---|---|
-| **Stars** | ~40k |
-| **Replaces** | Retool + an internal-tools engineer |
-| **Self-host** | Easy — `docker compose up` |
-| **Ship in** | 2–4 hours |
-| **Stack** | React/TS + Java |
-| **License** | Apache-2.0 |
-
-**Why it's on the list:** build the admin panel every ops team asks for, over your existing databases.
-
-### [Budibase](https://github.com/Budibase/budibase)
-
-> Build apps, automations, and AI agents over your business data.
-
-| | |
-|---|---|
-| **Stars** | ~28k |
-| **Replaces** | an internal-tools dev / low-code admin builder |
-| **Self-host** | Easy — single Docker image |
-| **Ship in** | 2–4 hours |
-| **Stack** | TypeScript + Svelte |
-| **License** | GPL-3.0 core |
-
-**Why it's on the list:** slightly more app-centric than Appsmith, with built-in automations and AI blocks.
-
-### [Coder](https://github.com/coder/coder)
-
-> Self-hosted cloud development environments and AI coding-agent workspaces defined in Terraform.
-
-| | |
-|---|---|
-| **Stars** | ~14k |
-| **Replaces** | IT/DevOps managing dev environments; Gitpod/Codespaces |
-| **Self-host** | Easy — compose provided |
-| **Ship in** | 2–4 hours |
-| **Stack** | Go + TypeScript |
-| **License** | AGPL-3.0 |
-
-**Why it's on the list:** standardize dev environments — and give coding agents clean, reproducible sandboxes.
-
-### [Frappe Helpdesk](https://github.com/frappe/helpdesk)
-
-> Open-source ticket management for IT & customer support with SLAs and a knowledge base.
-
-| | |
-|---|---|
-| **Stars** | ~3k |
-| **Replaces** | Zendesk / Freshdesk for internal IT |
-| **Self-host** | Easy — compose, ~5 min |
-| **Ship in** | ~1 hour |
-| **Stack** | Vue + Python (Frappe) |
-| **License** | AGPL-3.0 |
-
-**Why it's on the list:** a clean IT ticketing desk you can wire an LLM into for auto-triage and replies.
 
 ---
 

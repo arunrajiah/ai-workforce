@@ -1,0 +1,10 @@
+# Automatic HTTPS via Let's Encrypt. Caddy reads DOMAIN and ACME_EMAIL from the
+# environment (set in .env). One site: GPT Researcher on your domain.
+
+{
+	email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
+	reverse_proxy gpt-researcher:8000
+}

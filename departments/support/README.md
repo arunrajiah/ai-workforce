@@ -6,48 +6,25 @@ An omnichannel helpdesk plus a RAG agent over your docs deflects the majority of
 Tier-1 tickets and drafts answers for the rest. This is the most immediately
 ROI-positive department to automate.
 
-## ⚡ One-click deploy (recommended)
+## ⚡ One-click deploy — Veska (recommended)
 
-**Run the entire support department with one command** — Chatwoot (omnichannel
-helpdesk) + an AI agent that auto-answers tickets from your docs + Caddy for
-automatic HTTPS, pre-wired together.
+**This department runs on [Veska](../../apps/veska/) — one AI-native platform that configures CRM, support, finance, HR & ops from a plain-English description, then runs on Slack / WhatsApp / Email.** One deploy covers this department and the rest of your back office.
 
 ```bash
-git clone https://github.com/arunrajiah/ai-workforce.git
-cd ai-workforce/departments/support/deploy
-cp .env.example .env      # set DOMAIN, ACME_EMAIL, and generated secrets
-docker compose run --rm rails bundle exec rails db:chatwoot_prepare
-docker compose up -d
+git clone https://github.com/arunrajiah/veska.git
+cd veska && cp .env.example .env    # set your LLM (local Ollama works) + MAGIC_LINK_SECRET
+docker compose up -d && docker compose exec api node apps/api/dist/db/migrate.js
 ```
 
-👉 **Full go-live walkthrough (server, DNS, HTTPS, connecting the bot, adding
-channels): [deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live on your domain in ~30–60 min.
+👉 **Go live on your domain with HTTPS: [apps/veska/GO-LIVE.md](../../apps/veska/GO-LIVE.md)**
 
 ---
 
 ## 🧩 Swap a component
 
-The one-click stack above is the fast path. Prefer to assemble your own? Every
-piece below is a strong, self-hostable option — the "recommended starter stack"
-is Chatwoot (inbox) + Onyx/AnythingLLM (AI answers). See also the standalone
-[`apps/ai-support-agent`](../../apps/ai-support-agent) flagship.
+Prefer to assemble this department from individual AI tools? These AI-native options each do a slice of the job (Veska above does all of it):
 
 ---
-
-### [Chatwoot](https://github.com/chatwoot/chatwoot)
-
-> Omnichannel support platform (live chat, email, social) with AI features — an Intercom/Zendesk alternative.
-
-| | |
-|---|---|
-| **Stars** | ~34k |
-| **Replaces** | a support team + Intercom/Zendesk/Freshdesk |
-| **Self-host** | Easy — `docker compose up` |
-| **Ship in** | ~30 min |
-| **Stack** | Ruby on Rails + Vue |
-| **License** | MIT (+ enterprise) |
-
-**Why it's on the list:** the best open-source support inbox. MIT core, huge community, real AI assist features.
 
 ### [Onyx](https://github.com/onyx-dot-app/onyx) (formerly Danswer)
 
@@ -79,51 +56,6 @@ is Chatwoot (inbox) + Onyx/AnythingLLM (AI answers). See also the standalone
 
 **Why it's on the list:** fastest way to a working "chat with our docs" agent, with multi-user access built in.
 
-### [Zammad](https://github.com/zammad/zammad)
-
-> Web-based helpdesk consolidating email, chat, phone, and social into one ticketing system.
-
-| | |
-|---|---|
-| **Stars** | ~5.7k |
-| **Replaces** | a support desk + Zendesk |
-| **Self-host** | Medium — needs Elasticsearch |
-| **Ship in** | ~1 hour |
-| **Stack** | Ruby on Rails |
-| **License** | AGPL-3.0 |
-
-**Why it's on the list:** mature, auditable ticketing for teams that need SLAs and reporting.
-
-### [FreeScout](https://github.com/FreeScout-help-desk/freescout)
-
-> Lightweight self-hosted help desk & shared inbox — a Help Scout alternative with unlimited seats.
-
-| | |
-|---|---|
-| **Stars** | ~4.4k |
-| **Replaces** | a shared-inbox support role + Help Scout |
-| **Self-host** | Easy — Docker or LAMP |
-| **Ship in** | 30–60 min |
-| **Stack** | PHP (Laravel) |
-| **License** | AGPL-3.0 |
-
-**Why it's on the list:** the low-footprint choice. Runs on a cheap VPS, unlimited users and tickets.
-
-### [Typebot](https://github.com/baptisteArno/typebot.io)
-
-> Visual chatbot builder with OpenAI blocks — lead-capture and conversational support flows, embeddable anywhere.
-
-| | |
-|---|---|
-| **Stars** | ~10k |
-| **Replaces** | a conversational-forms/chatbot role + Landbot/Drift |
-| **Self-host** | Easy — `docker compose up` |
-| **Ship in** | ~30 min |
-| **Stack** | TypeScript (Next.js) |
-| **License** | Functional Source License (AGPL fallback) |
-
-**Why it's on the list:** design deflection and qualification flows visually, drop them on any site.
-
 ### [Botpress](https://github.com/botpress/botpress)
 
 > Open-source platform for building LLM-powered support chatbots and assistants.
@@ -138,6 +70,8 @@ is Chatwoot (inbox) + Onyx/AnythingLLM (AI answers). See also the standalone
 | **License** | MIT |
 
 **Why it's on the list:** a full conversational-AI builder when you need more control than a widget gives you.
+
+Also: our [AI Support Agent](../../apps/ai-support-agent) flagship answers tickets from your docs.
 
 ---
 

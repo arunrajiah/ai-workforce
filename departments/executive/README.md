@@ -6,7 +6,32 @@ The chief-of-staff loop — triage email, schedule, capture meetings, summarize 
 is now a set of self-hostable agents. Run them locally with Ollama and your
 calendar and inbox never leave your machine.
 
-**Recommended starter stack:** Inbox Zero (email triage) + Cal.com (scheduling) + Meetily (meeting notes) + Fabric or Khoj (briefings & second brain).
+**Recommended starter stack:** Inbox Zero (email triage) + Meetily (meeting notes) + LobeChat (assistant chat/agent workspace) + Fabric or Khoj (briefings & second brain).
+
+## ⚡ One-click deploy (recommended)
+
+**Run a personal AI assistant with one command** — Khoj (a "second brain" that
+chats with and semantically searches your own docs) + Caddy for automatic HTTPS,
+pre-wired together and able to run on a local/private LLM.
+
+```bash
+git clone https://github.com/arunrajiah/ai-workforce.git
+cd ai-workforce/departments/executive/deploy
+cp .env.example .env      # set DOMAIN, ACME_EMAIL, and generated secrets
+docker compose up -d
+```
+
+👉 **Full go-live walkthrough (server, DNS, HTTPS, pointing Khoj at a local LLM,
+indexing your docs): [deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live on your domain in ~30–60 min.
+
+---
+
+## 🧩 Swap a component
+
+The one-click stack above is the fast path. Prefer to assemble your own? Every
+piece below is a strong, self-hostable, AI-native option — the "recommended starter stack"
+is Inbox Zero (email) + Meetily (notes) + LobeChat (assistant workspace) + Fabric or Khoj
+(briefings & second brain).
 
 ---
 
@@ -24,21 +49,6 @@ calendar and inbox never leave your machine.
 | **License** | AGPL-3.0 (+ commercial for 5+ business users) |
 
 **Why it's on the list:** the closest open equivalent to an EA managing your inbox. Note the commercial-use gate.
-
-### [Cal.com](https://github.com/calcom/cal.com)
-
-> Scheduling infrastructure with team routing and workflows — an open Calendly.
-
-| | |
-|---|---|
-| **Stars** | ~46k |
-| **Replaces** | Calendly / EA scheduling |
-| **Self-host** | Medium — calendar OAuth + DB |
-| **Ship in** | 2–3 hours |
-| **Stack** | TypeScript (Next.js / Prisma) |
-| **License** | MIT (AGPL for some enterprise features) |
-
-**Why it's on the list:** the scheduling half of the assistant role, fully self-hosted.
 
 ### [Meetily](https://github.com/Zackriya-Solutions/meeting-minutes)
 

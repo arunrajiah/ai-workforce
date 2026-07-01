@@ -1,0 +1,43 @@
+# Data & Analytics — a talk-to-your-data analyst in one command.
+#
+#   AI Analyst (ask plain-English questions over a CSV → SQL + results table)
+#   +  Caddy (automatic HTTPS)
+#
+# Start everything:
+#   docker compose up -d
+#
+# See GO-LIVE.md for the full walkthrough (domain, DNS, connecting your data, LLM).
+
+services:
+  ai-analyst:
+    build: ../../../apps/ai-analyst
+    restart: unless-stopped
+    environment:
+      # LLM: leave blank for offline demo, or point at any OpenAI-compatible endpoint.
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+    expose:
+      - "8000"
+    volumes:
+      - ./data:/app/data:ro
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - ai-analyst
+
+volumes:
+  caddy_data:
+  caddy_config:

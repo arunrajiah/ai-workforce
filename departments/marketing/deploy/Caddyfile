@@ -1,0 +1,14 @@
+# Automatic HTTPS for a self-hosted Dify instance.
+# Caddy joins Dify's Docker Compose network (see caddy-compose.yml) and reaches
+# its `nginx` service by name. Reads DOMAIN / ACME_EMAIL from the environment.
+
+{
+	email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
+	# Dify's own nginx entrypoint fronts the web UI + API. Proxy to it by service
+	# name over the joined network. Set EXPOSE_NGINX_PORT=8080 in Dify's docker/.env
+	# so Dify does not also bind host port 80 (which Caddy needs).
+	reverse_proxy nginx:80
+}

@@ -6,7 +6,41 @@ Content generation, SEO research, social scheduling, email campaigns, and produc
 analytics can all run on open-source infrastructure. Add an LLM content agent on
 top and one person can run the output of a whole marketing team.
 
-**Recommended starter stack:** Dify (content/SEO agents) + listmonk (email) + Postiz (social) + PostHog (analytics). Firecrawl for competitor/SEO research.
+## ⚡ One-click deploy (recommended)
+
+**Run an AI content/agent platform with one command** — [Dify](https://github.com/langgenius/dify)
+(open-source LLM app & agent platform: build ad-copy, blog, and SEO agents with RAG)
+behind Caddy for automatic HTTPS.
+
+```bash
+git clone https://github.com/langgenius/dify.git
+cd dify/docker
+cp .env.example .env
+docker compose up -d
+```
+
+Then layer HTTPS + your domain on top with the Caddy overlay in
+[`deploy/`](deploy/):
+
+```bash
+git clone https://github.com/arunrajiah/ai-workforce.git
+cd ai-workforce/departments/marketing/deploy
+cp .env.example .env      # set DOMAIN and ACME_EMAIL
+docker compose --env-file .env -f caddy-compose.yml up -d
+```
+
+👉 **Full go-live walkthrough (server, DNS, HTTPS overlay, first-run setup, wiring
+your LLM): [deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live on your domain in
+~30–60 min.
+
+---
+
+## 🧩 Swap a component
+
+The one-click stack above is the fast path. Prefer to assemble your own? Every
+piece below is a strong, self-hostable option — the "recommended starter stack"
+is Dify (content/SEO agents) + Postiz (social) + Activepieces (campaign ops), with
+Firecrawl for competitor/SEO research.
 
 ---
 
@@ -39,51 +73,6 @@ top and one person can run the output of a whole marketing team.
 | **License** | AGPL-3.0 |
 
 **Why it's on the list:** AI-assisted, multi-channel scheduling that actually looks modern. The social team in a box.
-
-### [listmonk](https://github.com/knadh/listmonk)
-
-> High-performance newsletter and mailing-list manager — a single binary with a clean dashboard.
-
-| | |
-|---|---|
-| **Stars** | ~22k |
-| **Replaces** | an email-marketing manager + Mailchimp |
-| **Self-host** | Easy — single binary or compose |
-| **Ship in** | ~30 min |
-| **Stack** | Go (+ Vue) |
-| **License** | AGPL-3.0 |
-
-**Why it's on the list:** blisteringly fast, cheap to run at scale, great API for LLM-generated campaigns.
-
-### [Mautic](https://github.com/mautic/mautic)
-
-> The largest open-source marketing-automation platform: campaigns, email, segmentation, multi-channel.
-
-| | |
-|---|---|
-| **Stars** | ~10k |
-| **Replaces** | a marketing-automation manager + HubSpot/Marketo |
-| **Self-host** | Medium — LAMP stack |
-| **Ship in** | 1–2 hours |
-| **Stack** | PHP (Symfony) |
-| **License** | GPL-3.0 |
-
-**Why it's on the list:** full lifecycle automation and lead scoring when you've outgrown a newsletter tool.
-
-### [PostHog](https://github.com/PostHog/posthog)
-
-> All-in-one product & web analytics, session replay, feature flags, experiments, surveys + AI assistant.
-
-| | |
-|---|---|
-| **Stars** | ~35k |
-| **Replaces** | a growth/analytics role + Amplitude/Mixpanel |
-| **Self-host** | Medium — heavier stack (ClickHouse) |
-| **Ship in** | 1–2 hours |
-| **Stack** | Python + TypeScript |
-| **License** | MIT (FOSS build available) |
-
-**Why it's on the list:** the growth team's instrument panel; its AI assistant answers analytics questions directly.
 
 ### [Activepieces](https://github.com/activepieces/activepieces)
 

@@ -1,0 +1,57 @@
+# Engineering / DevOps — an autonomous coding agent in one command.
+#
+#   OpenHands (autonomous coding agent: issue → pull request)
+#   +  Caddy (automatic HTTPS)
+#
+# OpenHands spins up a per-session sandbox container to run code, so it needs the
+# host Docker socket mounted and the runtime image named in
+# SANDBOX_RUNTIME_CONTAINER_IMAGE. See GO-LIVE.md for the security implications
+# of mounting the Docker socket.
+#
+# Start everything:
+#   docker compose up -d
+#
+# See GO-LIVE.md for the full walkthrough (domain, DNS, first login, connecting an LLM).
+
+services:
+  openhands:
+    image: docker.all-hands.dev/all-hands-ai/openhands:0.55
+    restart: unless-stopped
+    environment:
+      # The sandbox image OpenHands launches to run the agent's code (must match the app version).
+      SANDBOX_RUNTIME_CONTAINER_IMAGE: ${SANDBOX_RUNTIME_CONTAINER_IMAGE:-docker.all-hands.dev/all-hands-ai/runtime:0.55-nikolaik}
+      LOG_ALL_EVENTS: "true"
+      # LLM: provider-neutral. Leave blank to configure in the UI, or point at any
+      # OpenAI-compatible endpoint (Ollama, LiteLLM, vLLM, a hosted gateway, …).
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+    volumes:
+      # Lets OpenHands start sandbox containers on the host (see GO-LIVE.md security note).
+      - /var/run/docker.sock:/var/run/docker.sock
+      - openhands_state:/.openhands
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    expose:
+      - "3000"
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - openhands
+
+volumes:
+  openhands_state:
+  caddy_data:
+  caddy_config:

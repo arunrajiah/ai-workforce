@@ -1,0 +1,34 @@
+# HTTPS overlay for a running Veska instance.
+#
+# Start Veska first (in the veska repo):  docker compose up -d
+# Then, from THIS folder:                 docker compose --env-file .env -f caddy-compose.yml up -d
+#
+# The overlay attaches to Veska's default Compose network so it can reach the
+# `admin` and `api` services by name. If your Veska project directory is not
+# named "veska", update the external network name below to "<dir>_default".
+
+services:
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - veska
+
+networks:
+  veska:
+    external: true
+    name: veska_default
+
+volumes:
+  caddy_data:
+  caddy_config:

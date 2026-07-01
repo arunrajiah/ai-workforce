@@ -2,20 +2,20 @@
 
 # 🤖 AI Workforce
 
-### Open-source AI apps that run entire departments. Assemble your AI company in an afternoon.
+### Open-source, AI-native apps that run entire departments. Assemble your AI company in an afternoon.
 
-**90+ hand-picked, self-hostable AI apps — mapped to the department they replace.**
+**Every entry is AI-native — an LLM or AI agent at its core — mapped to the department it replaces.**
 Sales. Marketing. Support. HR. Finance. Legal. Engineering. Data. Design. Ops. Product. Executive.
 
 <br/>
 
 [![Departments](https://img.shields.io/badge/departments-12-6C5CE7)](departments/)
-[![Apps](https://img.shields.io/badge/curated_apps-90+-00B894)](#-the-departments)
-[![Industries](https://img.shields.io/badge/industries-7-0984E3)](industries/)
+[![AI-native](https://img.shields.io/badge/AI--native-only-00B894)](#-the-departments)
+[![Flagship](https://img.shields.io/badge/flagship-Veska-6C5CE7)](apps/veska/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 
-[**📚 Docs & Tutorials**](https://hub.arunrajiah.com) · [**🏭 By Industry**](industries/) · [**🚀 Flagship apps**](apps/) · [**🤝 Contribute**](CONTRIBUTING.md)
+[**📚 Docs & Tutorials**](https://hub.arunrajiah.com) · [**🌟 Veska**](apps/veska/) · [**🏭 By Industry**](industries/) · [**🚀 Flagship apps**](apps/) · [**🤝 Contribute**](CONTRIBUTING.md)
 
 </div>
 
@@ -25,56 +25,70 @@ Sales. Marketing. Support. HR. Finance. Legal. Engineering. Data. Design. Ops. P
 
 Every company is a set of departments. Every department is a set of repetitive,
 well-defined workflows. In 2026, **almost every one of those workflows has a
-mature, open-source, self-hostable app** — and an LLM to drive it.
+mature, open-source, AI-native app** that can do it.
 
 **AI Workforce** is the map. For each department, we curate the best open-source
-apps, tell you honestly what each one replaces, and show you how to ship it in
-hours — not a research project, a working deployment.
+**AI** apps — LLM- or agent-native, not legacy software with an "AI" sticker — tell
+you honestly what each replaces, and show you how to ship it in hours.
 
 > The goal isn't to fire your team. It's to give a small team — or a solo founder —
 > the output of a big one. Run the company you couldn't afford to staff.
 
-### Why this list is different
+---
 
-- **Organized by department, not by framework.** You think "I need to replace my SDR," not "I need a RAG pipeline." This list matches how you actually think.
-- **Every entry says what it replaces** — the role *and* the SaaS bill.
-- **Ship-time on every card.** Most are `docker compose up` and under an hour.
-- **Honest assessments.** We flag rough edges, restrictive licenses, and heavy infra. Trust is the whole point.
-- **Verified links & star counts.** CI checks every link on every PR.
+## 🌟 The flagship: Veska
+
+For the **back office**, you don't need to wire up five tools — you run one
+AI-native platform.
+
+> **[Veska](apps/veska/)** — describe your company in plain language and its AI
+> configures **CRM, support desk, finance, and HR** in minutes. Then your team
+> works entirely through **Slack, WhatsApp, and Email** — no logins, no training.
+> Real double-entry accounting, an AI action agent with 57 audited ERP tools, a
+> workflow engine, and a plugin SDK. Apache-2.0, self-hosted, bring-your-own-LLM
+> (local Ollama supported).
+
+**Veska is the one-click deploy for five departments at once** — Sales, Support,
+Finance, HR, and Operations. → **[Deploy Veska](apps/veska/GO-LIVE.md)**
+
+The specialized departments (Marketing, Legal, Engineering, Data, Design, Product,
+Executive) each have a best-in-class AI-native primary below.
 
 ---
 
 ## 🚀 Quick start
 
-1. Read the **[Quickstart](docs/quickstart.mdx)** — the 5 things every app here needs (an LLM key, a vector store, Docker, a domain, secrets). Set them up once.
+1. Read the **[Quickstart](docs/quickstart.mdx)** — the shared foundation (an LLM endpoint, a vector store, Docker, a domain, secrets). Local Ollama works everywhere.
 2. Pick your **department** below.
-3. Follow its deploy guide, or run a **[flagship app](apps/)** with zero API keys via offline demo mode.
+3. Deploy its one-click stack, or run a **[flagship app](apps/)** with zero API keys via offline demo mode.
 
 ```bash
-git clone https://github.com/arunrajiah/ai-workforce
-cd ai-workforce/apps/ai-support-agent
-cp .env.example .env      # works in offline demo mode with no keys
-docker compose up
+# The back office, in one platform:
+git clone https://github.com/arunrajiah/veska.git
+cd veska && cp .env.example .env
+docker compose up -d
 ```
 
 ---
 
 ## 🏢 The departments
 
-| Department | Replaces | Apps | Deploy guide |
-|---|---|:--:|---|
-| [📈 Sales & Revenue](departments/sales/) | an SDR + CRM + booking + enrichment | 6 | [guide](docs/departments/sales.mdx) |
-| [📣 Marketing & Growth](departments/marketing/) | content + social + email + analytics | 7 | [guide](docs/departments/marketing.mdx) |
-| [🎧 Customer Support](departments/support/) | Tier-1 support + live chat + KB | 7 | [guide](docs/departments/support.mdx) |
-| [🧑‍💼 Human Resources](departments/hr/) | ATS + scheduling + HRIS + onboarding | 7 | [guide](docs/departments/hr.mdx) |
-| [💰 Finance & Accounting](departments/finance/) | bookkeeping + invoicing + FP&A | 8 | [guide](docs/departments/finance.mdx) |
-| [⚖️ Legal & Compliance](departments/legal/) | contract review + e-sign + GRC | 7 | [guide](docs/departments/legal.mdx) |
-| [🛠️ Engineering / DevOps](departments/engineering/) | junior dev + internal tools + IT desk | 7 | [guide](docs/departments/engineering.mdx) |
-| [📊 Data & Analytics](departments/data/) | BI analyst + Looker seat + ad-hoc SQL | 7 | [guide](docs/departments/data.mdx) |
-| [🎨 Design & Creative](departments/design/) | production designer + stock spend | 6 | [guide](docs/departments/design.mdx) |
-| [⚙️ Operations & PM](departments/operations/) | Zapier + Jira + Notion | 6 | [guide](docs/departments/operations.mdx) |
-| [🔬 Product & Research](departments/product/) | market research + surveys + analytics | 6 | [guide](docs/departments/product.mdx) |
-| [🧭 Executive / Assistant](departments/executive/) | inbox triage + scheduling + notes | 6 | [guide](docs/departments/executive.mdx) |
+Every listed tool is **AI-native**. Back-office departments deploy as one platform (Veska); specialized departments have their own AI primary.
+
+| Department | One-click | AI-native primary |
+|---|---|---|
+| [📈 Sales & Revenue](departments/sales/) | 🌟 **Veska** | Veska CRM + AI SDR |
+| [📣 Marketing & Growth](departments/marketing/) | [Dify](departments/marketing/deploy/) | Dify · Postiz · Firecrawl |
+| [🎧 Customer Support](departments/support/) | 🌟 **Veska** | Veska desk + Onyx / AnythingLLM |
+| [🧑‍💼 Human Resources](departments/hr/) | 🌟 **Veska** | Veska HR + FoloUp |
+| [💰 Finance & Accounting](departments/finance/) | 🌟 **Veska** | Veska ledger + Paperless-ngx |
+| [⚖️ Legal & Compliance](departments/legal/) | [AnythingLLM](departments/legal/deploy/) | AnythingLLM · Onyx · PrivateGPT |
+| [🛠️ Engineering / DevOps](departments/engineering/) | [OpenHands](departments/engineering/deploy/) | OpenHands · Aider |
+| [📊 Data & Analytics](departments/data/) | [AI Analyst](departments/data/deploy/) | AI Analyst · Vanna · Wren AI |
+| [🎨 Design & Creative](departments/design/) | [ComfyUI](departments/design/deploy/) | ComfyUI · InvokeAI |
+| [⚙️ Operations & PM](departments/operations/) | 🌟 **Veska** | Veska workflow engine |
+| [🔬 Product & Research](departments/product/) | [GPT Researcher](departments/product/deploy/) | GPT Researcher · Open Deep Research |
+| [🧭 Executive / Assistant](departments/executive/) | [Khoj](departments/executive/deploy/) | Khoj · Fabric · Meetily |
 
 **Cross-cut by vertical:** [🏭 Industry Index →](industries/) — Healthcare · Legal · Real Estate · E-commerce · Education · Fintech · SMB/Local
 
@@ -82,38 +96,34 @@ docker compose up
 
 ## ⭐ Starter kits (copy-paste stacks)
 
-Don't want to choose? These proven combinations stand up a working department fast:
-
 | Kit | Stack | You get |
 |---|---|---|
-| **The Solo Founder** | n8n + Twenty + Chatwoot + listmonk + Metabase | Sales, support, email, and analytics on one box |
-| **The Support Desk** | Chatwoot + Onyx | Omnichannel inbox + AI answers that deflect Tier-1 |
-| **The Back Office** | ERPNext + Paperless-ngx + Documenso | Accounting, receipt OCR, and signatures |
-| **The Private Brain** | Ollama + AnythingLLM + Onyx | Fully offline RAG over your company's docs |
-| **The Growth Engine** | Dify + Postiz + listmonk + PostHog | Content, social, email, and product analytics |
+| **The One-Person Company** | Veska | CRM + support + finance + HR + ops, run from Slack |
+| **The Private Brain** | Ollama + AnythingLLM + Onyx | Fully offline AI RAG over your company's docs |
+| **The Growth Engine** | Dify + Postiz + Firecrawl | AI content, social, and SEO research |
+| **The Autonomous Dev** | OpenHands + Aider | Issues → pull requests, and a terminal pair-programmer |
+| **The Research Desk** | GPT Researcher + Khoj | Cited market research + a personal AI second brain |
 
 ---
 
-## 🧱 The three flagship apps
+## 🧱 Flagship apps
 
-Original reference apps built by maintainers — each runs end-to-end with an
-**offline/mock mode** so you can try it with **zero API keys**.
+Original, runnable reference apps — each with an **offline mode** (zero API keys). Provider-neutral: point them at any OpenAI-compatible endpoint (Ollama, LiteLLM, …).
 
 | App | What it does | Stack |
 |---|---|---|
+| [🌟 `apps/veska`](apps/veska/) | The AI-native back office — CRM, support, finance, HR, ops (deploy wrapper + go-live) | TypeScript |
 | [`apps/ai-sdr`](apps/ai-sdr) | Researches a lead from a URL and drafts personalized outreach | Python / FastAPI |
 | [`apps/ai-support-agent`](apps/ai-support-agent) | RAG support agent that answers from your docs with citations | Python / FastAPI |
-| [`apps/ai-analyst`](apps/ai-analyst) | Ask your data questions in English, get answers + charts | Python / FastAPI |
+| [`apps/ai-analyst`](apps/ai-analyst) | Ask your data questions in English, get answers + SQL | Python / FastAPI |
 
 ---
 
 ## 🤝 Contributing
 
-This list gets better — and more starred — with every good addition. Adding an app
-takes 5 minutes: see **[CONTRIBUTING.md](CONTRIBUTING.md)** for the card format and
-quality bar. One app per PR. No affiliate links, ever.
-
-**Good first contributions:** add an app to a department, fill an industry gap, or write a department deploy guide.
+This list gets better — and more starred — with every good addition. The bar:
+**open-source and AI-native** (an LLM or AI agent at its core), self-hostable, and
+shippable in ~a day. See **[CONTRIBUTING.md](CONTRIBUTING.md)**. One app per PR. No affiliate links, ever.
 
 <div align="center">
 
@@ -130,26 +140,21 @@ quality bar. One app per PR. No affiliate links, ever.
 <details>
 <summary><b>FAQ</b></summary>
 
-**Is this just another awesome-list?**
-No. Every entry is mapped to the department and role it replaces, carries a ship-time,
-and is honestly assessed. Plus we ship original runnable flagship apps.
+**What counts as "AI-native"?**
+The tool's core is an LLM or an AI agent — it does the work with AI, not a legacy
+app with an AI add-on bolted on. That's why you won't find generic CRMs, ERPs, or
+helpdesks here; for the back office, Veska covers those with an AI-native platform.
 
 **Can I actually run a company on this?**
-A small or solo team can run a *lot* of it. These are real, production-grade projects
-used by thousands of companies. You still need judgment, security, and (for regulated
-work) compliance sign-off.
+A small or solo team can run a *lot* of it. These are real, production-grade projects.
+You still need judgment, security, and (for regulated work) compliance sign-off.
 
-**"Replace a department" — isn't that hype?**
-For a solo founder or a lean team, these tools genuinely do the work a department
-used to. For a large org, think "give your team 10x leverage." Both are true.
+**Do I need API keys?**
+No — everything is provider-agnostic and runs against a local [Ollama](https://github.com/ollama/ollama)
+for a fully private, free setup. Point at a hosted OpenAI-compatible endpoint if you prefer.
 
 **Are the licenses safe for commercial use?**
-Most are MIT/Apache/AGPL/GPL. Some are source-available (n8n, Outline, Twenty enterprise
-files, LobeChat) or have commercial gates (Inbox Zero). Every card flags this — check the
-linked repo's license before you ship.
-
-**How are apps chosen?**
-Open source, self-hostable, department-grade, and shippable in ~a day or less. See
-[CONTRIBUTING.md](CONTRIBUTING.md).
+Most are MIT/Apache/AGPL/GPL. Some are source-available or have commercial gates —
+every card flags this; check the linked repo before you ship.
 
 </details>

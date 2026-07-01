@@ -1,0 +1,10 @@
+# Automatic HTTPS via Let's Encrypt. Caddy reads DOMAIN and ACME_EMAIL from the
+# environment (set in .env) and reverse-proxies your domain to the AI Analyst.
+
+{
+	email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
+	reverse_proxy ai-analyst:8000
+}

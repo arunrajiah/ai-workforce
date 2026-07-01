@@ -1,0 +1,17 @@
+# Automatic HTTPS for a self-hosted Veska instance.
+# Caddy attaches to Veska's Docker network (see caddy-compose.yml) and reaches its
+# `admin` and `api` services by name. Reads DOMAIN / ACME_EMAIL from the environment.
+
+{
+	email {$ACME_EMAIL}
+}
+
+# Admin UI
+{$DOMAIN} {
+	reverse_proxy admin:3000
+}
+
+# API (and webhooks for Slack/WhatsApp/Email channels)
+api.{$DOMAIN} {
+	reverse_proxy api:3001
+}

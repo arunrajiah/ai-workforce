@@ -6,39 +6,35 @@ Modern open BI tools let anyone ask questions in plain English and get charts
 back; text-to-SQL engines turn "what were sales last quarter by region?" into a
 query. Together they replace the analyst-in-the-loop for most routine reporting.
 
-**Recommended starter stack:** Metabase (self-serve BI + NL questions) + Vanna or Wren AI (text-to-SQL agent) + Airflow (pipelines) if you need orchestration.
+**Recommended starter stack:** our [AI Analyst](../../apps/ai-analyst) (plain-English → SQL over your data) + Vanna or Wren AI (text-to-SQL engine) when you outgrow a single CSV.
+
+## ⚡ One-click deploy (recommended)
+
+**Run a talk-to-your-data analyst with one command** — our flagship
+[**AI Analyst**](../../apps/ai-analyst) (ask plain-English questions over a CSV and
+get the SQL it ran plus a results table) behind Caddy for automatic HTTPS.
+[Vanna](https://github.com/vanna-ai/vanna) is the text-to-SQL engine to graduate
+to when you point it at a full warehouse.
+
+```bash
+git clone https://github.com/arunrajiah/ai-workforce.git
+cd ai-workforce/departments/data/deploy
+cp .env.example .env      # set DOMAIN, ACME_EMAIL, and your LLM endpoint
+docker compose up -d
+```
+
+👉 **Full go-live walkthrough (server, DNS, HTTPS, connecting your data):
+[deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live on your domain in ~30–60 min.
 
 ---
 
-### [Metabase](https://github.com/metabase/metabase)
+## 🧩 Swap a component
 
-> Easy open-source BI and embedded analytics — ask questions in plain language, build dashboards.
+The one-click stack above is the fast path. Prefer to assemble your own? Every
+piece below is a strong, self-hostable option — the "recommended starter stack"
+is our [AI Analyst](../../apps/ai-analyst) + Vanna/Wren AI (text-to-SQL).
 
-| | |
-|---|---|
-| **Stars** | ~48k |
-| **Replaces** | a BI analyst / Looker / Tableau seat |
-| **Self-host** | Easy — official Docker image |
-| **Ship in** | ~1 hour |
-| **Stack** | Clojure + React/TS |
-| **License** | AGPL-3.0 (+ commercial editions) |
-
-**Why it's on the list:** the friendliest open BI. Non-technical teams self-serve; it has native NL questions.
-
-### [Apache Superset](https://github.com/apache/superset)
-
-> Data exploration and visualization at scale — SQL Lab, rich charts, dashboards.
-
-| | |
-|---|---|
-| **Stars** | ~74k |
-| **Replaces** | a BI/analytics engineer / Tableau / Looker |
-| **Self-host** | Medium — compose for dev; prod needs tuning |
-| **Ship in** | 2–4 hours |
-| **Stack** | Python/Flask + React |
-| **License** | Apache-2.0 |
-
-**Why it's on the list:** the most powerful fully-permissive BI. Apache-2.0 makes it safe for any commercial use.
+---
 
 ### [Vanna](https://github.com/vanna-ai/vanna)
 
@@ -69,51 +65,6 @@ query. Together they replace the analyst-in-the-loop for most routine reporting.
 | **License** | Apache-2.0 (mixed) |
 
 **Why it's on the list:** actively developed text-to-SQL with a semantic layer — the maintained alternative to Vanna.
-
-### [Redash](https://github.com/getredash/redash)
-
-> Connect any data source, query, visualize, dashboard, and share; scheduled refreshes + alerts.
-
-| | |
-|---|---|
-| **Stars** | ~29k |
-| **Replaces** | a SQL analyst / lightweight BI |
-| **Self-host** | Easy — Dockerfile + compose |
-| **Ship in** | 2–4 hours |
-| **Stack** | Python + JS/TS |
-| **License** | BSD-2-Clause |
-
-**Why it's on the list:** 35+ data sources and simple alerting. Permissive BSD license.
-
-### [Lightdash](https://github.com/lightdash/lightdash)
-
-> Open-source Looker alternative; agentic BI with metrics defined as code (dbt-native).
-
-| | |
-|---|---|
-| **Stars** | ~6k |
-| **Replaces** | a Looker seat / analytics engineer |
-| **Self-host** | Easy — Dockerfile + compose |
-| **Ship in** | 2–4 hours |
-| **Stack** | TypeScript |
-| **License** | MIT-family |
-
-**Why it's on the list:** metrics-as-code keeps definitions consistent — the right choice for dbt teams.
-
-### [Apache Airflow](https://github.com/apache/airflow)
-
-> Author, schedule, and monitor data pipelines as code.
-
-| | |
-|---|---|
-| **Stars** | ~46k |
-| **Replaces** | a data engineer maintaining ETL/orchestration |
-| **Self-host** | Medium — Docker + Helm |
-| **Ship in** | 2–4 hours |
-| **Stack** | Python |
-| **License** | Apache-2.0 |
-
-**Why it's on the list:** when analytics needs fresh data, this is the industry-standard orchestrator.
 
 ---
 

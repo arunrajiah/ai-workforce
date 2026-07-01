@@ -6,7 +6,31 @@ Generative image/video pipelines produce marketing creative, product shots, and
 brand assets on demand; open design platforms replace per-seat SaaS. Most of
 these run locally on a GPU, so the marginal cost of a thousand assets is near zero.
 
-**Recommended starter stack:** ComfyUI (programmable generation pipeline) or AUTOMATIC1111 (approachable UI) for assets + Penpot for design/prototyping. A GPU is recommended for generation tools.
+## ⚡ One-click deploy (recommended)
+
+**Run the entire design studio with one command** — ComfyUI (node-graph image/video
+generation) + Caddy for automatic HTTPS, pre-wired together on your own GPU server.
+
+```bash
+git clone https://github.com/arunrajiah/ai-workforce.git
+cd ai-workforce/departments/design/deploy
+cp .env.example .env      # set DOMAIN and ACME_EMAIL
+docker compose up -d
+```
+
+👉 **Full go-live walkthrough (GPU + NVIDIA toolkit, DNS, HTTPS, adding models,
+first render, AI prompt-expansion): [deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live
+on your domain in ~30–60 min. A GPU (NVIDIA + nvidia-container-toolkit) is strongly
+recommended; a CPU-only mode exists for trials but is very slow.
+
+---
+
+## 🧩 Swap a component
+
+The one-click stack above is the fast path. Prefer to assemble your own? Every
+piece below is a strong, self-hostable, AI-native option — the **recommended starter stack**
+is ComfyUI (programmable generation pipeline) or AUTOMATIC1111 (approachable UI)
+for assets. A GPU is recommended for generation tools.
 
 ---
 
@@ -54,21 +78,6 @@ these run locally on a GPU, so the marginal cost of a thousand assets is near ze
 | **License** | Apache-2.0 (model licenses apply) |
 
 **Why it's on the list:** the most "designed" of the generation UIs — good for teams that want structure over knobs.
-
-### [Penpot](https://github.com/penpot/penpot)
-
-> Open-source design & prototyping platform built on open web standards — a Figma alternative.
-
-| | |
-|---|---|
-| **Stars** | ~55k |
-| **Replaces** | Figma seats; UI/product designer collaboration |
-| **Self-host** | Easy — Docker configs included |
-| **Ship in** | 2–4 hours |
-| **Stack** | Clojure (+ JS/Rust/TS) |
-| **License** | MPL-2.0 |
-
-**Why it's on the list:** the credible open Figma. Own your design files, no per-seat pricing.
 
 ### [HivisionIDPhotos](https://github.com/Zeyi-Lin/HivisionIDPhotos)
 

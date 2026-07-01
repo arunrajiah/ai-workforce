@@ -6,7 +6,34 @@ Autonomous research agents run multi-source investigations and return cited
 reports; feedback platforms capture user signal; analytics tools tell you what
 happened. Together they cover the discovery half of product work.
 
-**Recommended starter stack:** GPT Researcher or Open Deep Research (research briefs) + Formbricks (user feedback) + PostHog (product analytics).
+**Recommended starter stack:** GPT Researcher or Open Deep Research (research briefs) + Onyx (internal knowledge research).
+
+## ⚡ One-click deploy (recommended)
+
+**Run the core of the product-research department with one command** — GPT
+Researcher (autonomous cited research briefs) + Caddy for automatic HTTPS,
+pre-wired together.
+
+```bash
+git clone https://github.com/arunrajiah/ai-workforce.git
+cd ai-workforce/departments/product/deploy
+cp .env.example .env      # set DOMAIN, ACME_EMAIL, TAVILY_API_KEY, LLM_*
+docker compose up -d
+```
+
+👉 **Full go-live walkthrough (server, DNS, HTTPS, API keys, first research run):
+[deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live on your domain in ~30–60 min.
+
+The LLM is provider-neutral: point `LLM_BASE_URL`/`LLM_API_KEY` at any
+OpenAI-compatible endpoint (self-hosted, Ollama, a gateway).
+
+---
+
+## 🧩 Swap a component
+
+The one-click stack above is the fast path. Prefer to assemble your own? Every
+piece below is a strong, self-hostable option — the "recommended starter stack"
+is GPT Researcher (research briefs) + Onyx (internal knowledge research).
 
 ---
 
@@ -54,36 +81,6 @@ happened. Together they cover the discovery half of product work.
 | **License** | MIT |
 
 **Why it's on the list:** tiny, readable codebase — the best starting point if you want to build your own researcher.
-
-### [Formbricks](https://github.com/formbricks/formbricks)
-
-> Open-source survey & experience platform for in-app, website, and link user feedback.
-
-| | |
-|---|---|
-| **Stars** | ~13k |
-| **Replaces** | Qualtrics / Typeform / Sprig |
-| **Self-host** | Easy — `docker compose up` |
-| **Ship in** | 1–2 hours |
-| **Stack** | TypeScript |
-| **License** | AGPLv3 |
-
-**Why it's on the list:** capture user signal, then feed responses to an LLM for theme extraction.
-
-### [PostHog](https://github.com/PostHog/posthog)
-
-> Product analytics, session replay, feature flags, experiments, and surveys in one platform.
-
-| | |
-|---|---|
-| **Stars** | ~35k |
-| **Replaces** | Amplitude / Mixpanel / Hotjar + a product analyst |
-| **Self-host** | Hard — heavy infra (ClickHouse, Kafka) |
-| **Ship in** | 3–4 hours |
-| **Stack** | Python / TypeScript |
-| **License** | MIT (proprietary `ee/`) |
-
-**Why it's on the list:** the open product-analytics standard, with an AI assistant that answers analytics questions.
 
 ### [Onyx](https://github.com/onyx-dot-app/onyx)
 

@@ -1,0 +1,36 @@
+# HTTPS overlay for a running Dify instance.
+#
+# Start Dify first (in the dify repo):  cd dify/docker && cp .env.example .env && docker compose up -d
+# Then, from THIS folder:               docker compose --env-file .env -f caddy-compose.yml up -d
+#
+# The overlay attaches to Dify's default Compose network so it can reach the
+# `nginx` service by name. Dify starts from its `docker/` folder, so the network
+# is named "docker_default". If you started Dify from a differently named folder,
+# update the external network name below to "<folder>_default"
+# (confirm with `docker network ls`).
+
+services:
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - dify
+
+networks:
+  dify:
+    external: true
+    name: docker_default
+
+volumes:
+  caddy_data:
+  caddy_config:

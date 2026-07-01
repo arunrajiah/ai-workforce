@@ -1,0 +1,10 @@
+# Automatic HTTPS via Let's Encrypt. Caddy reads DOMAIN and ACME_EMAIL from the
+# environment (set in .env). ComfyUI's websocket (/ws) passes through automatically.
+
+{
+	email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
+	reverse_proxy comfyui:8188
+}

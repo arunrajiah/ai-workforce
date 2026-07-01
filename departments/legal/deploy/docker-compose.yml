@@ -1,0 +1,57 @@
+# Legal & Compliance — the core department in one command.
+#
+#   AnythingLLM (private chat-with-your-contracts Q&A)
+#   +  Caddy (automatic HTTPS)
+#
+# Start everything:
+#   docker compose up -d
+#
+# See GO-LIVE.md for the full walkthrough (domain, DNS, first login, wiring the LLM).
+
+services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    restart: unless-stopped
+    environment:
+      STORAGE_DIR: /app/server/storage
+      # LLM: provider-neutral. Defaults below target a local Ollama for maximum
+      # privacy (nothing leaves your network). Point at any OpenAI-compatible
+      # endpoint instead by switching LLM_PROVIDER to generic-openai in .env.
+      LLM_PROVIDER: ${LLM_PROVIDER:-ollama}
+      OLLAMA_BASE_PATH: ${OLLAMA_BASE_PATH:-http://host.docker.internal:11434}
+      OLLAMA_MODEL_PREF: ${OLLAMA_MODEL_PREF:-llama3.1}
+      OLLAMA_MODEL_TOKEN_LIMIT: ${OLLAMA_MODEL_TOKEN_LIMIT:-4096}
+      # Generic OpenAI-compatible endpoint (used when LLM_PROVIDER=generic-openai):
+      GENERIC_OPEN_AI_BASE_PATH: ${LLM_BASE_URL:-}
+      GENERIC_OPEN_AI_MODEL_PREF: ${LLM_MODEL:-}
+      GENERIC_OPEN_AI_API_KEY: ${LLM_API_KEY:-}
+      GENERIC_OPEN_AI_MODEL_TOKEN_LIMIT: ${LLM_MODEL_TOKEN_LIMIT:-4096}
+      # Embeddings default to AnythingLLM's built-in engine (fully local).
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
+    volumes:
+      - anythingllm_storage:/app/server/storage
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    expose:
+      - "3001"
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - anythingllm
+
+volumes:
+  anythingllm_storage:
+  caddy_data:
+  caddy_config:

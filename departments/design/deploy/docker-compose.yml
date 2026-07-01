@@ -1,0 +1,54 @@
+# Design & Creative — the whole department in one command.
+#
+#   ComfyUI (node-graph image/video generation)  +  Caddy (automatic HTTPS)
+#
+# ComfyUI has no official image; this uses the well-maintained community image
+# yanwk/comfyui-boot (see GO-LIVE.md for the verification note and alternatives).
+#
+# Start everything:
+#   docker compose up -d
+#
+# See GO-LIVE.md for the full walkthrough (GPU setup, domain, DNS, first render).
+
+services:
+  comfyui:
+    # Community image (no official ComfyUI image exists). cu126-megapak ships CUDA
+    # + a broad set of custom nodes. For CPU-only, set COMFYUI_IMAGE=yanwk/comfyui-boot:cpu
+    # in .env and comment out the `deploy:` block below (expect very slow renders).
+    image: ${COMFYUI_IMAGE:-yanwk/comfyui-boot:cu126-megapak}
+    restart: unless-stopped
+    expose:
+      - "8188"
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - ./storage:/root
+    # NVIDIA GPU passthrough (requires nvidia-container-toolkit on the host).
+    # Comment out this whole block to run CPU-only.
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - comfyui
+
+volumes:
+  caddy_data:
+  caddy_config:

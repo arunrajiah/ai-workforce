@@ -1,0 +1,47 @@
+# Product & Research — the core department in one command.
+#
+#   GPT Researcher (autonomous research agent)  +  Caddy (automatic HTTPS)
+#
+# Start everything:
+#   docker compose up -d
+#
+# See GO-LIVE.md for the full walkthrough (domain, DNS, API keys, first login).
+
+services:
+  gpt-researcher:
+    image: gptresearcher/gpt-researcher:latest
+    restart: unless-stopped
+    expose:
+      - "8000"
+    environment:
+      # Search provider — GPT Researcher's default retriever needs a Tavily key.
+      TAVILY_API_KEY: ${TAVILY_API_KEY:?set TAVILY_API_KEY in .env}
+      # LLM: point at any OpenAI-compatible endpoint (self-hosted, Ollama, a gateway…).
+      # Models use the provider:model format, e.g. openai:gpt-4o-mini.
+      OPENAI_BASE_URL: ${LLM_BASE_URL:-}
+      OPENAI_API_KEY: ${LLM_API_KEY:-}
+      FAST_LLM: ${FAST_LLM:-openai:gpt-4o-mini}
+      SMART_LLM: ${SMART_LLM:-openai:gpt-4o}
+      STRATEGIC_LLM: ${STRATEGIC_LLM:-openai:gpt-4o}
+      EMBEDDING: ${EMBEDDING:-openai:text-embedding-3-small}
+      LOGGING_LEVEL: INFO
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env}
+      ACME_EMAIL: ${ACME_EMAIL:?set ACME_EMAIL in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - gpt-researcher
+
+volumes:
+  caddy_data:
+  caddy_config:

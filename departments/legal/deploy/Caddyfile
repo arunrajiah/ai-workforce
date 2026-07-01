@@ -1,0 +1,11 @@
+# Automatic HTTPS via Let's Encrypt. Caddy reads DOMAIN and ACME_EMAIL from the
+# environment (set in .env). One site: the private doc-Q&A app (AnythingLLM) on
+# your domain.
+
+{
+	email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
+	reverse_proxy anythingllm:3001
+}
