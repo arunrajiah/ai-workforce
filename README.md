@@ -91,7 +91,7 @@ Every listed tool is **AI-native**. Back-office departments deploy as one platfo
 | [🔬 Product & Research](departments/product/) | [GPT Researcher](departments/product/deploy/) | GPT Researcher · Open Deep Research |
 | [🧭 Executive / Assistant](departments/executive/) | [Khoj](departments/executive/deploy/) | Khoj · Fabric · Meetily |
 
-**Cross-cut by vertical:** [🏭 Industry Index →](industries/) — Healthcare · Legal · Real Estate · E-commerce · Education · Fintech · SMB/Local
+**Cross-cut by vertical:** [🏭 Industry Index →](industries/) — **45 AI-native tools across 10 verticals**: Healthcare · Legal · Fintech · Insurance · E-commerce · Media · Education · Real Estate · Logistics · Hospitality
 
 ---
 
