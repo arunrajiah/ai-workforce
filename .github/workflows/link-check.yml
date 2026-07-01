@@ -2,16 +2,13 @@ name: Link check
 
 on:
   pull_request:
-    paths:
-      - "**/*.md"
-      - "**/*.mdx"
   push:
     branches: [main]
   schedule:
     - cron: "0 6 * * 1" # weekly, Mondays 06:00 UTC
 
 jobs:
-  lychee:
+  links:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

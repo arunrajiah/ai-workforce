@@ -2,15 +2,11 @@ name: Validate entries
 
 on:
   pull_request:
-    paths:
-      - "departments/**/*.md"
-      - "industries/**/*.md"
-      - "scripts/validate_entries.py"
   push:
     branches: [main]
 
 jobs:
-  entry-lint:
+  entries:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
