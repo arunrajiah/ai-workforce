@@ -1,8 +1,14 @@
-name: "🚀 Suggest an app"
-description: Suggest an open-source AI app to add to the directory
+name: "🚀 Suggest an AI-native app"
+description: Suggest an open-source, AI-native app to add to a department or industry
 title: "[App]: "
-labels: ["app-suggestion"]
+labels: ["app-suggestion", "needs-review"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping grow the directory! The bar is **open-source + AI-native**
+        (an LLM or AI agent at the core). See [REVIEWING.md](../blob/main/REVIEWING.md)
+        for exactly how entries are reviewed.
   - type: input
     id: repo
     attributes:
@@ -10,23 +16,31 @@ body:
       placeholder: https://github.com/owner/repo
     validations:
       required: true
-  - type: dropdown
-    id: department
+  - type: input
+    id: stars
     attributes:
-      label: Department
+      label: Approximate stars
+      placeholder: "~12k"
+    validations:
+      required: true
+  - type: dropdown
+    id: placement
+    attributes:
+      label: Where does it belong?
       options:
-        - Sales & Revenue
-        - Marketing & Growth
-        - Customer Support & Success
-        - Human Resources & Recruiting
-        - Finance & Accounting
-        - Legal & Compliance
-        - Engineering / DevOps / IT
-        - Data & Analytics / BI
-        - Design & Creative
-        - Operations & Project Management
-        - Product & Research
-        - Executive / Assistant
+        - "Department — Sales"
+        - "Department — Marketing"
+        - "Department — Support"
+        - "Department — HR"
+        - "Department — Finance"
+        - "Department — Legal"
+        - "Department — Engineering"
+        - "Department — Data"
+        - "Department — Design"
+        - "Department — Operations"
+        - "Department — Product"
+        - "Department — Executive"
+        - "Industry (say which in the description)"
     validations:
       required: true
   - type: input
@@ -36,28 +50,32 @@ body:
       placeholder: an SDR + a $99/mo outreach tool
     validations:
       required: true
-  - type: dropdown
-    id: selfhost
+  - type: textarea
+    id: ai
     attributes:
-      label: Self-host difficulty
-      options: ["Easy (docker compose)", "Medium", "Hard"]
+      label: Why is it AI-native?
+      description: What is the LLM / AI agent / ML model doing at its core? (Not "a normal app with an AI feature.")
     validations:
       required: true
   - type: textarea
     id: why
     attributes:
-      label: Why does it belong on the list?
-      description: Be honest — note strengths and rough edges.
+      label: Honest assessment
+      description: Strengths AND rough edges. Trust is the whole point of this list.
     validations:
       required: true
   - type: checkboxes
     id: checks
     attributes:
-      label: Quality checklist
+      label: Quality bar (all required)
       options:
-        - label: It is open source with a real license
+        - label: It is **AI-native** — an LLM/agent/model is at its core
           required: true
-        - label: It is self-hostable
+        - label: It is **open source** with a real license
           required: true
-        - label: A team could ship it in roughly a day or less
+        - label: It is **self-hostable**
+          required: true
+        - label: A team could **ship it in ~a day or less**
+          required: true
+        - label: I verified the repo link resolves and the star count is roughly right
           required: true

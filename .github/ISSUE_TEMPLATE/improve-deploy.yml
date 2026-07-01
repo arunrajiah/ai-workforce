@@ -1,0 +1,43 @@
+name: "🛠️ Improve or add a deploy guide"
+description: Fix a one-click deploy, or propose a new one-click stack for a department
+title: "[Deploy]: "
+labels: ["deploy", "needs-review"]
+body:
+  - type: input
+    id: dept
+    attributes:
+      label: Which department's deploy?
+      placeholder: departments/data/deploy
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What are you proposing?
+      options:
+        - Fix a bug in an existing deploy (compose/Caddy/env/steps)
+        - Improve the go-live guide
+        - Propose a new / better one-click stack for this department
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: |
+        If proposing a stack: which AI-native tool(s), and how it's wired (Docker image, ports,
+        HTTPS via Caddy). Note any host requirements (GPU, RAM). Verify against the project's
+        official docker docs.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: Steps are copy-pasteable and I verified image/ports against official docs
+          required: true
+        - label: Provider-neutral LLM config (LLM_BASE_URL / LLM_MODEL / LLM_API_KEY); no vendor lock-in
+          required: true
+        - label: No secrets committed — only a `.env.example`
+          required: true

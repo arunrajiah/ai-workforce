@@ -1,0 +1,36 @@
+name: "🔍 Verify / re-check a page"
+description: Claim a page and re-verify its entries are still accurate (part of the review system)
+title: "[Verify]: "
+labels: ["verification", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Entries drift — projects get archived, stars change, licenses flip. Re-verifying a
+        page is one of the most useful (and beginner-friendly) ways to contribute. See the
+        [review system](../blob/main/REVIEWING.md#-verification-keeping-the-list-honest).
+  - type: input
+    id: page
+    attributes:
+      label: Which page are you re-verifying?
+      placeholder: industries/fintech/README.md
+    validations:
+      required: true
+  - type: textarea
+    id: findings
+    attributes:
+      label: Findings
+      description: |
+        For each entry: does the repo still exist and is it maintained? Is it still AI-native?
+        Are the stars and license roughly right? Note anything to fix.
+      placeholder: |
+        - TradingAgents — ✅ still active, stars now ~92k, MIT — OK
+        - <project> — ⚠️ archived 2026-05, propose removal
+    validations:
+      required: true
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Follow-up
+      options:
+        - label: I'll open a PR with the fixes I found

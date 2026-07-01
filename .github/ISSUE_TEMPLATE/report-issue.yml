@@ -1,0 +1,39 @@
+name: "🐛 Report a problem with an entry"
+description: A broken link, outdated star count, an unmaintained/dead project, or a tool that isn't really AI-native
+title: "[Fix]: "
+labels: ["fix", "needs-review"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Which page / entry?
+      placeholder: departments/support/README.md — the "Onyx" card
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What's wrong?
+      options:
+        - Broken or wrong link
+        - Outdated star count
+        - Project is unmaintained / archived / dead
+        - Not actually AI-native (should be removed)
+        - License changed / no longer open source
+        - Inaccurate description or "replaces"
+        - Something else (explain below)
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What did you find? Link to evidence (the repo, an archive notice, etc.) where possible.
+    validations:
+      required: true
+  - type: checkboxes
+    id: fix
+    attributes:
+      label: Want to fix it yourself?
+      options:
+        - label: I'm happy to open a PR for this

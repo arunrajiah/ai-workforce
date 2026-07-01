@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Questions & Ideas (Discussions)
+    url: https://github.com/arunrajiah/ai-workforce/discussions
+    about: Ask a question, share how you're using AI Workforce, or float a big idea before opening an issue.
+  - name: 📚 Docs & deploy guides
+    url: https://hub.arunrajiah.com
+    about: Tutorials and go-live guides for every department.

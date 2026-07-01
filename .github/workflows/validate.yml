@@ -1,0 +1,21 @@
+name: Validate entries
+
+on:
+  pull_request:
+    paths:
+      - "departments/**/*.md"
+      - "industries/**/*.md"
+      - "scripts/validate_entries.py"
+  push:
+    branches: [main]
+
+jobs:
+  entry-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Lint tool cards
+        run: python scripts/validate_entries.py

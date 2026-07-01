@@ -4,6 +4,23 @@ Thanks for helping build the world's best directory of open-source AI apps that
 run entire departments. Every good addition makes the repo more useful — and
 more starred. Here's how to contribute well.
 
+## Ways to contribute
+
+Pick whatever fits — each has a one-click issue template ([open an issue](https://github.com/arunrajiah/ai-workforce/issues/new/choose)):
+
+| I want to… | Use |
+|---|---|
+| 🚀 **Add an AI-native app** to a department or industry | [Suggest an app](.github/ISSUE_TEMPLATE/suggest-app.yml) → then a PR |
+| 🐛 **Report a problem** — broken link, stale stars, dead/archived project, not AI-native | [Report a problem](.github/ISSUE_TEMPLATE/report-issue.yml) |
+| 🔍 **Verify a page** — re-check that a page's entries are still accurate (great first PR) | [Verify a page](.github/ISSUE_TEMPLATE/verify-entries.yml) |
+| 🏭 **Propose a new department or industry** (seeded with real tools) | [Suggest a vertical](.github/ISSUE_TEMPLATE/suggest-vertical.yml) |
+| 🛠️ **Fix or add a one-click deploy** | [Improve a deploy](.github/ISSUE_TEMPLATE/improve-deploy.yml) |
+| 💬 **Ask a question or float an idea** | [Discussions](https://github.com/arunrajiah/ai-workforce/discussions) |
+
+**How contributions are reviewed** — the rubric, approval thresholds, verification cadence,
+and how to become a trusted reviewer — is documented in **[REVIEWING.md](REVIEWING.md)**.
+Read it before a big PR; it's exactly what reviewers check.
+
 ## What belongs here
 
 An entry qualifies if it is **all** of the following:

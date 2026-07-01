@@ -1,0 +1,40 @@
+name: "🏭 Suggest a new department or industry"
+description: Propose a new department or industry vertical for the directory
+title: "[Vertical]: "
+labels: ["new-vertical", "needs-review"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options: ["New department", "New industry vertical"]
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: Insurance / Customer Success / Cybersecurity
+    validations:
+      required: true
+  - type: textarea
+    id: tools
+    attributes:
+      label: Seed it — list 3+ AI-native OSS tools for it
+      description: |
+        A vertical only lands if it has real AI-native OSS to fill it. List repos (with URLs)
+        that are AI-native (LLM/agent/model at the core), open source, and self-hostable.
+      placeholder: |
+        - https://github.com/owner/repo — what it does, why AI-native
+        - ...
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: The tools I listed are AI-native, open source, and self-hostable
+          required: true
+        - label: This isn't already covered by an existing department/industry
+          required: true
