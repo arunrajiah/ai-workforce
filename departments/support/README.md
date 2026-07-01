@@ -75,5 +75,5 @@ Also: our [AI Support Agent](../../apps/ai-support-agent) flagship answers ticke
 
 ---
 
-📘 **Deploy guide:** [Ship a support agent](../../docs/departments/support.mdx) · 🚀 **Flagship app:** [`apps/ai-support-agent`](../../apps/ai-support-agent)
+🚀 **Flagship app:** [`apps/ai-support-agent`](../../apps/ai-support-agent)
 🏭 **Industry cross-links:** [E-commerce](../../industries/README.md#e-commerce--retail) · [SMB / Local](../../industries/README.md#smb--local-business)

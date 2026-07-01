@@ -68,4 +68,3 @@ is our [AI Analyst](../../apps/ai-analyst) + Vanna/Wren AI (text-to-SQL).
 
 ---
 
-📘 **Deploy guide:** [Ship a talk-to-your-data BI agent](../../docs/departments/data.mdx)

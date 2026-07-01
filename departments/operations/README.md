@@ -32,4 +32,3 @@ _Operations is Veska's core. There isn't a strong single AI-native alternative t
 
 ---
 
-📘 **Deploy guide:** [Ship a workflow-automation backbone](../../docs/departments/operations.mdx)

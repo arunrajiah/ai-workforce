@@ -1,9 +1,10 @@
-# 🌟 Veska — the AI-native back office (flagship)
+# 🌟 Veska — our AI-native ERP (flagship)
 
-> **One AI platform that runs your whole back office.** Describe your company in
-> plain language and Veska configures CRM, support desk, finance, and HR — then
-> your team works entirely through Slack, WhatsApp, and Email. No logins, no
-> training.
+> **Veska is our own open-source, AI-native ERP** — built by the maintainer of
+> AI Workforce and featured here as its flagship. **One AI platform that runs your
+> whole back office.** Describe your company in plain language and Veska configures
+> CRM, support desk, finance, and HR — then your team works entirely through Slack,
+> WhatsApp, and Email. No logins, no training.
 
 **Veska is the one-click answer for five departments at once** —
 [Sales](../../departments/sales/), [Support](../../departments/support/),

@@ -99,4 +99,3 @@ is GPT Researcher (research briefs) + Onyx (internal knowledge research).
 
 ---
 
-📘 **Deploy guide:** [Ship a user-research + PRD agent](../../docs/departments/product.mdx)

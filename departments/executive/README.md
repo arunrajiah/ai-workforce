@@ -112,6 +112,4 @@ is Inbox Zero (email) + Meetily (notes) + LobeChat (assistant workspace) + Fabri
 
 ---
 
-📘 **Deploy guide:** [Ship an inbox + calendar chief-of-staff](../../docs/departments/executive.mdx)
-
 > **Local & private:** pair any of these with [Ollama](https://github.com/ollama/ollama) (~175k ⭐, MIT) to run entirely offline.

@@ -36,10 +36,11 @@ you honestly what each replaces, and show you how to ship it in hours.
 
 ---
 
-## 🌟 The flagship: Veska
+## 🌟 The flagship: Veska (our AI-native ERP)
 
 For the **back office**, you don't need to wire up five tools — you run one
-AI-native platform.
+AI-native platform. **[Veska](apps/veska/) is our own open-source, AI-native ERP**,
+built by the maintainer of this repo and battle-tested as the flagship of AI Workforce.
 
 > **[Veska](apps/veska/)** — describe your company in plain language and its AI
 > configures **CRM, support desk, finance, and HR** in minutes. Then your team
@@ -112,7 +113,7 @@ Original, runnable reference apps — each with an **offline mode** (zero API ke
 
 | App | What it does | Stack |
 |---|---|---|
-| [🌟 `apps/veska`](apps/veska/) | The AI-native back office — CRM, support, finance, HR, ops (deploy wrapper + go-live) | TypeScript |
+| [🌟 `apps/veska`](apps/veska/) | **Our AI-native ERP** — CRM, support, finance, HR, ops (deploy wrapper + go-live) | TypeScript |
 | [`apps/ai-sdr`](apps/ai-sdr) | Researches a lead from a URL and drafts personalized outreach | Python / FastAPI |
 | [`apps/ai-support-agent`](apps/ai-support-agent) | RAG support agent that answers from your docs with citations | Python / FastAPI |
 | [`apps/ai-analyst`](apps/ai-analyst) | Ask your data questions in English, get answers + SQL | Python / FastAPI |

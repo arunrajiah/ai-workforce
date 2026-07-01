@@ -46,5 +46,4 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 
 ---
 
-📘 **Deploy guide:** [Ship an AI finance back-office](../../docs/departments/finance.mdx)
 🏭 **Industry cross-links:** [Fintech](../../industries/README.md#fintech)

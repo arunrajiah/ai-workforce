@@ -6,7 +6,11 @@ Markdown/MDX with frontmatter, so they render on GitHub **and** publish to
 
 - [`index.mdx`](index.mdx) — the docs landing page
 - [`quickstart.mdx`](quickstart.mdx) — the shared foundation every app needs
-- [`departments/`](departments/) — one deploy guide per department
+
+Each department's step-by-step deploy guide lives next to its stack, in
+`departments/<name>/deploy/GO-LIVE.md` (or [`apps/veska/GO-LIVE.md`](../apps/veska/GO-LIVE.md)
+for the back-office departments). They use the same frontmatter, so they publish
+to the hub alongside these pages.
 
 ## Publishing to a hub (Docusaurus / Next.js / Nextra)
 

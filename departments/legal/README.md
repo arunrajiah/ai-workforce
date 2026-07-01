@@ -85,5 +85,4 @@ it fully local with Ollama for confidential matters.
 
 ---
 
-📘 **Deploy guide:** [Ship a private contract-review assistant](../../docs/departments/legal.mdx)
 🏭 **Industry cross-links:** [Legal](../../industries/README.md#legal)

@@ -67,4 +67,3 @@ is OpenHands or Aider (autonomous/pair coding).
 
 ---
 
-📘 **Deploy guide:** [Ship an autonomous coding + internal-tools stack](../../docs/departments/engineering.mdx)

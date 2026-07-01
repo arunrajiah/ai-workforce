@@ -6,7 +6,7 @@ Wire a CRM, a scraper, and an automation engine together with an LLM and you hav
 a system that researches leads, writes personalized outreach, books demos, and
 keeps the pipeline clean — the core loop of a sales development team.
 
-**Recommended starter stack:** Veska (runs the whole department) + Firecrawl (lead research) + our [AI SDR](../../apps/ai-sdr) flagship for outreach. See the [AI SDR deploy guide](../../docs/departments/sales.mdx) and the bundled [`apps/ai-sdr`](../../apps/ai-sdr) flagship.
+**Recommended starter stack:** Veska (runs the whole department) + Firecrawl (lead research) + our [AI SDR](../../apps/ai-sdr) flagship for outreach.
 
 ## ⚡ One-click deploy — Veska (recommended)
 
@@ -47,5 +47,5 @@ Also: our [AI SDR](../../apps/ai-sdr) flagship drafts personalized outreach.
 
 ---
 
-📘 **Deploy guide:** [Ship an AI SDR](../../docs/departments/sales.mdx) · 🚀 **Flagship app:** [`apps/ai-sdr`](../../apps/ai-sdr)
+🚀 **Flagship app:** [`apps/ai-sdr`](../../apps/ai-sdr)
 🏭 **Industry cross-links:** [Real Estate](../../industries/README.md#real-estate) · [E-commerce](../../industries/README.md#e-commerce--retail)

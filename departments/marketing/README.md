@@ -106,5 +106,4 @@ Firecrawl for competitor/SEO research.
 
 ---
 
-📘 **Deploy guide:** [Ship a content + SEO engine](../../docs/departments/marketing.mdx)
 🏭 **Industry cross-links:** [E-commerce](../../industries/README.md#e-commerce--retail) · [Education](../../industries/README.md#education)

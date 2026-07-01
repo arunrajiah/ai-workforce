@@ -111,4 +111,3 @@ for assets. A GPU is recommended for generation tools.
 
 ---
 
-📘 **Deploy guide:** [Ship a brand-asset generation pipeline](../../docs/departments/design.mdx)

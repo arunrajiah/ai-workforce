@@ -45,4 +45,3 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 
 ---
 
-📘 **Deploy guide:** [Ship an AI resume screener + scheduler](../../docs/departments/hr.mdx)
