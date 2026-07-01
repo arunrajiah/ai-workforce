@@ -10,6 +10,7 @@ Sales. Marketing. Support. HR. Finance. Legal. Engineering. Data. Design. Ops. P
 <br/>
 
 [![Departments](https://img.shields.io/badge/departments-12-6C5CE7)](departments/)
+[![Industries](https://img.shields.io/badge/industries-12_verticals_·_52_tools-0984E3)](industries/)
 [![AI-native](https://img.shields.io/badge/AI--native-only-00B894)](#-the-departments)
 [![Flagship](https://img.shields.io/badge/flagship-Veska-6C5CE7)](apps/veska/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
@@ -91,7 +92,19 @@ Every listed tool is **AI-native**. Back-office departments deploy as one platfo
 | [🔬 Product & Research](departments/product/) | [GPT Researcher](departments/product/deploy/) | GPT Researcher · Open Deep Research |
 | [🧭 Executive / Assistant](departments/executive/) | [Khoj](departments/executive/deploy/) | Khoj · Fabric · Meetily |
 
-**Cross-cut by vertical:** [🏭 Industry Index →](industries/) — **52 AI-native tools across 12 verticals**: Healthcare · Legal · Fintech · Insurance · E-commerce · Media · Education · Real Estate · Logistics · Hospitality · Government · Agriculture
+---
+
+## 🏭 Browse by industry
+
+Same AI-native tools, re-sliced by vertical — **52 tools across 12 industries**. Each page lists the best AI-native OSS for that sector (and flags where a vertical is still thin).
+
+| | | | |
+|---|---|---|---|
+| 🏥 [Healthcare](industries/healthcare/) | ⚖️ [Legal](industries/legal/) | 💳 [Fintech](industries/fintech/) | 🛡️ [Insurance](industries/insurance/) |
+| 🛒 [E-commerce](industries/ecommerce/) | 🎬 [Media & Creative](industries/media/) | 🎓 [Education](industries/education/) | 🏠 [Real Estate](industries/real-estate/) |
+| 🚚 [Logistics](industries/logistics/) | 🍽️ [Hospitality](industries/hospitality/) | 🏛️ [Government](industries/government/) | 🌾 [Agriculture](industries/agriculture/) |
+
+→ Full [Industry Index](industries/)
 
 ---
 
