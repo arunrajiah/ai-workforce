@@ -15,6 +15,7 @@ Sales. Marketing. Support. HR. Finance. Legal. Engineering. Data. Design. Ops. P
 [![Flagship](https://img.shields.io/badge/flagship-Veska-6C5CE7)](apps/veska/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
+[![Good first issues](https://img.shields.io/github/issues/arunrajiah/ai-workforce/good%20first%20issue?label=good%20first%20issues&color=7057ff)](https://github.com/arunrajiah/ai-workforce/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 
 [**📚 Docs & Tutorials**](https://hub.arunrajiah.com) · [**🌟 Veska**](apps/veska/) · [**🏭 By Industry**](industries/) · [**🚀 Flagship apps**](apps/) · [**🤝 Contribute**](CONTRIBUTING.md)
 
@@ -137,7 +138,14 @@ Original, runnable reference apps — each with an **offline mode** (zero API ke
 
 This list gets better — and more starred — with every good addition. The bar:
 **open-source and AI-native** (an LLM or AI agent at its core), self-hostable, and
-shippable in ~a day. See **[CONTRIBUTING.md](CONTRIBUTING.md)**. One app per PR. No affiliate links, ever.
+shippable in ~a day.
+
+**🌱 New here? Start with a [good first issue](https://github.com/arunrajiah/ai-workforce/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).** The easiest is *verifying a page* — re-checking that a page's entries are still accurate. It takes 20 minutes and is exactly the judgment we look for in reviewers.
+
+**Ways to contribute** (each has a [guided issue template](https://github.com/arunrajiah/ai-workforce/issues/new/choose)):
+add an AI-native app · report a broken/stale entry · verify a page · propose a new department or industry · fix a deploy · or [start a discussion](https://github.com/arunrajiah/ai-workforce/discussions).
+
+How submissions are reviewed — the rubric, approval thresholds, and verification cadence — is in **[REVIEWING.md](REVIEWING.md)**; the format and quality bar are in **[CONTRIBUTING.md](CONTRIBUTING.md)**. One app per PR. No affiliate links, ever.
 
 <div align="center">
 
