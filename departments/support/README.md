@@ -6,7 +6,31 @@ An omnichannel helpdesk plus a RAG agent over your docs deflects the majority of
 Tier-1 tickets and drafts answers for the rest. This is the most immediately
 ROI-positive department to automate.
 
-**Recommended starter stack:** Chatwoot (omnichannel inbox) + Onyx or AnythingLLM (AI answers over your docs). See the [support deploy guide](../../docs/departments/support.mdx) and the bundled [`apps/ai-support-agent`](../../apps/ai-support-agent) flagship.
+## ⚡ One-click deploy (recommended)
+
+**Run the entire support department with one command** — Chatwoot (omnichannel
+helpdesk) + an AI agent that auto-answers tickets from your docs + Caddy for
+automatic HTTPS, pre-wired together.
+
+```bash
+git clone https://github.com/arunrajiah/ai-workforce.git
+cd ai-workforce/departments/support/deploy
+cp .env.example .env      # set DOMAIN, ACME_EMAIL, and generated secrets
+docker compose run --rm rails bundle exec rails db:chatwoot_prepare
+docker compose up -d
+```
+
+👉 **Full go-live walkthrough (server, DNS, HTTPS, connecting the bot, adding
+channels): [deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live on your domain in ~30–60 min.
+
+---
+
+## 🧩 Swap a component
+
+The one-click stack above is the fast path. Prefer to assemble your own? Every
+piece below is a strong, self-hostable option — the "recommended starter stack"
+is Chatwoot (inbox) + Onyx/AnythingLLM (AI answers). See also the standalone
+[`apps/ai-support-agent`](../../apps/ai-support-agent) flagship.
 
 ---
 

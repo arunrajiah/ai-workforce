@@ -12,10 +12,11 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
+import chatwoot
 from llm import answer as llm_answer
 from llm import llm_enabled
 from rag import KnowledgeBase
@@ -45,3 +46,32 @@ def ask(body: Ask):
     chunks = kb.search(body.question, k=4)
     result = llm_answer(body.question, chunks)
     return result
+
+
+@app.post("/webhooks/chatwoot")
+async def chatwoot_webhook(req: Request):
+    """Chatwoot Agent Bot endpoint: auto-answer incoming customer messages.
+
+    Point a Chatwoot AgentBot's outgoing URL at this route. Only 'incoming'
+    messages are answered, so the bot never replies to itself (no loops).
+    """
+    payload = await req.json()
+    if payload.get("event") != "message_created" or payload.get("message_type") != "incoming":
+        return {"status": "ignored"}
+
+    question = (payload.get("content") or "").strip()
+    conversation_id = (payload.get("conversation") or {}).get("id")
+    account_id = os.getenv("CHATWOOT_ACCOUNT_ID") or (payload.get("account") or {}).get("id")
+    if not (question and conversation_id and account_id):
+        return {"status": "skipped", "reason": "missing content/conversation/account"}
+
+    chunks = kb.search(question, k=4)
+    result = llm_answer(question, chunks)
+
+    if not chatwoot.enabled():
+        return {"status": "dry-run", "answer": result["answer"], "mode": result["mode"]}
+    try:
+        chatwoot.post_reply(account_id, conversation_id, result["answer"])
+    except Exception as exc:
+        return {"status": "error", "detail": str(exc)}
+    return {"status": "answered", "mode": result["mode"]}
