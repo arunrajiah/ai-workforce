@@ -1,0 +1,12 @@
+services:
+  ai-support-agent:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Leave unset for offline demo mode. Set these to use an OpenAI-compatible LLM.
+      - LLM_BASE_URL=${LLM_BASE_URL:-}
+      - LLM_MODEL=${LLM_MODEL:-}
+      - LLM_API_KEY=${LLM_API_KEY:-}
+    volumes:
+      - ./knowledge:/app/knowledge:ro

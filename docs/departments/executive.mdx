@@ -1,0 +1,65 @@
+---
+title: "Ship an inbox + calendar chief-of-staff"
+description: Self-host email triage, scheduling, meeting notes, and AI briefings.
+sidebar_label: Executive
+slug: /departments/executive
+keywords: [self-host, open source, executive, ai]
+---
+
+# Ship an inbox + calendar chief-of-staff
+> Replaces: an EA's triage load, Calendly, Otter, morning-briefing time. Ship in: an afternoon.
+
+This guide builds an open-source chief-of-staff stack: an AI email-triage app, a scheduler, a meeting-notes tool, and a briefing generator. The LLM prioritizes your inbox and turns meetings into action items.
+
+## What you'll build
+- [Inbox Zero](https://github.com/elie222/inbox-zero) — AI email triage and cleanup.
+- [Cal.com](https://github.com/calcom/cal.com) — scheduling.
+- [Meetily](https://github.com/Zackriya-Solutions/meeting-minutes) — meeting notes/minutes.
+- [Fabric](https://github.com/danielmiessler/fabric) — AI briefings and summaries.
+
+## Prerequisites
+An LLM key and Docker. See [`/quickstart`](/quickstart) for the shared foundation.
+
+## Step 1 — Stand up email triage (Inbox Zero)
+```bash
+git clone https://github.com/elie222/inbox-zero.git
+cd inbox-zero
+cp apps/web/.env.example apps/web/.env   # set GOOGLE creds, your LLM endpoint, DATABASE_URL
+docker compose up -d
+```
+Inbox Zero serves on port `3000`. Connect your mailbox via the Google OAuth flow.
+
+## Step 2 — Add scheduling (Cal.com)
+```bash
+git clone https://github.com/calcom/cal.com.git
+cd cal.com
+cp .env.example .env   # set NEXTAUTH_SECRET, CALENDSO_ENCRYPTION_KEY, DATABASE_URL
+docker compose up -d
+```
+Cal.com serves on port `3000` — remap to avoid the Inbox Zero collision.
+
+## Step 3 — Add meeting notes (Meetily)
+```bash
+git clone https://github.com/Zackriya-Solutions/meeting-minutes.git
+cd meeting-minutes
+cp .env.example .env   # set your LLM + transcription keys
+docker compose up -d
+```
+Meetily runs its backend on port `5167` with a desktop client for capture and minutes.
+
+## Step 4 — Add briefings (Fabric)
+```bash
+go install github.com/danielmiessler/fabric/cmd/fabric@latest
+fabric --setup                       # pick any provider; Ollama for fully local
+echo "<today's context>" | fabric --pattern summarize
+```
+Fabric is a CLI — no port. Configure your provider in `--setup` and it runs curated prompt patterns.
+
+## Step 5 — Wire in the AI
+Inbox Zero, Meetily, and Fabric all work with any OpenAI-compatible endpoint (`LLM_BASE_URL` / `LLM_MODEL`) — set it in each `.env`/setup. Tie them together with an n8n/Activepieces flow that feeds triaged mail and meeting minutes into a Fabric `summarize` pattern for a daily briefing. For local/offline, point them at [Ollama](https://github.com/ollama/ollama).
+
+## Ship it
+Put [Caddy](https://caddyserver.com) in front of Inbox Zero, Cal.com, and Meetily for automatic HTTPS. See [`/quickstart`](/quickstart).
+
+## Related
+- Department page: [`../../departments/executive/README.md`](../../departments/executive/README.md)

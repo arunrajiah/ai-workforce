@@ -1,0 +1,59 @@
+---
+title: "Ship a support agent"
+description: Self-host an omnichannel inbox with AI answers over your docs and private doc chat.
+sidebar_label: Support
+slug: /departments/support
+keywords: [self-host, open source, support, ai]
+---
+
+# Ship a support agent
+> Replaces: Zendesk, Intercom, and a tier-1 support queue. Ship in: an afternoon.
+
+This guide sets up an open-source support stack: an omnichannel inbox for conversations, an AI answer engine that reads your docs, and a private doc-chat tool for internal knowledge. The LLM drafts and auto-answers grounded in your own content.
+
+> **Try it with zero API keys.** The bundled flagship app `apps/ai-support-agent` runs the answer loop out of the box — start there to see it work before self-hosting the full stack.
+
+## What you'll build
+- [Chatwoot](https://github.com/chatwoot/chatwoot) — omnichannel support inbox.
+- [Onyx](https://github.com/onyx-dot-app/onyx) — AI answers grounded in your docs (RAG).
+- [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) — private chat over your knowledge base.
+
+## Prerequisites
+An LLM key and Docker. See [`/quickstart`](/quickstart) for the shared foundation.
+
+## Step 1 — Stand up the inbox (Chatwoot)
+```bash
+mkdir chatwoot && cd chatwoot
+curl -LO https://raw.githubusercontent.com/chatwoot/chatwoot/develop/docker-compose.production.yaml
+cp docker-compose.production.yaml docker-compose.yaml
+# set SECRET_KEY_BASE, POSTGRES_PASSWORD, FRONTEND_URL in .env
+docker compose run --rm rails bundle exec rails db:chatwoot_prepare
+docker compose up -d
+```
+Chatwoot serves on port `3000`. Connect email, chat widget, and social channels in the UI.
+
+## Step 2 — Add AI answers over docs (Onyx)
+```bash
+git clone https://github.com/onyx-dot-app/onyx.git
+cd onyx/deployment/docker_compose
+docker compose -f docker-compose.dev.yml up -d
+```
+Onyx serves on port `3000` (remap if it collides). Connect your help center/docs as sources.
+
+## Step 3 — Add private doc chat (AnythingLLM)
+```bash
+docker run -d --name anythingllm -p 3001:3001 \
+  -v anythingllm_storage:/app/server/storage \
+  mintplexlabs/anythingllm
+```
+AnythingLLM serves on port `3001`. Upload internal runbooks for agent-facing lookups.
+
+## Step 4 — Wire in the AI
+In Onyx and AnythingLLM, open **LLM settings** and add any OpenAI-compatible provider (base URL + model; an API key only for hosted gateways). Point Chatwoot's suggested-reply/automation at Onyx so agents get grounded draft answers. For a fully offline deployment, select [Ollama](https://github.com/ollama/ollama) as the provider instead.
+
+## Ship it
+Put [Caddy](https://caddyserver.com) in front of Chatwoot, Onyx, and AnythingLLM for automatic HTTPS. See [`/quickstart`](/quickstart).
+
+## Related
+- Department page: [`../../departments/support/README.md`](../../departments/support/README.md)
+- Flagship app: [`../../apps/ai-support-agent`](../../apps/ai-support-agent)

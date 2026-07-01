@@ -1,0 +1,64 @@
+---
+title: "Ship an AI finance back-office"
+description: Self-host invoicing, receipt OCR, bookkeeping, and financial analysis with an AI layer.
+sidebar_label: Finance
+slug: /departments/finance
+keywords: [self-host, open source, finance, ai]
+---
+
+# Ship an AI finance back-office
+> Replaces: QuickBooks-lite, Bill.com, Dext, a bookkeeper's busywork. Ship in: a day.
+
+This guide sets up an open-source finance stack: an invoicing app, an OCR pipeline for receipts and bills, a personal/business ledger, and a financial-analysis toolkit. The LLM categorizes transactions and drafts analysis.
+
+## What you'll build
+- [Invoice Ninja](https://github.com/invoiceninja/invoiceninja) — invoicing and payments.
+- [Paperless-ngx](https://github.com/paperless-ngx/paperless-ngx) — receipt/invoice OCR and archive.
+- [Firefly III](https://github.com/firefly-iii/firefly-iii) — books, budgets, and reconciliation.
+- [OpenBB](https://github.com/OpenBB-finance/OpenBB) — financial data and analysis.
+
+## Prerequisites
+An LLM key and Docker. See [`/quickstart`](/quickstart) for the shared foundation.
+
+## Step 1 — Stand up invoicing (Invoice Ninja)
+```bash
+git clone https://github.com/invoiceninja/invoiceninja.git
+cd invoiceninja/docker
+cp .env.example .env   # set APP_KEY, DB creds, APP_URL
+docker compose up -d
+```
+Invoice Ninja serves on port `80`/`8000`. Configure your company and payment gateway in setup.
+
+## Step 2 — Add receipt OCR (Paperless-ngx)
+```bash
+mkdir paperless && cd paperless
+curl -LO https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/docker/compose/docker-compose.postgres.yml
+mv docker-compose.postgres.yml docker-compose.yml
+docker compose up -d   # set PAPERLESS_SECRET_KEY, admin user via env
+```
+Paperless-ngx serves on port `8000`. Drop receipts into the consume folder for auto-OCR.
+
+## Step 3 — Add the ledger (Firefly III)
+```bash
+docker run -d --name firefly -p 8080:8080 \
+  -e APP_KEY=$(head -c32 /dev/urandom | base64) \
+  -e DB_CONNECTION=sqlite \
+  fireflyiii/core:latest
+```
+Firefly III serves on port `8080`. Import bank CSVs and set up budgets and rules.
+
+## Step 4 — Add financial analysis (OpenBB)
+```bash
+pip install openbb
+python -c "from openbb import obb; print(obb.equity.price.quote('AAPL').to_df())"
+```
+OpenBB runs as a Python library/platform (API on port `8000` if you launch the server).
+
+## Step 5 — Wire in the AI
+Use an n8n/Activepieces flow: new Paperless document → LLM call (any OpenAI-compatible endpoint via `LLM_BASE_URL` / `LLM_MODEL`) extracts vendor/amount/category → create the transaction in Firefly III. OpenBB Copilot and its API can use the same endpoint for narrative analysis. For local/offline, point the flow at [Ollama](https://github.com/ollama/ollama).
+
+## Ship it
+Put [Caddy](https://caddyserver.com) in front of each service for automatic HTTPS. See [`/quickstart`](/quickstart).
+
+## Related
+- Department page: [`../../departments/finance/README.md`](../../departments/finance/README.md)

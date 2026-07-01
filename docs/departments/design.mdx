@@ -1,0 +1,56 @@
+---
+title: "Ship a brand-asset generation pipeline"
+description: Self-host image generation pipelines and a design tool for on-brand assets.
+sidebar_label: Design
+slug: /departments/design
+keywords: [self-host, open source, design, ai]
+---
+
+# Ship a brand-asset generation pipeline
+> Replaces: stock-image subscriptions, a chunk of production-design work. Ship in: an afternoon (GPU permitting).
+
+This guide builds an open-source design stack: a node-based generation pipeline, an approachable image-gen UI, and a design/prototyping tool. Diffusion models produce on-brand imagery you refine and lay out.
+
+> **A GPU is strongly recommended.** ComfyUI and AUTOMATIC1111 will run on CPU but are painfully slow; an NVIDIA GPU (8GB+ VRAM) makes generation practical.
+
+## What you'll build
+- [ComfyUI](https://github.com/comfyanonymous/ComfyUI) — node-based generation pipeline.
+- [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) — approachable Stable Diffusion UI.
+- [Penpot](https://github.com/penpot/penpot) — design and prototyping.
+
+## Prerequisites
+A GPU box (or patience), an LLM key for prompt-assist, and Docker. See [`/quickstart`](/quickstart).
+
+## Step 1 — Stand up the pipeline (ComfyUI)
+```bash
+git clone https://github.com/comfyanonymous/ComfyUI.git
+cd ComfyUI
+pip install -r requirements.txt
+python main.py --listen 0.0.0.0 --port 8188
+```
+ComfyUI serves on port `8188`. Drop your checkpoints into `models/checkpoints`.
+
+## Step 2 — Add the approachable UI (AUTOMATIC1111)
+```bash
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
+cd stable-diffusion-webui
+./webui.sh --listen --port 7860
+```
+The web UI serves on port `7860`. Good for quick one-off brand images and inpainting.
+
+## Step 3 — Add design + prototyping (Penpot)
+```bash
+mkdir penpot && cd penpot
+curl -LO https://raw.githubusercontent.com/penpot/penpot/main/docker/images/docker-compose.yaml
+docker compose -f docker-compose.yaml up -d
+```
+Penpot serves on port `9001`. Import generated assets and assemble layouts/prototypes.
+
+## Step 4 — Wire in the AI
+Use an n8n/Activepieces flow with any OpenAI-compatible LLM endpoint (`LLM_BASE_URL` / `LLM_MODEL`) to expand a short brief into detailed diffusion prompts, then POST them to the ComfyUI API (`/prompt`) to batch-render on-brand variations. The image models run locally; only the prompt-writing step uses the LLM. Point it at [Ollama](https://github.com/ollama/ollama) to keep that local too.
+
+## Ship it
+Put [Caddy](https://caddyserver.com) in front of ComfyUI, the WebUI, and Penpot for automatic HTTPS. See [`/quickstart`](/quickstart).
+
+## Related
+- Department page: [`../../departments/design/README.md`](../../departments/design/README.md)

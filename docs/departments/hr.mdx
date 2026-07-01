@@ -1,0 +1,65 @@
+---
+title: "Ship an AI resume screener + scheduler"
+description: Self-host an HRIS, interview scheduling, offer-letter signing, and AI phone screens.
+sidebar_label: HR
+slug: /departments/hr
+keywords: [self-host, open source, hr, ai]
+---
+
+# Ship an AI resume screener + scheduler
+> Replaces: Workday-lite, Greenhouse, Calendly, DocuSign, first-round recruiters. Ship in: a day.
+
+This guide assembles an open-source HR stack: a full HRIS for people/payroll, a scheduler for interviews, an e-sign tool for offers, and an AI phone-screen tool. The LLM screens resumes and conducts structured first-round calls.
+
+## What you'll build
+- [Frappe HR](https://github.com/frappe/hrms) — HRIS, payroll, and leave.
+- [Cal.com](https://github.com/calcom/cal.com) — interview scheduling.
+- [Documenso](https://github.com/documenso/documenso) — sign offer letters.
+- [FoloUp](https://github.com/FoloUp/FoloUp) — AI phone/voice screens.
+
+## Prerequisites
+An LLM key and Docker. See [`/quickstart`](/quickstart) for the shared foundation.
+
+## Step 1 — Stand up the HRIS (Frappe HR)
+```bash
+git clone https://github.com/frappe/hrms.git
+cd hrms
+docker compose -f docker/docker-compose.yml up -d
+```
+Frappe HR serves on port `8000`. Set the site and admin password on first boot per the compose logs.
+
+## Step 2 — Add interview scheduling (Cal.com)
+```bash
+git clone https://github.com/calcom/cal.com.git
+cd cal.com
+cp .env.example .env   # set NEXTAUTH_SECRET, CALENDSO_ENCRYPTION_KEY, DATABASE_URL
+docker compose up -d
+```
+Cal.com serves on port `3000`. Create interview event types with your hiring panel.
+
+## Step 3 — Add offer signing (Documenso)
+```bash
+git clone https://github.com/documenso/documenso.git
+cd documenso
+cp .env.example .env   # set NEXTAUTH_SECRET, NEXT_PRIVATE_ENCRYPTION_KEY, DATABASE_URL
+docker compose up -d
+```
+Documenso serves on port `3000` — remap to avoid the Cal.com collision. Upload your offer-letter template.
+
+## Step 4 — Add AI phone screens (FoloUp)
+```bash
+git clone https://github.com/FoloUp/FoloUp.git
+cd FoloUp
+cp .env.example .env   # set Supabase + LLM + voice provider keys
+npm install && npm run dev
+```
+FoloUp serves on port `3000`. Configure your screening question set per role.
+
+## Step 5 — Wire in the AI
+Add your LLM endpoint (`LLM_BASE_URL` / `LLM_MODEL`, plus `LLM_API_KEY` for hosted gateways) to FoloUp's `.env` to drive interview questions and scoring. For resume screening, build a small n8n/Activepieces flow: new applicant → LLM call ranks against the job description → write score back to Frappe HR. For a local/offline option, point these at [Ollama](https://github.com/ollama/ollama).
+
+## Ship it
+Put [Caddy](https://caddyserver.com) in front of each service for automatic HTTPS. See [`/quickstart`](/quickstart).
+
+## Related
+- Department page: [`../../departments/hr/README.md`](../../departments/hr/README.md)

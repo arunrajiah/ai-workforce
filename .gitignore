@@ -1,0 +1,26 @@
+# Secrets
+.env
+*.local
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+.next/
+
+# OS / editor / local tooling
+.DS_Store
+.idea/
+.vscode/
+.claude/
+*.swp
+
+# Docs build
+docs/.docusaurus/
+build/

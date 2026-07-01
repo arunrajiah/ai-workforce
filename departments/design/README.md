@@ -1,0 +1,105 @@
+# 🎨 Design & Creative
+
+> Replace: a production designer + stock-image spend + a headshot service + Figma seats.
+
+Generative image/video pipelines produce marketing creative, product shots, and
+brand assets on demand; open design platforms replace per-seat SaaS. Most of
+these run locally on a GPU, so the marginal cost of a thousand assets is near zero.
+
+**Recommended starter stack:** ComfyUI (programmable generation pipeline) or AUTOMATIC1111 (approachable UI) for assets + Penpot for design/prototyping. A GPU is recommended for generation tools.
+
+---
+
+### [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+
+> The most powerful modular node-graph GUI/API/backend for diffusion models (image, video, 3D, audio).
+
+| | |
+|---|---|
+| **Stars** | ~119k |
+| **Replaces** | a creative/visual production designer; a generative-art pipeline |
+| **Self-host** | Easy–Medium — portable package; GPU recommended |
+| **Ship in** | ~1 hour (2–4h with custom models) |
+| **Stack** | Python + PyTorch |
+| **License** | GPL-3.0 |
+
+**Why it's on the list:** the professional's choice. Build a repeatable, API-driven asset pipeline as a node graph.
+
+### [Stable Diffusion web UI (AUTOMATIC1111)](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+
+> Feature-rich web interface for Stable Diffusion image generation.
+
+| | |
+|---|---|
+| **Stars** | ~164k |
+| **Replaces** | marketing/creative image production; stock-image spend |
+| **Self-host** | Easy — one-click install scripts; GPU recommended |
+| **Ship in** | ~1 hour |
+| **Stack** | Python (Gradio) |
+| **License** | AGPL-3.0 |
+
+**Why it's on the list:** the most popular entry point to local image generation. Approachable, huge ecosystem.
+
+### [InvokeAI](https://github.com/invoke-ai/InvokeAI)
+
+> Professional creative engine for Stable Diffusion with a polished web UI and workflows.
+
+| | |
+|---|---|
+| **Stars** | ~28k |
+| **Replaces** | a brand/creative asset designer |
+| **Self-host** | Easy — official Launcher or Docker |
+| **Ship in** | ~1 hour |
+| **Stack** | TypeScript + Python |
+| **License** | Apache-2.0 (model licenses apply) |
+
+**Why it's on the list:** the most "designed" of the generation UIs — good for teams that want structure over knobs.
+
+### [Penpot](https://github.com/penpot/penpot)
+
+> Open-source design & prototyping platform built on open web standards — a Figma alternative.
+
+| | |
+|---|---|
+| **Stars** | ~55k |
+| **Replaces** | Figma seats; UI/product designer collaboration |
+| **Self-host** | Easy — Docker configs included |
+| **Ship in** | 2–4 hours |
+| **Stack** | Clojure (+ JS/Rust/TS) |
+| **License** | MPL-2.0 |
+
+**Why it's on the list:** the credible open Figma. Own your design files, no per-seat pricing.
+
+### [HivisionIDPhotos](https://github.com/Zeyi-Lin/HivisionIDPhotos)
+
+> Auto-generates standardized ID/portrait photos (segmentation, background swap, sizing).
+
+| | |
+|---|---|
+| **Stars** | ~21k |
+| **Replaces** | a photo-retouch/headshot service |
+| **Self-host** | Easy — compose (Gradio UI + API) |
+| **Ship in** | ~1 hour |
+| **Stack** | Python (Gradio + FastAPI) |
+| **License** | Apache-2.0 |
+
+**Why it's on the list:** a narrow but genuinely useful task fully automated — team headshots and ID photos on demand.
+
+### [StableStudio](https://github.com/Stability-AI/StableStudio)
+
+> Stability AI's open-source DreamStudio UI — a pluggable image generate/edit front-end.
+
+| | |
+|---|---|
+| **Stars** | ~9k |
+| **Replaces** | a front-end for a creative image-gen studio |
+| **Self-host** | Easy — clone + `yarn dev` |
+| **Ship in** | ~1 hour |
+| **Stack** | TypeScript / Node |
+| **License** | MIT |
+
+**Why it's on the list:** MIT-licensed, swappable-backend studio UI. A clean base to build a branded creative tool on. Less actively maintained.
+
+---
+
+📘 **Deploy guide:** [Ship a brand-asset generation pipeline](../../docs/departments/design.mdx)

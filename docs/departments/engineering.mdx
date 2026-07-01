@@ -1,0 +1,63 @@
+---
+title: "Ship an autonomous coding + internal-tools stack"
+description: Self-host autonomous coding agents, pair programming, internal tools, and automation.
+sidebar_label: Engineering
+slug: /departments/engineering
+keywords: [self-host, open source, engineering, ai]
+---
+
+# Ship an autonomous coding + internal-tools stack
+> Replaces: Devin-style agents, low-code SaaS, glue-code contractors. Ship in: an afternoon.
+
+This guide stands up an open-source engineering stack: an autonomous coding agent, a terminal pair-programmer, an internal-tools builder, and an automation engine. The LLM drives the agents and codegen throughout.
+
+## What you'll build
+- [OpenHands](https://github.com/All-Hands-AI/OpenHands) — autonomous coding agent.
+- [Aider](https://github.com/Aider-AI/aider) — terminal pair programming.
+- [Appsmith](https://github.com/appsmithorg/appsmith) — internal tools / admin panels.
+- [n8n](https://github.com/n8n-io/n8n) — automation and glue.
+
+## Prerequisites
+An LLM key and Docker. See [`/quickstart`](/quickstart) for the shared foundation.
+
+## Step 1 — Stand up the autonomous agent (OpenHands)
+```bash
+docker run -d --name openhands -p 3000:3000 \
+  -e SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:latest \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  docker.all-hands.dev/all-hands-ai/openhands:latest
+```
+OpenHands serves on port `3000`. Set your LLM key in the in-app settings on first run.
+
+## Step 2 — Add pair programming (Aider)
+```bash
+python -m pip install aider-install && aider-install
+# Aider speaks the OpenAI-compatible API — point it at any endpoint (Ollama shown):
+aider --model ollama_chat/llama3.1 --openai-api-base http://localhost:11434/v1
+```
+Aider runs in your terminal inside a git repo — no port. It reads its model/endpoint from the flags or env.
+
+## Step 3 — Add internal tools (Appsmith)
+```bash
+mkdir appsmith && cd appsmith
+curl -L https://bit.ly/appsmith-docker-compose -o docker-compose.yml
+docker compose up -d
+```
+Appsmith serves on port `80`/`8080`. Connect your DBs/APIs and build admin UIs visually.
+
+## Step 4 — Add automation (n8n)
+```bash
+docker run -d --name n8n -p 5678:5678 \
+  -v n8n_data:/home/node/.n8n \
+  docker.n8n.io/n8nio/n8n
+```
+n8n serves on port `5678`. Wire CI events, PR triage, and deploy hooks here.
+
+## Step 5 — Wire in the AI
+OpenHands and Aider both work with any OpenAI-compatible endpoint (`LLM_BASE_URL` / `LLM_MODEL`) — set it in OpenHands settings and via flags/env for Aider. In n8n, add an AI node pointed at the same endpoint to automate PR summaries or ticket triage. For local/offline, point OpenHands and Aider at [Ollama](https://github.com/ollama/ollama).
+
+## Ship it
+Put [Caddy](https://caddyserver.com) in front of OpenHands, Appsmith, and n8n for automatic HTTPS. See [`/quickstart`](/quickstart).
+
+## Related
+- Department page: [`../../departments/engineering/README.md`](../../departments/engineering/README.md)

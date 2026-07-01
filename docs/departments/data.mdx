@@ -1,0 +1,56 @@
+---
+title: "Ship a talk-to-your-data BI agent"
+description: Self-host BI, natural-language questions, and text-to-SQL over your warehouse.
+sidebar_label: Data
+slug: /departments/data
+keywords: [self-host, open source, data, ai]
+---
+
+# Ship a talk-to-your-data BI agent
+> Replaces: Looker, ThoughtSpot, a queue of ad-hoc SQL requests. Ship in: an afternoon.
+
+This guide sets up an open-source BI stack: a dashboard tool with natural-language questions, a text-to-SQL engine trained on your schema, and an advanced BI platform for heavy reporting. The LLM turns plain-English questions into SQL and charts.
+
+> **Try it with zero API keys.** The bundled flagship app `apps/ai-analyst` runs the ask-your-data loop out of the box — start there before self-hosting the full stack.
+
+## What you'll build
+- [Metabase](https://github.com/metabase/metabase) — dashboards and natural-language questions.
+- [Vanna](https://github.com/vanna-ai/vanna) — text-to-SQL trained on your schema.
+- [Apache Superset](https://github.com/apache/superset) — advanced BI and exploration.
+
+## Prerequisites
+An LLM key and Docker. See [`/quickstart`](/quickstart) for the shared foundation.
+
+## Step 1 — Stand up dashboards (Metabase)
+```bash
+docker run -d --name metabase -p 3000:3000 \
+  -v metabase_data:/metabase-data \
+  -e MB_DB_FILE=/metabase-data/metabase.db \
+  metabase/metabase
+```
+Metabase serves on port `3000`. Connect your warehouse/DB in the setup wizard.
+
+## Step 2 — Add text-to-SQL (Vanna)
+```bash
+pip install vanna
+python -c "import vanna; print('vanna ready')"
+```
+Vanna runs as a Python library (or Flask app on port `8084`). Train it on your DDL and example queries.
+
+## Step 3 — Add advanced BI (Superset)
+```bash
+git clone https://github.com/apache/superset.git
+cd superset
+docker compose -f docker-compose-image-tag.yml up -d
+```
+Superset serves on port `8088`. Log in with the seeded admin and add your database.
+
+## Step 4 — Wire in the AI
+Give Vanna any OpenAI-compatible LLM endpoint (`LLM_BASE_URL` / `LLM_MODEL`) so plain-English questions become SQL against your trained schema. Metabase's built-in metabot / SQL assistant and Superset can use the same endpoint. For local/offline inference, point Vanna at [Ollama](https://github.com/ollama/ollama).
+
+## Ship it
+Put [Caddy](https://caddyserver.com) in front of Metabase, Superset, and your Vanna app for automatic HTTPS. See [`/quickstart`](/quickstart).
+
+## Related
+- Department page: [`../../departments/data/README.md`](../../departments/data/README.md)
+- Flagship app: [`../../apps/ai-analyst`](../../apps/ai-analyst)

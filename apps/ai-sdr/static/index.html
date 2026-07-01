@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI SDR</title>
+<style>
+  :root { --bg:#0f1020; --card:#1a1b34; --accent:#00B894; --text:#e8e8f0; --muted:#9a9ab0; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+  .wrap { max-width:680px; margin:0 auto; padding:28px 16px 64px; }
+  h1 { font-size:22px; margin:6px 0 2px; }
+  .sub { color:var(--muted); font-size:13px; margin-bottom:22px; }
+  .badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:20px; background:#2a2b4d; color:var(--muted); }
+  label { display:block; font-size:12px; color:var(--muted); margin:12px 0 4px; text-transform:uppercase; letter-spacing:.05em; }
+  input, textarea { width:100%; padding:12px 14px; border-radius:10px; border:1px solid #2a2b4d; background:var(--card); color:var(--text); font-size:14px; }
+  button { margin-top:18px; padding:13px 22px; border:0; border-radius:10px; background:var(--accent); color:#04231b; font-weight:700; cursor:pointer; font-size:15px; }
+  button:disabled { opacity:.5; }
+  pre { background:var(--card); border:1px solid #2a2b4d; border-radius:12px; padding:16px; white-space:pre-wrap; margin-top:20px; line-height:1.5; font-family:inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📈 AI SDR</h1>
+  <div class="sub">Researches a lead from its website and drafts personalized outreach. <span class="badge" id="mode">…</span></div>
+
+  <label>Company name</label>
+  <input id="company" placeholder="Acme Inc" />
+  <label>Website (optional — we'll read it)</label>
+  <input id="website" placeholder="acme.com" />
+  <label>What you offer</label>
+  <input id="value" value="getting more done with a smaller team" />
+  <label>Notes (optional)</label>
+  <textarea id="notes" rows="2" placeholder="Anything you already know about them"></textarea>
+
+  <button id="go">Research & draft →</button>
+  <pre id="out" style="display:none"></pre>
+</div>
+<script>
+  fetch('/api/health').then(r=>r.json()).then(h=>{
+    document.getElementById('mode').textContent = h.mode==='llm' ? 'LLM ✓' : 'offline demo';
+  });
+  const out = document.getElementById('out');
+  document.getElementById('go').addEventListener('click', async () => {
+    const btn = document.getElementById('go');
+    const company = document.getElementById('company').value.trim() || 'this company';
+    btn.disabled = true; out.style.display='block'; out.textContent='Researching…';
+    try {
+      const r = await fetch('/api/draft', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          company,
+          website: document.getElementById('website').value.trim() || null,
+          notes: document.getElementById('notes').value.trim() || null,
+          value_prop: document.getElementById('value').value.trim()
+        })
+      });
+      const d = await r.json();
+      const src = d.research && d.research.source ? `\n\n— research source: ${d.research.source}` : '';
+      out.textContent = d.draft + src;
+    } catch(e) { out.textContent = 'Error: '+e; }
+    finally { btn.disabled = false; }
+  });
+</script>
+</body>
+</html>

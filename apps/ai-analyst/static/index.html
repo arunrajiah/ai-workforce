@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Analyst</title>
+<style>
+  :root { --bg:#0f1020; --card:#1a1b34; --accent:#0984E3; --text:#e8e8f0; --muted:#9a9ab0; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+  .wrap { max-width:760px; margin:0 auto; padding:28px 16px 64px; }
+  h1 { font-size:22px; margin:6px 0 2px; }
+  .sub { color:var(--muted); font-size:13px; margin-bottom:18px; }
+  .badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:20px; background:#2a2b4d; color:var(--muted); }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 16px; }
+  .chip { font-size:12px; padding:6px 10px; border-radius:20px; background:#22233f; color:var(--text); cursor:pointer; border:1px solid #2a2b4d; }
+  .bar { display:flex; gap:8px; }
+  input { flex:1; padding:13px 15px; border-radius:10px; border:1px solid #2a2b4d; background:var(--card); color:var(--text); font-size:15px; }
+  button { padding:0 20px; border:0; border-radius:10px; background:var(--accent); color:#fff; font-weight:700; cursor:pointer; }
+  .answer { font-size:18px; margin:20px 0 6px; }
+  .sql { font-family:ui-monospace,Menlo,monospace; font-size:12px; color:var(--muted); background:var(--card); padding:10px 12px; border-radius:8px; border:1px solid #2a2b4d; overflow:auto; }
+  .note { color:var(--muted); font-size:13px; margin-top:12px; }
+  table { border-collapse:collapse; width:100%; margin-top:14px; font-size:14px; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid #2a2b4d; }
+  th { color:var(--muted); font-weight:600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>📊 AI Analyst</h1>
+  <div class="sub">Ask your data a question in plain English. <span class="badge" id="mode">…</span></div>
+  <div class="chips" id="chips"></div>
+  <div class="bar">
+    <input id="q" placeholder="e.g. revenue by region" />
+    <button id="go">Ask</button>
+  </div>
+  <div id="out"></div>
+</div>
+<script>
+  const examples = ['total revenue','revenue by region','who is the top rep','best selling product','revenue by product'];
+  const chips = document.getElementById('chips');
+  examples.forEach(e => { const c=document.createElement('span'); c.className='chip'; c.textContent=e;
+    c.onclick=()=>{ document.getElementById('q').value=e; ask(); }; chips.appendChild(c); });
+
+  fetch('/api/health').then(r=>r.json()).then(h=>{
+    document.getElementById('mode').textContent = h.mode==='llm' ? 'LLM ✓' : 'offline demo';
+  });
+
+  const out = document.getElementById('out');
+  async function ask() {
+    const question = document.getElementById('q').value.trim();
+    if (!question) return;
+    out.innerHTML = '<div class="note">Thinking…</div>';
+    try {
+      const r = await fetch('/api/ask', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({question}) });
+      const d = await r.json();
+      let html = '';
+      if (d.answer) html += `<div class="answer">${d.answer}</div>`;
+      if (d.sql) html += `<div class="sql">${d.sql.replace(/</g,'&lt;')}</div>`;
+      if (d.columns && d.rows) {
+        html += '<table><thead><tr>' + d.columns.map(c=>`<th>${c}</th>`).join('') + '</tr></thead><tbody>';
+        html += d.rows.slice(0,50).map(row=>'<tr>'+row.map(v=>`<td>${v}</td>`).join('')+'</tr>').join('');
+        html += '</tbody></table>';
+      }
+      if (d.note) html += `<div class="note">${d.note}</div>`;
+      if (!d.answer && d.summary) html += `<div class="sql">${JSON.stringify(d.summary,null,2)}</div>`;
+      out.innerHTML = html;
+    } catch(e) { out.innerHTML = '<div class="note">Error: '+e+'</div>'; }
+  }
+  document.getElementById('go').onclick = ask;
+  document.getElementById('q').addEventListener('keydown', e => { if (e.key==='Enter') ask(); });
+</script>
+</body>
+</html>

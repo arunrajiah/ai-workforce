@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Support Agent</title>
+<style>
+  :root { --bg:#0f1020; --card:#1a1b34; --accent:#6C5CE7; --text:#e8e8f0; --muted:#9a9ab0; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--text); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 24px 16px 96px; }
+  h1 { font-size: 22px; margin: 8px 0 2px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+  .badge { display:inline-block; font-size:11px; padding:2px 8px; border-radius:20px; background:#2a2b4d; color:var(--muted); }
+  .msg { background:var(--card); border-radius:14px; padding:14px 16px; margin:12px 0; line-height:1.5; white-space:pre-wrap; }
+  .msg.user { background:transparent; border:1px solid #2a2b4d; }
+  .msg .who { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px; }
+  .sources { font-size:12px; color:var(--muted); margin-top:8px; }
+  form { position:fixed; bottom:0; left:0; right:0; background:linear-gradient(transparent,var(--bg) 30%); padding:16px; }
+  .bar { max-width:720px; margin:0 auto; display:flex; gap:8px; }
+  input { flex:1; padding:14px 16px; border-radius:12px; border:1px solid #2a2b4d; background:var(--card); color:var(--text); font-size:15px; }
+  button { padding:0 20px; border:0; border-radius:12px; background:var(--accent); color:#fff; font-weight:600; cursor:pointer; }
+  button:disabled { opacity:.5; cursor:default; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🎧 AI Support Agent</h1>
+  <div class="sub">Answers from your knowledge base, with citations. <span class="badge" id="mode">checking…</span></div>
+  <div id="log">
+    <div class="msg"><div class="who">Agent</div>Hi! Ask me anything about our product. Try: <em>“How do I reset my password?”</em> or <em>“What’s your refund policy?”</em></div>
+  </div>
+</div>
+<form id="f">
+  <div class="bar">
+    <input id="q" placeholder="Ask a question…" autocomplete="off" />
+    <button id="send">Ask</button>
+  </div>
+</form>
+<script>
+  const log = document.getElementById('log');
+  const f = document.getElementById('f');
+  const q = document.getElementById('q');
+  const send = document.getElementById('send');
+
+  fetch('/api/health').then(r => r.json()).then(h => {
+    document.getElementById('mode').textContent = h.mode === 'llm' ? 'LLM ✓' : 'offline demo';
+  });
+
+  function add(text, who, sources) {
+    const el = document.createElement('div');
+    el.className = 'msg' + (who === 'You' ? ' user' : '');
+    el.innerHTML = `<div class="who">${who}</div>` + text.replace(/</g,'&lt;');
+    if (sources && sources.length) {
+      const s = sources.map(x => `[${x.n}] ${x.source}`).join('  ·  ');
+      el.innerHTML += `<div class="sources">Sources: ${s}</div>`;
+    }
+    log.appendChild(el);
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const question = q.value.trim();
+    if (!question) return;
+    add(question, 'You');
+    q.value = ''; send.disabled = true;
+    try {
+      const r = await fetch('/api/ask', {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ question })
+      });
+      const data = await r.json();
+      add(data.answer, 'Agent', data.sources);
+    } catch (err) {
+      add('Something went wrong: ' + err, 'Agent');
+    } finally {
+      send.disabled = false; q.focus();
+    }
+  });
+</script>
+</body>
+</html>

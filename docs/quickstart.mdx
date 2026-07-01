@@ -1,0 +1,76 @@
+---
+title: Quickstart — the shared foundation
+description: The five things every self-hosted AI app needs. Set them up once and reuse across every department.
+sidebar_label: Quickstart
+slug: /quickstart
+keywords: [self-host ai, docker, llm api key, vector database, ollama]
+---
+
+# Quickstart: the shared foundation
+
+Almost every app in AI Workforce needs the same five ingredients. Set them up
+**once** and every department guide gets shorter.
+
+## 1. A model to think with
+
+You need a model to run inference. Everything here speaks the **OpenAI-compatible
+chat API**, so you can point at whatever you like — swap the endpoint, not the code.
+
+- **Local (private / free):** [Ollama](https://github.com/ollama/ollama) exposes an
+  OpenAI-compatible endpoint at `http://localhost:11434/v1`.
+  ```bash
+  curl -fsSL https://ollama.com/install.sh | sh
+  ollama run llama3.1
+  ```
+- **Self-hosted gateway:** [LiteLLM](https://github.com/BerriAI/litellm) or
+  [LocalAI](https://github.com/mudler/LocalAI) give you one OpenAI-compatible URL
+  in front of many models.
+- **Hosted:** any provider that exposes an OpenAI-compatible endpoint — set
+  `LLM_BASE_URL` and `LLM_API_KEY`.
+
+> Every app in this repo is provider-agnostic. The three config values are
+> `LLM_BASE_URL`, `LLM_MODEL`, and (optionally) `LLM_API_KEY`.
+
+## 2. A place to remember things (vector store)
+
+For anything that does retrieval (support bots, doc Q&A, research):
+
+```bash
+docker run -p 6333:6333 qdrant/qdrant
+```
+
+[Qdrant](https://github.com/qdrant/qdrant) is the easy default. pgvector on your
+existing Postgres also works.
+
+## 3. Docker + Docker Compose
+
+Nearly every app ships a `docker-compose.yml`. Install
+[Docker Desktop](https://www.docker.com/products/docker-desktop/) (Mac/Windows)
+or Docker Engine (Linux). Verify:
+
+```bash
+docker compose version
+```
+
+## 4. A domain + reverse proxy (for anything public)
+
+Put a proxy in front so you get HTTPS and can host several apps on one box:
+
+- [Caddy](https://github.com/caddyserver/caddy) — automatic HTTPS, tiny config.
+- [Traefik](https://github.com/traefik/traefik) — great for many containers.
+
+## 5. A place to keep secrets
+
+Never commit keys. Every app here reads from a `.env` file:
+
+```bash
+cp .env.example .env
+# edit .env, then:
+docker compose up -d
+```
+
+For teams, graduate to [Infisical](https://github.com/Infisical/infisical) (open-source secrets manager).
+
+---
+
+That's the foundation. Now pick a department and ship.

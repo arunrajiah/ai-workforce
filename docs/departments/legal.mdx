@@ -1,0 +1,64 @@
+---
+title: "Ship a private contract-review assistant"
+description: Self-host a fully local contract Q&A, RAG, and e-signature stack.
+sidebar_label: Legal
+slug: /departments/legal
+keywords: [self-host, open source, legal, ai]
+---
+
+# Ship a private contract-review assistant
+> Replaces: junior-associate first-pass review, DocuSign. Ship in: an afternoon.
+
+This guide builds a privacy-first legal stack: a doc-chat tool for contract Q&A, a RAG engine over your document library, an e-sign tool, and a local model so nothing leaves your network. The LLM summarizes clauses and flags risks.
+
+> **Not legal advice.** This assistant surfaces and summarizes clauses to speed review; it does not replace a qualified attorney. Always have a human lawyer sign off.
+
+## What you'll build
+- [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm) — chat over individual contracts.
+- [Onyx](https://github.com/onyx-dot-app/onyx) — RAG across your document library.
+- [DocuSeal](https://github.com/docusealco/docuseal) — e-signatures.
+- [Ollama](https://github.com/ollama/ollama) — run models fully local.
+
+## Prerequisites
+An LLM key (or local Ollama) and Docker. See [`/quickstart`](/quickstart) for the shared foundation.
+
+## Step 1 — Run a local model (Ollama)
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+ollama pull llama3.1
+ollama serve   # API on port 11434
+```
+Keeping the model local means contract text never leaves your machine.
+
+## Step 2 — Add contract Q&A (AnythingLLM)
+```bash
+docker run -d --name anythingllm -p 3001:3001 \
+  -v anythingllm_storage:/app/server/storage \
+  mintplexlabs/anythingllm
+```
+AnythingLLM serves on port `3001`. In **LLM Preference**, select Ollama at `http://host.docker.internal:11434`.
+
+## Step 3 — Add RAG over your library (Onyx)
+```bash
+git clone https://github.com/onyx-dot-app/onyx.git
+cd onyx/deployment/docker_compose
+docker compose -f docker-compose.dev.yml up -d
+```
+Onyx serves on port `3000`. Connect your contract repository as a source and point its LLM at Ollama.
+
+## Step 4 — Add e-signatures (DocuSeal)
+```bash
+docker run -d --name docuseal -p 3000:3000 \
+  -v docuseal_data:/data \
+  docuseal/docuseal
+```
+DocuSeal serves on port `3000` — remap if it collides with Onyx. Build reusable signing templates.
+
+## Step 5 — Wire in the AI
+Both AnythingLLM and Onyx let you pick the provider in **LLM settings**. For maximum privacy keep [Ollama](https://github.com/ollama/ollama) selected. If you accept cloud processing for tougher reasoning, add any OpenAI-compatible provider (base URL + model + API key).
+
+## Ship it
+Put [Caddy](https://caddyserver.com) in front of each service for automatic HTTPS. See [`/quickstart`](/quickstart).
+
+## Related
+- Department page: [`../../departments/legal/README.md`](../../departments/legal/README.md)

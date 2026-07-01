@@ -1,0 +1,63 @@
+name: "🚀 Suggest an app"
+description: Suggest an open-source AI app to add to the directory
+title: "[App]: "
+labels: ["app-suggestion"]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: GitHub repository URL
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: dropdown
+    id: department
+    attributes:
+      label: Department
+      options:
+        - Sales & Revenue
+        - Marketing & Growth
+        - Customer Support & Success
+        - Human Resources & Recruiting
+        - Finance & Accounting
+        - Legal & Compliance
+        - Engineering / DevOps / IT
+        - Data & Analytics / BI
+        - Design & Creative
+        - Operations & Project Management
+        - Product & Research
+        - Executive / Assistant
+    validations:
+      required: true
+  - type: input
+    id: replaces
+    attributes:
+      label: What role or SaaS does it replace?
+      placeholder: an SDR + a $99/mo outreach tool
+    validations:
+      required: true
+  - type: dropdown
+    id: selfhost
+    attributes:
+      label: Self-host difficulty
+      options: ["Easy (docker compose)", "Medium", "Hard"]
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it belong on the list?
+      description: Be honest — note strengths and rough edges.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Quality checklist
+      options:
+        - label: It is open source with a real license
+          required: true
+        - label: It is self-hostable
+          required: true
+        - label: A team could ship it in roughly a day or less
+          required: true
