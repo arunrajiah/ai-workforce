@@ -37,7 +37,7 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 | **Self-host** | Easy — single-command install |
 | **Ship in** | 1–3 hours |
 | **Stack** | Python + TypeScript |
-| **License** | MIT |
+| **License** | MIT (core; ee dirs separate) |
 
 **Why it's on the list:** connect your docs/Slack/Confluence and it answers with citations. The deflection engine.
 
