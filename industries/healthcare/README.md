@@ -69,7 +69,7 @@
 | **Self-host** | Medium — local LLM + transcription |
 | **License** | MIT |
 
-### [OpenScribe](https://github.com/Open-scribe/OpenScribe)
+### [OpenScribe](https://github.com/sammargolis/OpenScribe)
 
 > Open ambient scribe that records a patient encounter and drafts structured clinical notes; provider-configurable LLM, local-first by default.
 
