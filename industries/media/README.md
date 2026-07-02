@@ -5,7 +5,7 @@
 > self-hostable models at their core. These replace whole categories of
 > subscription creative SaaS — and keep your assets on your own hardware.
 
-### [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+### [ComfyUI](https://github.com/Comfy-Org/ComfyUI)
 
 > A node-based engine for diffusion workflows — image, video, and audio generation — replacing a stack of paid generative-media subscriptions.
 
