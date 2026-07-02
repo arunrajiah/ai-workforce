@@ -50,7 +50,7 @@
 
 | | |
 |---|---|
-| **Stars** | ~7k |
+| **Stars** | ~7.4k |
 | **AI** | Financial-CoT agents combining LLMs with quant analytics for report generation and forecasting |
 | **Replaces** | equity-research analyst hours; manual report drafting |
 | **Self-host** | Medium — Python/notebooks, bring your own LLM + data keys |
@@ -64,7 +64,7 @@
 
 | | |
 |---|---|
-| **Stars** | ~7k |
+| **Stars** | ~6.7k |
 | **AI** | Prompt-defined extraction over any LLM (OpenAI/Bedrock/Gemini/Ollama); deploys as an API or ETL step |
 | **Replaces** | manual data entry; per-format document parsers; SaaS IDP |
 | **Self-host** | Medium — Docker Compose, wire in an LLM |
