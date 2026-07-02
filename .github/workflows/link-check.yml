@@ -19,6 +19,8 @@ jobs:
             --no-progress
             --max-concurrency 8
             --accept 200,206,429
-            --exclude-mail
+            --root-dir .
+            --exclude 'https?://[^/]*yourdomain\.com'
+            --exclude-path docs
             './**/*.md' './**/*.mdx'
           fail: true
