@@ -35,7 +35,7 @@ is OpenHands or Aider (autonomous/pair coding).
 
 ---
 
-### [OpenHands](https://github.com/All-Hands-AI/OpenHands)
+### [OpenHands](https://github.com/OpenHands/OpenHands)
 
 > Self-hosted control center for autonomous coding agents that turn issues into pull requests.
 
@@ -46,7 +46,7 @@ is OpenHands or Aider (autonomous/pair coding).
 | **Self-host** | Easy — Docker image + volume mounts |
 | **Ship in** | ~1 hour |
 | **Stack** | Python + TypeScript |
-| **License** | MIT |
+| **License** | MIT (core; enterprise dir separate) |
 
 **Why it's on the list:** the leading open autonomous-SWE platform. Give it a repo and an issue, review the PR.
 
