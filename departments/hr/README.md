@@ -6,7 +6,7 @@ From sourcing to onboarding, HR runs on structured workflows — exactly what
 open-source HRMS tools plus an LLM screener handle well. Screen resumes, schedule
 interviews, run payroll, and sign offer letters without a stack of SaaS seats.
 
-**Recommended starter stack:** Veska (runs the whole department) + FoloUp for AI phone screens.
+**Recommended starter stack:** Veska (runs the whole department) + FoloUp for AI phone screens + Aural for structured AI interviews.
 
 ## ⚡ One-click deploy — Veska (recommended)
 
@@ -45,3 +45,19 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 
 ---
 
+### [Aural](https://github.com/1146345502/aural-oss)
+
+> AI interview platform that conducts structured voice, chat, and video interviews, then generates scored reports.
+
+| | |
+|---|---|
+| **Stars** | ~100 |
+| **Replaces** | Async interview tools / first-pass interview coordination |
+| **Self-host** | Medium — Next.js, Supabase, and LLM/voice provider keys |
+| **Ship in** | ~half a day |
+| **Stack** | TypeScript (Next.js) + Supabase |
+| **License** | MIT |
+
+**Why it's on the list:** the AI interviewer, follow-up questions, resume import, and post-interview scoring are core to the product. It is newer and much smaller than FoloUp, but covers structured chat/video/coding interviews instead of only phone screens.
+
+---
