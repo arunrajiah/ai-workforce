@@ -2,7 +2,7 @@
 
 The [departments](../departments) are the primary map. This index re-slices the
 world by **industry**, pointing to the best **AI-native** open-source projects
-(an LLM, AI agent, or ML model at the core) for each one — **52 tools across 12
+(an LLM, AI agent, or ML model at the core) for each one — **73 tools across 16
 verticals**.
 
 For general back-office ops (CRM, support, finance, HR) in *any* vertical, one
@@ -31,6 +31,10 @@ focuses on the AI tools unique to that industry.
 | 🍽️ **Hospitality & Restaurants** | Vocode-Core · AnythingLLM · Onyx | [→](hospitality/) |
 | 🏛️ **Government & Public Sector** | Civic AI Tools · RAGFlow · Onyx · GPT Researcher | [→](government/) |
 | 🌾 **Agriculture & AgTech** | FarmVibes.AI · Ultralytics YOLO · Nixtla | [→](agriculture/) |
+| 🔐 **Cybersecurity** | PentestGPT · garak · Vulnhuntr · Nebula | [→](cybersecurity/) |
+| 🧪 **Scientific Research** | GPT Researcher · PaperQA2 · ChemCrow · scispaCy | [→](scientific-research/) |
+| 🎮 **Game Development** | Voyager · AI Town · Generative Agents · PettingZoo | [→](gamedev/) |
+| 🤖 **Robotics & Manufacturing** | LeRobot · OpenVLA · Isaac GR00T · Ultralytics YOLO | [→](robotics/) |
 
 ---
 
