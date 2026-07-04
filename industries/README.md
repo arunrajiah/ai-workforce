@@ -2,7 +2,7 @@
 
 The [departments](../departments) are the primary map. This index re-slices the
 world by **industry**, pointing to the best **AI-native** open-source projects
-(an LLM, AI agent, or ML model at the core) for each one — **73 tools across 16
+(an LLM, AI agent, or ML model at the core) for each one — **87 tools across 18
 verticals**.
 
 These pages focus on AI-native tools unique to each industry. For general
@@ -25,6 +25,8 @@ back-office ops (CRM, support, finance, HR), see the [departments](../department
 | 🛡️ **Insurance** | Unstract · MinerU · Zerox · Onyx | [→](insurance/) |
 | 🛒 **E-commerce & Retail** | browser-use · Gorse · SalesGPT | [→](ecommerce/) |
 | 🎬 **Media & Creative** | ComfyUI · Whisper · Open-Sora · Chatterbox | [→](media/) |
+| 🎥 **Film & Video Production** | HunyuanVideo · Wan2.1 · CogVideoX · Real-ESRGAN | [→](film/) |
+| 🎵 **Music & Audio Production** | AudioCraft · YuE · ACE-Step · RVC | [→](music/) |
 | 🎓 **Education & EdTech** | DeepTutor · RAGFlow · Khoj · Quivr | [→](education/) |
 | 🏠 **Real Estate** | Vocode-Core · LiveKit Agents · Unstract | [→](real-estate/) |
 | 🚚 **Supply Chain & Logistics** | Nixtla · Ultralytics YOLO · Sparrow | [→](logistics/) |

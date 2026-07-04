@@ -10,7 +10,7 @@ Sales. Marketing. Support. HR. Finance. Legal. Engineering. Data. Design. Ops. P
 <br/>
 
 [![Departments](https://img.shields.io/badge/departments-12-6C5CE7)](departments/)
-[![Industries](https://img.shields.io/badge/industries-16_verticals_·_73_tools-0984E3)](industries/)
+[![Industries](https://img.shields.io/badge/industries-18_verticals_·_87_tools-0984E3)](industries/)
 [![AI-native](https://img.shields.io/badge/AI--native-only-00B894)](#-the-departments)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
@@ -71,14 +71,15 @@ AI-native ERP — is listed there as an all-in-one option alongside the individu
 
 ## 🏭 Browse by industry
 
-Same AI-native tools, re-sliced by vertical — **73 tools across 16 industries**. Each page lists the best AI-native OSS for that sector (and flags where a vertical is still thin).
+Same AI-native tools, re-sliced by vertical — **87 tools across 18 industries**. Each page lists the best AI-native OSS for that sector (and flags where a vertical is still thin).
 
 | | | | |
 |---|---|---|---|
 | 🏥 [Healthcare](industries/healthcare/) | ⚖️ [Legal](industries/legal/) | 💳 [Fintech](industries/fintech/) | 🛡️ [Insurance](industries/insurance/) |
-| 🛒 [E-commerce](industries/ecommerce/) | 🎬 [Media & Creative](industries/media/) | 🎓 [Education](industries/education/) | 🏠 [Real Estate](industries/real-estate/) |
-| 🚚 [Logistics](industries/logistics/) | 🍽️ [Hospitality](industries/hospitality/) | 🏛️ [Government](industries/government/) | 🌾 [Agriculture](industries/agriculture/) |
-| 🔐 [Cybersecurity](industries/cybersecurity/) | 🧪 [Scientific Research](industries/scientific-research/) | 🎮 [Game Dev](industries/gamedev/) | 🤖 [Robotics](industries/robotics/) |
+| 🛒 [E-commerce](industries/ecommerce/) | 🎬 [Media & Creative](industries/media/) | 🎥 [Film & Video](industries/film/) | 🎵 [Music & Audio](industries/music/) |
+| 🎓 [Education](industries/education/) | 🏠 [Real Estate](industries/real-estate/) | 🚚 [Logistics](industries/logistics/) | 🍽️ [Hospitality](industries/hospitality/) |
+| 🏛️ [Government](industries/government/) | 🌾 [Agriculture](industries/agriculture/) | 🔐 [Cybersecurity](industries/cybersecurity/) | 🧪 [Scientific Research](industries/scientific-research/) |
+| 🎮 [Game Dev](industries/gamedev/) | 🤖 [Robotics](industries/robotics/) | | |
 
 → Full [Industry Index](industries/)
 
