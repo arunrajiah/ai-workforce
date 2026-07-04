@@ -182,4 +182,4 @@ the studio stays vendor-neutral.
 
 Prefer a different generation engine or a lighter footprint? Every piece is
 replaceable — see the [Design & Creative directory](../README.md) for alternatives
-(AUTOMATIC1111, InvokeAI, Penpot, HivisionIDPhotos, StableStudio).
+(AUTOMATIC1111, InvokeAI, HivisionIDPhotos, StableStudio).

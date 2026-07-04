@@ -76,7 +76,7 @@ question ─▶ rag.py (BM25 lexical search over your docs) ─▶ top passages
 
 ## Where to take it next
 
-- Point it at a real Chatwoot inbox for full omnichannel support ([Support department](../../departments/support/)).
+- Graduate to [Onyx](../../departments/support/) for multi-connector RAG (Slack, Confluence, 50+ sources) at scale ([Support department](../../departments/support/)).
 - Add a vector store (Qdrant/pgvector) for large knowledge bases.
 - Add a "confidence" threshold that escalates low-confidence questions to a human.
 

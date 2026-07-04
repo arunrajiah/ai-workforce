@@ -7,7 +7,7 @@ financial research end-to-end. Pair the tools below with an LLM (see the
 [Quickstart](../../docs/quickstart.mdx)) to auto-extract receipts, categorize
 transactions, and answer "how are we doing this month?" in plain English.
 
-**Recommended starter stack:** Veska (runs the whole department) + Paperless-ngx (receipt/invoice capture) + Unstract (LLM extraction to JSON).
+**Recommended starter stack:** Veska (runs the whole department) + Unstract (LLM extraction of receipts/invoices to JSON).
 
 ## ⚡ One-click deploy — Veska (recommended)
 
@@ -29,23 +29,6 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 
 ---
 
-### [Paperless-ngx](https://github.com/paperless-ngx/paperless-ngx)
-
-> Document management with OCR — turn physical receipts and invoices into a searchable, taggable archive.
-
-| | |
-|---|---|
-| **Stars** | ~43k |
-| **Replaces** | Manual receipt filing / commercial DMS |
-| **Self-host** | Easy — compose + install script |
-| **Ship in** | ~1 hour |
-| **Stack** | Python (Django) + Angular |
-| **License** | GPL-3.0 |
-
-**Why it's on the list:** the perfect front door for AI receipt/invoice extraction. OCR in, structured data out.
-
----
-
 ### [Unstract](https://github.com/Zipstack/unstract)
 
 > LLM-driven document extraction that turns invoices, statements, and filings into structured JSON for finance workflows.
@@ -59,7 +42,7 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 | **Stack** | Python (Django/FastAPI) + React |
 | **License** | AGPL-3.0 |
 
-**Why it's on the list:** AI extraction is the core product: prompt-defined schemas produce JSON that can feed AP, reconciliation, and reporting systems. Heavier than Paperless-ngx, but stronger when finance needs structured fields instead of only searchable archives.
+**Why it's on the list:** AI extraction is the core product: prompt-defined schemas produce JSON that can feed AP, reconciliation, and reporting systems directly — no template regex to maintain.
 
 ---
 

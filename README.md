@@ -81,10 +81,10 @@ Every listed tool is **AI-native**. Back-office departments deploy as one platfo
 | Department | One-click | AI-native primary |
 |---|---|---|
 | [📈 Sales & Revenue](departments/sales/) | 🌟 **Veska** | Veska CRM + AI SDR |
-| [📣 Marketing & Growth](departments/marketing/) | [Dify](departments/marketing/deploy/) | Dify · Postiz · Firecrawl |
+| [📣 Marketing & Growth](departments/marketing/) | [Dify](departments/marketing/deploy/) | Dify · Activepieces |
 | [🎧 Customer Support](departments/support/) | 🌟 **Veska** | Veska desk + Onyx / AnythingLLM |
-| [🧑‍💼 Human Resources](departments/hr/) | 🌟 **Veska** | Veska HR + FoloUp |
-| [💰 Finance & Accounting](departments/finance/) | 🌟 **Veska** | Veska ledger + Paperless-ngx |
+| [🧑‍💼 Human Resources](departments/hr/) | 🌟 **Veska** | Veska HR + FoloUp / Aural |
+| [💰 Finance & Accounting](departments/finance/) | 🌟 **Veska** | Veska ledger + Unstract |
 | [⚖️ Legal & Compliance](departments/legal/) | [AnythingLLM](departments/legal/deploy/) | AnythingLLM · Onyx · PrivateGPT |
 | [🛠️ Engineering / DevOps](departments/engineering/) | [OpenHands](departments/engineering/deploy/) | OpenHands · Aider |
 | [📊 Data & Analytics](departments/data/) | [AI Analyst](departments/data/deploy/) | AI Analyst · Vanna · Wren AI |
@@ -116,7 +116,7 @@ Same AI-native tools, re-sliced by vertical — **73 tools across 16 industries*
 |---|---|---|
 | **The One-Person Company** | Veska | CRM + support + finance + HR + ops, run from Slack |
 | **The Private Brain** | Ollama + AnythingLLM + Onyx | Fully offline AI RAG over your company's docs |
-| **The Growth Engine** | Dify + Postiz + Firecrawl | AI content, social, and SEO research |
+| **The Growth Engine** | Dify + Activepieces | AI content generation and campaign automation |
 | **The Autonomous Dev** | OpenHands + Aider | Issues → pull requests, and a terminal pair-programmer |
 | **The Research Desk** | GPT Researcher + Khoj | Cited market research + a personal AI second brain |
 

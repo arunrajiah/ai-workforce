@@ -64,8 +64,7 @@ rejected. Still, point this at a read-only replica or a copy for anything sensit
 
 ## Where to take it next
 
-- Swap SQLite for your warehouse connection and graduate to [Metabase](../../departments/data/) or [Wren AI](../../departments/data/) for a full BI layer.
-- Schedule a daily "state of the business" summary via [n8n](../../departments/operations/).
+- Swap SQLite for your warehouse connection and graduate to [Vanna](../../departments/data/) or [Wren AI](../../departments/data/) for a full text-to-SQL layer.
 
 ---
 

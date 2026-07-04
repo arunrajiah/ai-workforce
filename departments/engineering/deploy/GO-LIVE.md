@@ -131,25 +131,6 @@ security-sensitive:
 
 ---
 
-## Optional add-on — n8n for CI/PR automation
-
-Want to trigger OpenHands from new issues, or post its PRs to Slack/Linear? Add
-[n8n](https://github.com/n8n-io/n8n) as an automation layer. It's **not** part of
-the core compose (keep the deploy lean), but it drops in easily — run it alongside
-and reverse-proxy it under a subpath or subdomain:
-
-```bash
-docker run -d --restart unless-stopped \
-  -p 5678:5678 \
-  -v n8n_data:/home/node/.n8n \
-  docker.n8n.io/n8nio/n8n
-```
-
-Wire a webhook (new GitHub issue → call OpenHands / notify your team). See the
-[Engineering directory](../README.md) for the n8n listing.
-
----
-
 ## Operate it
 
 | Task | Command |
@@ -171,5 +152,4 @@ Wire a webhook (new GitHub issue → call OpenHands / notify your team). See the
 ## Swap a component
 
 Prefer a different coding agent or a lighter footprint? Every piece is replaceable —
-see the [Engineering / DevOps directory](../README.md) for alternatives (Aider,
-Coder, Appsmith, Budibase, n8n, Frappe Helpdesk).
+see the [Engineering / DevOps directory](../README.md) for alternatives (Aider).

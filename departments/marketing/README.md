@@ -38,9 +38,8 @@ your LLM): [deploy/GO-LIVE.md](deploy/GO-LIVE.md)** — live on your domain in
 ## 🧩 Swap a component
 
 The one-click stack above is the fast path. Prefer to assemble your own? Every
-piece below is a strong, self-hostable option — the "recommended starter stack"
-is Dify (content/SEO agents) + Postiz (social) + Activepieces (campaign ops), with
-Firecrawl for competitor/SEO research.
+piece below is a strong, self-hostable, AI-native option — the "recommended
+starter stack" is Dify (content/SEO agents) + Activepieces (AI-first campaign automation).
 
 ---
 
@@ -59,21 +58,6 @@ Firecrawl for competitor/SEO research.
 
 **Why it's on the list:** build a branded content pipeline with prompts, knowledge, and review steps — no code.
 
-### [Postiz](https://github.com/gitroomhq/postiz-app)
-
-> Agentic social-media scheduling and analytics across X, LinkedIn, Instagram, TikTok, and more.
-
-| | |
-|---|---|
-| **Stars** | ~33k |
-| **Replaces** | a social-media manager + Buffer/Hootsuite |
-| **Self-host** | Easy — `docker compose up` |
-| **Ship in** | ~30 min |
-| **Stack** | TypeScript (Next.js + NestJS) |
-| **License** | AGPL-3.0 |
-
-**Why it's on the list:** AI-assisted, multi-channel scheduling that actually looks modern. The social team in a box.
-
 ### [Activepieces](https://github.com/activepieces/activepieces)
 
 > Open-source Zapier alternative with AI agents/MCP — automate email, social, and publishing.
@@ -88,21 +72,6 @@ Firecrawl for competitor/SEO research.
 | **License** | MIT (+ enterprise) |
 
 **Why it's on the list:** MIT-licensed automation with first-class AI steps — the glue for campaign ops.
-
-### [Firecrawl](https://github.com/mendableai/firecrawl)
-
-> Bulk site scraping/extraction for SEO audits, competitor content, and AI content pipelines.
-
-| | |
-|---|---|
-| **Stars** | ~142k |
-| **Replaces** | an SEO analyst's crawls + ScreamingFrog/Ahrefs |
-| **Self-host** | Medium — compose |
-| **Ship in** | ~1 hour |
-| **Stack** | TypeScript |
-| **License** | AGPL-3.0 |
-
-**Why it's on the list:** SEO and content agents need clean web data. This is the best open way to get it.
 
 ---
 

@@ -57,9 +57,8 @@ LLM_API_KEY=                             # set for hosted gateways
 
 ## Where to take it next
 
-- Pull leads from your CRM ([Twenty](../../departments/sales/)) and loop this over them in [n8n](../../departments/operations/).
-- Add [Firecrawl](../../departments/sales/) for deeper, multi-page research.
-- Book the meeting automatically with [Cal.com](../../departments/sales/).
+- Pull leads from [Veska](../veska/)'s CRM and loop this app over them.
+- Pair it with [SalesGPT](../../departments/sales/) for the full conversation loop once a prospect replies.
 
 ---
 

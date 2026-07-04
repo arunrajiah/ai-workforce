@@ -122,8 +122,7 @@ private setup, a self-hosted gateway (LiteLLM, vLLM, LocalAI), or a hosted key.
 In Dify, create an app (chatflow, workflow, or agent) for your use case:
 
 - **Ad copy / blog drafts** — a prompt app with your brand voice as the system prompt.
-- **SEO research** — a workflow that pulls clean web data (pair it with
-  [Firecrawl](https://github.com/mendableai/firecrawl)) and drafts optimized copy.
+- **SEO research** — a workflow that summarizes competitor pages and drafts optimized copy.
 - **Campaign ops** — expose the app's API and trigger it from
   [Activepieces](https://github.com/activepieces/activepieces) or your own scripts.
 
@@ -151,8 +150,7 @@ You're live. 🎉
 ## Swap a component
 
 Prefer a different platform or a lighter footprint? Every piece is replaceable —
-see the [Marketing & Growth directory](../README.md) for alternatives (Postiz,
-Activepieces, Firecrawl).
+see the [Marketing & Growth directory](../README.md) for alternatives (Activepieces).
 
 ---
 
