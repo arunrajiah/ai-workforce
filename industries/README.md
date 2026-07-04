@@ -5,9 +5,9 @@ world by **industry**, pointing to the best **AI-native** open-source projects
 (an LLM, AI agent, or ML model at the core) for each one — **73 tools across 16
 verticals**.
 
-For general back-office ops (CRM, support, finance, HR) in *any* vertical, one
-platform covers it: **[Veska](../apps/veska/)** — so each page links it once and
-focuses on the AI tools unique to that industry.
+These pages focus on AI-native tools unique to each industry. For general
+back-office ops (CRM, support, finance, HR), see the [departments](../departments)
+— a few of them list [Veska](../apps/veska/) as an all-in-one option.
 
 > **Honest note on sparsity:** some verticals (real estate, hospitality,
 > insurance, logistics, e-commerce) have little *dedicated* AI-native OSS yet —

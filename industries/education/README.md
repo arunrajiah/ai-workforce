@@ -81,5 +81,4 @@
 > tool above with your own rubric rather than a purpose-built app.
 
 ---
-For general back-office ops, see [Veska](../../apps/veska/).
 Related departments: [Support](../../departments/support/) · [Executive](../../departments/executive/)

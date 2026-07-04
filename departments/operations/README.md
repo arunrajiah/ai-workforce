@@ -6,29 +6,26 @@ Operations is glue work: connect systems, track projects, and keep the company's
 knowledge in one place. Open automation engines plus a project tracker and a wiki
 cover it — and the automation layer is what every other department plugs into.
 
-**Recommended starter stack:** Veska (runs the whole department). For AI automation glue, see the coding-agent tools in [Engineering](../engineering/).
+This is a genuinely thin department for dedicated AI-native OSS — there isn't yet
+a strong single-purpose AI-native tool for general ops/workflow automation. For AI
+automation glue, see the coding-agent tools in [Engineering](../engineering/).
 
-## ⚡ One-click deploy — Veska (recommended)
+## AI-native options
 
-**This department runs on [Veska](../../apps/veska/) — one AI-native platform that configures CRM, support, finance, HR & ops from a plain-English description, then runs on Slack / WhatsApp / Email.** One deploy covers this department and the rest of your back office.
+### [Veska](https://github.com/arunrajiah/veska)
 
-```bash
-git clone https://github.com/arunrajiah/veska.git
-cd veska && cp .env.example .env    # set your LLM (local Ollama works) + MAGIC_LINK_SECRET
-docker compose up -d && docker compose exec api node apps/api/dist/db/migrate.js
-```
+> AI-native ERP with a built-in workflow engine that configures from a plain-English description of your business, then runs from Slack/WhatsApp/Email.
 
-👉 **Go live on your domain with HTTPS: [apps/veska/GO-LIVE.md](../../apps/veska/GO-LIVE.md)**
+| | |
+|---|---|
+| **Stars** | ~2 (new project) |
+| **Replaces** | Zapier/Make-style glue + Jira/Notion, in one deploy |
+| **Self-host** | Medium — `docker compose up`, bring your own LLM |
+| **Ship in** | ~1 hour |
+| **Stack** | TypeScript (Next.js) |
+| **License** | Apache-2.0 |
 
----
-
-## 🧩 Swap a component
-
-Prefer to assemble this department from individual AI tools? These AI-native options each do a slice of the job (Veska above does all of it):
-
----
-
-_Operations is Veska's core. There isn't a strong single AI-native alternative that runs the whole department — for AI automation glue, see the coding-agent tools in [Engineering](../engineering/)._
+**Why it's on the list:** the only AI-native option we've found that covers general ops end-to-end. **Disclosure:** built by this repo's maintainer — judge it on the same bar as everything else here. [Go-live guide](../../apps/veska/GO-LIVE.md).
 
 ---
 

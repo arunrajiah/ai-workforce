@@ -6,25 +6,7 @@ An omnichannel helpdesk plus a RAG agent over your docs deflects the majority of
 Tier-1 tickets and drafts answers for the rest. This is the most immediately
 ROI-positive department to automate.
 
-## ⚡ One-click deploy — Veska (recommended)
-
-**This department runs on [Veska](../../apps/veska/) — one AI-native platform that configures CRM, support, finance, HR & ops from a plain-English description, then runs on Slack / WhatsApp / Email.** One deploy covers this department and the rest of your back office.
-
-```bash
-git clone https://github.com/arunrajiah/veska.git
-cd veska && cp .env.example .env    # set your LLM (local Ollama works) + MAGIC_LINK_SECRET
-docker compose up -d && docker compose exec api node apps/api/dist/db/migrate.js
-```
-
-👉 **Go live on your domain with HTTPS: [apps/veska/GO-LIVE.md](../../apps/veska/GO-LIVE.md)**
-
----
-
-## 🧩 Swap a component
-
-Prefer to assemble this department from individual AI tools? These AI-native options each do a slice of the job (Veska above does all of it):
-
----
+## AI-native options
 
 ### [Onyx](https://github.com/onyx-dot-app/onyx) (formerly Danswer)
 
@@ -70,6 +52,21 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 | **License** | MIT |
 
 **Why it's on the list:** a full conversational-AI builder when you need more control than a widget gives you.
+
+### [Veska](https://github.com/arunrajiah/veska)
+
+> AI-native ERP with a built-in support desk that configures from a plain-English description of your business, then runs from Slack/WhatsApp/Email. Covers this whole department, not just support.
+
+| | |
+|---|---|
+| **Stars** | ~2 (new project) |
+| **Replaces** | a full helpdesk + the rest of the back office, in one deploy |
+| **Self-host** | Medium — `docker compose up`, bring your own LLM |
+| **Ship in** | ~1 hour |
+| **Stack** | TypeScript (Next.js) |
+| **License** | Apache-2.0 |
+
+**Why it's on the list:** if you want one platform instead of assembling pieces, this is the all-in-one option. **Disclosure:** built by this repo's maintainer — judge it on the same bar as everything else here. [Go-live guide](../../apps/veska/GO-LIVE.md).
 
 Also: our [AI Support Agent](../../apps/ai-support-agent) flagship answers tickets from your docs.
 

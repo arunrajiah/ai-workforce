@@ -7,27 +7,9 @@ financial research end-to-end. Pair the tools below with an LLM (see the
 [Quickstart](../../docs/quickstart.mdx)) to auto-extract receipts, categorize
 transactions, and answer "how are we doing this month?" in plain English.
 
-**Recommended starter stack:** Veska (runs the whole department) + Unstract (LLM extraction of receipts/invoices to JSON).
+**Recommended starter stack:** Unstract (LLM extraction of receipts/invoices to JSON).
 
-## ⚡ One-click deploy — Veska (recommended)
-
-**This department runs on [Veska](../../apps/veska/) — one AI-native platform that configures CRM, support, finance, HR & ops from a plain-English description, then runs on Slack / WhatsApp / Email.** One deploy covers this department and the rest of your back office.
-
-```bash
-git clone https://github.com/arunrajiah/veska.git
-cd veska && cp .env.example .env    # set your LLM (local Ollama works) + MAGIC_LINK_SECRET
-docker compose up -d && docker compose exec api node apps/api/dist/db/migrate.js
-```
-
-👉 **Go live on your domain with HTTPS: [apps/veska/GO-LIVE.md](../../apps/veska/GO-LIVE.md)**
-
----
-
-## 🧩 Swap a component
-
-Prefer to assemble this department from individual AI tools? These AI-native options each do a slice of the job (Veska above does all of it):
-
----
+## AI-native options
 
 ### [Unstract](https://github.com/Zipstack/unstract)
 
@@ -43,6 +25,21 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 | **License** | AGPL-3.0 |
 
 **Why it's on the list:** AI extraction is the core product: prompt-defined schemas produce JSON that can feed AP, reconciliation, and reporting systems directly — no template regex to maintain.
+
+### [Veska](https://github.com/arunrajiah/veska)
+
+> AI-native ERP with a real double-entry ledger that configures from a plain-English description of your business, then runs from Slack/WhatsApp/Email. Covers this whole department, not just finance.
+
+| | |
+|---|---|
+| **Stars** | ~2 (new project) |
+| **Replaces** | invoicing/bookkeeping software + the rest of the back office, in one deploy |
+| **Self-host** | Medium — `docker compose up`, bring your own LLM |
+| **Ship in** | ~1 hour |
+| **Stack** | TypeScript (Next.js) |
+| **License** | Apache-2.0 |
+
+**Why it's on the list:** there isn't yet a strong single-purpose AI-native bookkeeping tool in this space, so an all-in-one option is worth including. **Disclosure:** built by this repo's maintainer — judge it on the same bar as everything else here. [Go-live guide](../../apps/veska/GO-LIVE.md).
 
 ---
 

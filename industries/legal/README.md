@@ -54,7 +54,5 @@ single jurisdiction. For private "chat with our contracts" the general RAG stack
 in the [Legal department](../../departments/legal/) (AnythingLLM, Onyx, PrivateGPT)
 are often the more practical starting point.
 
-For general back-office ops, see [Veska](../../apps/veska/).
-
 Related departments: [Legal & Compliance](../../departments/legal/).
 🏭 Back to the [industry index](../README.md).

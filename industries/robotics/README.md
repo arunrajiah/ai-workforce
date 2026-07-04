@@ -86,7 +86,5 @@ vision-language-action models (OpenVLA, Isaac GR00T), imitation learning
 (Stable-Baselines3). Note that some VLA *model weights* carry
 source-available (not fully open) licenses even where the code is Apache/MIT.
 
-For general back-office ops, see [Veska](../../apps/veska/).
-
 Related departments: [Engineering](../../departments/engineering/) · [Data](../../departments/data/) (sensor and telemetry analytics).
 🏭 Back to the [industry index](../README.md).

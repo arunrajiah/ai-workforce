@@ -67,7 +67,5 @@ verify as genuinely open and AI-native: autonomous research (GPT Researcher),
 grounded literature Q&A (PaperQA2), domain agents (ChemCrow), and scientific NLP
 (scispaCy). See also [Biomni](../healthcare/) for a biomedical research agent.
 
-For general back-office ops, see [Veska](../../apps/veska/).
-
 Related departments: [Product & Research](../../departments/product/) · [Data](../../departments/data/) (analysis pipelines).
 🏭 Back to the [industry index](../README.md).

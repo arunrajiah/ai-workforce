@@ -77,7 +77,5 @@ fastest-growing slice — tools that secure the models themselves (garak,
 agentic_security). If you deploy LLMs in production, treat the last two as
 table stakes.
 
-For general back-office ops, see [Veska](../../apps/veska/).
-
 Related departments: [Engineering](../../departments/engineering/) (code review, CI) · [Data](../../departments/data/) (log and alert analytics).
 🏭 Back to the [industry index](../README.md).

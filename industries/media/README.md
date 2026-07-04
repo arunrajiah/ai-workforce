@@ -88,5 +88,4 @@
 | **License** | Apache-2.0 |
 
 ---
-For general back-office ops, see [Veska](../../apps/veska/).
 Related departments: [Design](../../departments/design/) · [Marketing](../../departments/marketing/)

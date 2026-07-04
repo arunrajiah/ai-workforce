@@ -59,5 +59,4 @@
 | **License** | MIT |
 
 ---
-For general back-office ops (intake, billing, records admin), see [Veska](../../apps/veska/).
 Related departments: [Support](../../departments/support/) · [Legal](../../departments/legal/)

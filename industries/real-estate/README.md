@@ -54,5 +54,4 @@
 
 > 🏠 **Sparse vertical.** There is little *dedicated* AI-native OSS for real estate (no strong open valuation-ML model or listing-generation app with real traction). The genuinely AI-native path is voice agents (Vocode/LiveKit) for lead and showing work, plus general LLM tools (Unstract for docs, AnythingLLM for listing/contract Q&A and description drafting).
 
-For general back-office ops, see [Veska](../../apps/veska/).
 Related departments: [Sales](../../departments/sales/) · [Support](../../departments/support/)

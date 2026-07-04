@@ -67,5 +67,4 @@
 > deliberately excluded — they're infrastructure, not AI-native.
 
 ---
-For general back-office ops, see [Veska](../../apps/veska/).
 Related departments: [Support](../../departments/support/) · [Marketing](../../departments/marketing/) · [Data](../../departments/data/)

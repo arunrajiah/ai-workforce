@@ -54,5 +54,4 @@
 
 > 🏨 **Sparse vertical.** There is almost no *dedicated* AI-native OSS for hospitality — most restaurant chatbots and review-sentiment repos are small tutorials, not production tools. The genuinely AI-native path is voice agents (Vocode/LiveKit) for reservations and reception, plus general LLM assistants (AnythingLLM, Onyx) for guest FAQ, review analysis, and menu/marketing content.
 
-For general back-office ops, see [Veska](../../apps/veska/).
 Related departments: [Support](../../departments/support/) · [Sales](../../departments/sales/)

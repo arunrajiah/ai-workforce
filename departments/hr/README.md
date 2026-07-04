@@ -6,27 +6,9 @@ From sourcing to onboarding, HR runs on structured workflows — exactly what
 open-source HRMS tools plus an LLM screener handle well. Screen resumes, schedule
 interviews, run payroll, and sign offer letters without a stack of SaaS seats.
 
-**Recommended starter stack:** Veska (runs the whole department) + FoloUp for AI phone screens + Aural for structured AI interviews.
+**Recommended starter stack:** FoloUp for AI phone screens + Aural for structured AI interviews.
 
-## ⚡ One-click deploy — Veska (recommended)
-
-**This department runs on [Veska](../../apps/veska/) — one AI-native platform that configures CRM, support, finance, HR & ops from a plain-English description, then runs on Slack / WhatsApp / Email.** One deploy covers this department and the rest of your back office.
-
-```bash
-git clone https://github.com/arunrajiah/veska.git
-cd veska && cp .env.example .env    # set your LLM (local Ollama works) + MAGIC_LINK_SECRET
-docker compose up -d && docker compose exec api node apps/api/dist/db/migrate.js
-```
-
-👉 **Go live on your domain with HTTPS: [apps/veska/GO-LIVE.md](../../apps/veska/GO-LIVE.md)**
-
----
-
-## 🧩 Swap a component
-
-Prefer to assemble this department from individual AI tools? These AI-native options each do a slice of the job (Veska above does all of it):
-
----
+## AI-native options
 
 ### [FoloUp](https://github.com/FoloUp/FoloUp)
 
@@ -59,5 +41,20 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 | **License** | MIT |
 
 **Why it's on the list:** the AI interviewer, follow-up questions, resume import, and post-interview scoring are core to the product. It is newer and much smaller than FoloUp, but covers structured chat/video/coding interviews instead of only phone screens.
+
+### [Veska](https://github.com/arunrajiah/veska)
+
+> AI-native ERP with built-in HR that configures from a plain-English description of your business, then runs from Slack/WhatsApp/Email. Covers this whole department, not just HR.
+
+| | |
+|---|---|
+| **Stars** | ~2 (new project) |
+| **Replaces** | a full HRIS + the rest of the back office, in one deploy |
+| **Self-host** | Medium — `docker compose up`, bring your own LLM |
+| **Ship in** | ~1 hour |
+| **Stack** | TypeScript (Next.js) |
+| **License** | Apache-2.0 |
+
+**Why it's on the list:** there isn't yet a strong single-purpose AI-native HRIS in this space, so an all-in-one option is worth including. **Disclosure:** built by this repo's maintainer — judge it on the same bar as everything else here. [Go-live guide](../../apps/veska/GO-LIVE.md).
 
 ---

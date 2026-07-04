@@ -71,5 +71,4 @@
 | **License** | AGPL-3.0 |
 
 ---
-For general back-office ops (bookkeeping, reconciliation, finance admin), see [Veska](../../apps/veska/).
 Related departments: [Data](../../departments/data/) · [Product](../../departments/product/)

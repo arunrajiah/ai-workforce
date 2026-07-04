@@ -86,7 +86,5 @@ training/playtesting (PettingZoo). Dedicated open-source *procedural content
 generation* driven by ML is still mostly hobby-scale demos — we left those out
 rather than pad the list.
 
-For general back-office ops, see [Veska](../../apps/veska/).
-
 Related departments: [Engineering](../../departments/engineering/) · [Design](../../departments/design/) (asset and content generation).
 🏭 Back to the [industry index](../README.md).

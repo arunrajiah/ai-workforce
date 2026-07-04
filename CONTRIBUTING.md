@@ -27,7 +27,7 @@ An entry qualifies if it is **all** of the following:
 
 1. **AI-native** — an LLM or an AI agent is at the tool's core; it does the work
    with AI. Legacy software with an "AI" add-on bolted on does **not** qualify
-   (no generic CRMs, ERPs, helpdesks, or BI tools — Veska covers the back office).
+   (no generic CRMs, ERPs, helpdesks, or BI tools).
 2. **Open source** — a real, public GitHub repository with an OSI-approved (or
    source-available) license. No closed SaaS, no "open core" that is useless
    without the paid tier.

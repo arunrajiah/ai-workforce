@@ -87,7 +87,7 @@ solo-approve your own project — that includes maintainers).
 ## What gets rejected (so you don't waste effort)
 
 - Closed SaaS, or "open core" that's useless without the paid tier.
-- Non-AI infrastructure (generic CRMs, ERPs, helpdesks, BI) — the back office is covered by Veska.
+- Non-AI infrastructure (generic CRMs, ERPs, helpdesks, BI) — those workflows need an AI-native tool, not a legacy app.
 - Toy demos, course projects, and single-digit-star hobby repos presented as production tools.
 - Affiliate links, paid placement, or self-promo dressed as a neutral entry (disclose authorship — it's fine to submit your own project, just say so).
 - Inflated stars or descriptions that hide real limitations.

@@ -87,7 +87,5 @@ Healthcare has real AI-native depth: imaging (MONAI), domain LLMs (Meditron),
 research agents (Biomni), and ambient documentation (Phlox, OpenScribe). The
 scribe tools are young and low-star — pilot carefully.
 
-For general back-office ops, see [Veska](../../apps/veska/).
-
 Related departments: [Support](../../departments/support/) (private RAG over protocols) · [Data](../../departments/data/) (analytics on clinical data).
 🏭 Back to the [industry index](../README.md).

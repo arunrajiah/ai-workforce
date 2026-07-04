@@ -70,5 +70,4 @@
 OSS — the practical path is horizontal RAG/research agents (above) run privately over
 public data. Contributions of on-vertical tools welcome.
 
-For general back-office ops, see [Veska](../../apps/veska/).
 Related departments: [Legal](../../departments/legal/) · [Product & Research](../../departments/product/) · [Support](../../departments/support/)

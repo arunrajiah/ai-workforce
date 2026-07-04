@@ -6,7 +6,7 @@ slug: /apps/veska/deploy
 keywords: [veska, ai erp, self-host, ai back office, one click deploy]
 ---
 
-# 🌟 Veska — go live in under an hour
+# Veska — go live in under an hour
 
 One AI-native platform for your whole back office:
 

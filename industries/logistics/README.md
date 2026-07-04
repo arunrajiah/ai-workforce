@@ -54,5 +54,4 @@
 
 > 🚚 This vertical is the least sparse: forecasting (Nixtla), warehouse vision (YOLO), and document extraction (Unstract, Sparrow) are all genuinely AI-native. Note: route optimization is well served by open engines like VROOM, but those are OR/heuristic solvers rather than LLM/ML-model-at-the-core AI, so they're out of scope here.
 
-For general back-office ops, see [Veska](../../apps/veska/).
 Related departments: [Data](../../departments/data/) · [Support](../../departments/support/)

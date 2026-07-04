@@ -57,5 +57,4 @@ the open [PlantVillage dataset](https://github.com/spMohanty/PlantVillage-Datase
 products — a great base to fine-tune YOLO or a classifier on. Dedicated turnkey AgTech
 AI OSS is a real gap; contributions welcome.
 
-For general back-office ops, see [Veska](../../apps/veska/).
 Related departments: [Data & Analytics](../../departments/data/) · [Design](../../departments/design/)
