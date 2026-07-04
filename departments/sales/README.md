@@ -43,9 +43,26 @@ Prefer to assemble this department from individual AI tools? These AI-native opt
 
 **Why it's on the list:** feed a company URL, get structured facts back — the fuel for personalized outreach.
 
-Also: our [AI SDR](../../apps/ai-sdr) flagship drafts personalized outreach.
+---
+
+### [SalesGPT](https://github.com/filip-michalsky/SalesGPT)
+
+> Context-aware AI sales agent for voice, email, and chat that advances prospects through configurable sales stages.
+
+| | |
+|---|---|
+| **Stars** | ~2.7k |
+| **Replaces** | Scripted SDR sequences / first-touch sales reps |
+| **Self-host** | Medium — Docker Compose or Python, bring your own LLM keys |
+| **Ship in** | ~1 hour |
+| **Stack** | Python + LangChain / LiteLLM |
+| **License** | MIT |
+
+**Why it's on the list:** the sales-stage agent loop, product-knowledge tools, email follow-ups, and meeting/payment handoffs are the core product. It is more of an agent framework than a polished CRM, so pair it with a pipeline system rather than expecting a full sales suite.
 
 ---
+
+Also: our [AI SDR](../../apps/ai-sdr) flagship drafts personalized outreach.
 
 🚀 **Flagship app:** [`apps/ai-sdr`](../../apps/ai-sdr)
 🏭 **Industry cross-links:** [Real Estate](../../industries/README.md#real-estate) · [E-commerce](../../industries/README.md#e-commerce--retail)
