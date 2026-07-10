@@ -1,3 +1,11 @@
+---
+title: Music & Audio Production — AI-native open source
+description: Open-source AI music generation, voice cloning, and stem separation — a self-hosted alternative to Suno and Udio.
+sidebar_label: Music & Audio
+slug: /industries/music
+keywords: [ai music generator open source, open source suno alternative, ai voice cloning open source, stem separation ai github, text to music open source]
+---
+
 # 🎵 Music & Audio Production — AI-native open source
 
 > "Open source Suno alternative," "AI music generator open source," "AI voice

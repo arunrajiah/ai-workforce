@@ -1,3 +1,11 @@
+---
+title: Agriculture & AgTech — AI-native open source
+description: Open-source AI for farming — crop-disease vision models, yield forecasting, and geospatial ML you can self-host.
+sidebar_label: Agriculture
+slug: /industries/agriculture
+keywords: [agriculture ai open source, agtech ai, crop disease detection ai, yield forecasting open source, farming ai github]
+---
+
 # 🌾 Agriculture & AgTech — AI-native open source
 
 > Farming is one of the most *computer-vision- and forecasting-native* verticals:

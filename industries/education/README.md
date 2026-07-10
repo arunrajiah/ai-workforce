@@ -1,3 +1,11 @@
+---
+title: Education / EdTech — AI-native open source
+description: Open-source AI tutors and study assistants — RAG-grounded tutoring, quiz generation, and personal knowledge tools for education.
+sidebar_label: Education
+slug: /industries/education
+keywords: [ai tutor open source, edtech ai github, ai study assistant, open source rag education, ai quiz generator]
+---
+
 # 🎓 Education / EdTech — AI-native open source
 
 > The strongest education AI is a tutor or study assistant grounded in your own

@@ -1,3 +1,11 @@
+---
+title: Logistics & Supply Chain — AI-native open source
+description: Open-source AI for supply chain — demand-forecasting models, warehouse vision, and document extraction for invoices and BOLs.
+sidebar_label: Logistics
+slug: /industries/logistics
+keywords: [logistics ai open source, supply chain ai github, demand forecasting open source, warehouse vision ai, ai invoice extraction]
+---
+
 # 🚚 Logistics & Supply Chain — AI-native open source
 
 > This is the vertical with the most real AI-native OSS: ML models for demand forecasting, vision models for warehouse and shelf detection, and LLMs that read invoices, BOLs, and customs paperwork.

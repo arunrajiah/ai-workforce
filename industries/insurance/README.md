@@ -1,3 +1,11 @@
+---
+title: Insurance — AI-native open source
+description: Open-source AI for claims and policy documents — LLM/vision extraction and RAG assistants for insurance workflows.
+sidebar_label: Insurance
+slug: /industries/insurance
+keywords: [insurance ai open source, claims processing ai, ai document extraction insurance, policy rag assistant]
+---
+
 # 🛡️ Insurance — AI-native open source
 
 > Insurance is document-heavy: claims, policies, and forms flow through people who read and re-key them. The AI-native opportunity is exactly there — LLM/vision extraction that structures claim and policy documents, and RAG that answers questions over a policy library.

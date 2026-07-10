@@ -1,3 +1,11 @@
+---
+title: Cybersecurity — AI-native open source
+description: Open-source AI for security — autonomous pentest agents, LLM vulnerability scanners, and AI red-teaming tools you can self-host.
+sidebar_label: Cybersecurity
+slug: /industries/cybersecurity
+keywords: [ai pentesting open source, llm security scanner, ai red team tools, jailbreak detection open source, cybersecurity ai agent]
+---
+
 # 🔐 Cybersecurity — AI-native open source
 
 > Security has two AI frontiers: using LLM agents to *do* offensive and defensive

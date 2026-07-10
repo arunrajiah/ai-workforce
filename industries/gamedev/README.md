@@ -1,3 +1,11 @@
+---
+title: Game Development — AI-native open source
+description: Open-source AI for games — LLM-driven NPCs, embodied learning agents, and multi-agent RL frameworks for training and playtesting.
+sidebar_label: Game Dev
+slug: /industries/gamedev
+keywords: [ai npc open source, generative agents github, game ai open source, llm game agent, reinforcement learning game bots]
+---
+
 # 🎮 Game Development — AI-native open source
 
 > AI in games has moved past scripted dialogue trees: open LLM agents now drive

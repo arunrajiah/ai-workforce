@@ -1,3 +1,11 @@
+---
+title: Legal — AI-native open source
+description: Open-source legal AI — document-intelligence platforms and RAG assistants, a self-hosted alternative to Harvey and CoCounsel.
+sidebar_label: Legal
+slug: /industries/legal
+keywords: [legal ai open source, open source harvey alternative, ai contract review, legal rag assistant, law llm github]
+---
+
 # ⚖️ Legal — AI-native open source
 
 > Most legal AI lives behind closed SaaS (Harvey, Spellbook, CoCounsel). The

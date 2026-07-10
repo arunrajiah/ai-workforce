@@ -1,3 +1,11 @@
+---
+title: Healthcare — AI-native open source
+description: Open-source medical AI — imaging models, clinical LLMs, AI scribes, and biomedical research agents you can self-host.
+sidebar_label: Healthcare
+slug: /industries/healthcare
+keywords: [healthcare ai open source, medical imaging ai github, ai scribe open source, clinical llm, biomedical ai agent]
+---
+
 # 🏥 Healthcare — AI-native open source
 
 > AI in healthcare has moved past chatbots: open models now read scans, reason

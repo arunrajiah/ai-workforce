@@ -2,7 +2,7 @@
 
 These are the deploy guides for [AI Workforce](../README.md). They're plain
 Markdown/MDX with frontmatter, so they render on GitHub **and** publish to
-[hub.arunrajiah.com](https://hub.arunrajiah.com).
+[hub.arunrajiah.com/docs](https://hub.arunrajiah.com/docs).
 
 - [`index.mdx`](index.mdx) — the docs landing page
 - [`quickstart.mdx`](quickstart.mdx) — the shared foundation every app needs

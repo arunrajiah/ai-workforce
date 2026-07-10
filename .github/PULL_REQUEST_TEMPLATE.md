@@ -21,3 +21,4 @@
 
 - [ ] Seeded with 3+ verified AI-native tools
 - [ ] Added to the index and the README count where relevant
+- [ ] New/edited `industries/*/README.md` or `*/GO-LIVE.md` has valid hub frontmatter (`title`/`description`/`sidebar_label`/`slug`/`keywords`) — see [Hub publishing](../CONTRIBUTING.md#hub-publishing-hubarunrajiahcomdocs). CI checks this automatically.

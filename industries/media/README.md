@@ -1,3 +1,11 @@
+---
+title: Media / Creative — AI-native open source
+description: Open-source generative AI for creative work — image and video generation, speech-to-text, and voice synthesis models.
+sidebar_label: Media & Creative
+slug: /industries/media
+keywords: [generative ai open source, ai image generation github, open source text to speech, ai creative tools]
+---
+
 # 🎬 Media / Creative — AI-native open source
 
 > Media is the vertical where open-source AI is richest: image and video

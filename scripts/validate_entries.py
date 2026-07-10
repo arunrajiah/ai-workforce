@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Entry-format linter for AI Workforce.
+"""Entry-format + hub-frontmatter linter for AI Workforce.
 
-Every tool card (`### [Name](url)`) in departments/ and industries/ must carry a
-`Stars` row and a `License` row, and its heading must link to a real URL. Keeps
-cards consistent and parseable. Run: python scripts/validate_entries.py
+1. Every tool card (`### [Name](url)`) in departments/ and industries/ must carry
+   a `Stars` row and a `License` row, and its heading must link to a real URL.
+2. Every file that's supposed to publish to hub.arunrajiah.com/docs — docs/*.mdx,
+   departments/*/deploy/GO-LIVE.md, apps/*/GO-LIVE.md, industries/*/README.md —
+   must open with valid YAML frontmatter carrying title/description/sidebar_label/
+   slug/keywords. See CONTRIBUTING.md#hub-publishing.
+
+Run: python scripts/validate_entries.py
 """
 from __future__ import annotations
 
@@ -13,8 +18,30 @@ import sys
 
 CARD = re.compile(r"^###\s+\[([^\]]+)\]\(([^)]+)\)\s*$")
 
-# Files that are indexes / prose, not card lists — skipped.
+# Files that are indexes / prose, not card lists — skipped for the card check.
 SKIP = {"industries/README.md"}
+
+FRONTMATTER_REQUIRED_KEYS = ("title", "description", "sidebar_label", "slug", "keywords")
+
+
+def check_frontmatter(paths: list[str]) -> list[str]:
+    problems: list[str] = []
+    for path in paths:
+        text = open(path, encoding="utf-8").read()
+        if not text.startswith("---\n"):
+            problems.append(f"{path}:1  missing hub frontmatter (must start with '---')")
+            continue
+        end = text.find("\n---\n", 4)
+        if end == -1:
+            problems.append(f"{path}:1  frontmatter opened but never closed with '---'")
+            continue
+        block = text[4:end]
+        for key in FRONTMATTER_REQUIRED_KEYS:
+            if not re.search(rf"^{key}:", block, re.MULTILINE):
+                problems.append(f"{path}:1  frontmatter missing '{key}:'")
+        if re.search(r"^description:.*[^\[]:\s", block, re.MULTILINE):
+            problems.append(f"{path}:1  'description:' contains an unescaped colon — likely breaks YAML")
+    return problems
 
 
 def card_blocks(lines: list[str]):
@@ -45,12 +72,22 @@ def main() -> int:
             if "**License**" not in body:
                 problems.append(f"{path}:{lineno}  card '{name}' is missing a **License** row")
 
+    hub_files = sorted(set(
+        glob.glob("docs/*.mdx")
+        + glob.glob("departments/*/deploy/GO-LIVE.md")
+        + glob.glob("apps/*/GO-LIVE.md")
+        + glob.glob("industries/README.md")
+        + glob.glob("industries/*/README.md")
+    ))
+    fm_problems = check_frontmatter(hub_files)
+    problems.extend(fm_problems)
+
     if problems:
-        print("Entry-format problems found:\n")
+        print("Entry-format / hub-frontmatter problems found:\n")
         print("\n".join(problems))
-        print(f"\n{len(problems)} problem(s) across {checked} cards.")
+        print(f"\n{len(problems)} problem(s) across {checked} cards and {len(hub_files)} hub-publishable files.")
         return 1
-    print(f"OK — {checked} cards validated, all well-formed.")
+    print(f"OK — {checked} cards and {len(hub_files)} hub-publishable files validated, all well-formed.")
     return 0
 
 

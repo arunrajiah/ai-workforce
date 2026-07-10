@@ -1,3 +1,11 @@
+---
+title: Real Estate — AI-native open source
+description: Open-source AI voice agents and document tools for real estate — lead qualification, showing scheduling, and contract extraction.
+sidebar_label: Real Estate
+slug: /industries/real-estate
+keywords: [real estate ai open source, ai lead qualification voice agent, property listing ai, ai contract extraction real estate]
+---
+
 # 🏠 Real Estate — AI-native open source
 
 > AI in real estate is mostly conversational and document-shaped: voice agents that qualify leads and book showings, and LLMs that draft listings and pull data out of contracts and disclosures.

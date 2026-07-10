@@ -42,10 +42,17 @@ An entry qualifies if it is **all** of the following:
 1. Fork the repo and create a branch.
 2. Add your entry to the correct file in [`departments/`](departments/), using
    the **exact card format** below.
-3. If the app is industry-specific, also add a one-line pointer in
-   [`industries/README.md`](industries/README.md).
+3. If the app is industry-specific, also add it to the matching page in
+   [`industries/`](industries/) (or propose a new one — see
+   [Suggest a vertical](.github/ISSUE_TEMPLATE/suggest-vertical.yml)).
 4. Keep the department list ordered by usefulness (rough star/quality order).
 5. Open a PR using the template. One app per PR keeps review fast.
+6. **Keep the hub in sync.** This repo's `docs/`, `departments/*/deploy/GO-LIVE.md`,
+   and `industries/*/README.md` files publish to [hub.arunrajiah.com/docs](https://hub.arunrajiah.com/docs)
+   via their YAML frontmatter (see [Hub publishing](#hub-publishing-docsarunrajiahcomdocs)
+   below). If your PR adds a new industry page or changes a department's
+   one-click deploy, make sure the frontmatter is present/accurate — that's
+   what puts it on the hub site, not just on GitHub.
 
 ### App card format
 
@@ -86,8 +93,36 @@ include an **offline/mock mode** so it runs without API keys for evaluation.
 ## Tutorials (`docs/`)
 
 Tutorials are Markdown/MDX with frontmatter (see [`docs/`](docs/)) so they render
-on GitHub **and** publish to [hub.arunrajiah.com](https://hub.arunrajiah.com).
+on GitHub **and** publish to [hub.arunrajiah.com/docs](https://hub.arunrajiah.com/docs).
 Follow the existing template and keep steps copy-pasteable.
+
+## Hub publishing (`hub.arunrajiah.com/docs`)
+
+Three kinds of files publish to the hub, all via the same YAML frontmatter block:
+
+- [`docs/*.mdx`](docs/) — the quickstart and landing page.
+- `departments/*/deploy/GO-LIVE.md` and `apps/*/GO-LIVE.md` — one-click deploy guides.
+- `industries/*/README.md` — every industry vertical page.
+
+Each needs this frontmatter at the top of the file:
+
+```markdown
+---
+title: Page Title — AI-native open source
+description: One sentence, no colon (breaks YAML), under ~160 chars for SEO.
+sidebar_label: Short Nav Label
+slug: /industries/your-vertical
+keywords: [search term one, search term two, search term three]
+---
+```
+
+**If you add a new industry page, it needs this frontmatter or it won't appear
+on the hub** — it'll still render fine on GitHub, but readers searching from
+hub.arunrajiah.com won't find it. Use real search terms people type (e.g. "open
+source Suno alternative," "AI video generator open source") in `keywords` and
+the intro paragraph — that's what drives discovery traffic to begin with.
+`department`/`app` deploy guides follow the same pattern; see any existing
+`GO-LIVE.md` for a worked example.
 
 ## Code of conduct
 

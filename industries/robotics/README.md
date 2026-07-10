@@ -1,3 +1,11 @@
+---
+title: Robotics & Manufacturing — AI-native open source
+description: Open-source AI for robotics — vision-language-action models, imitation learning, and defect-detection vision for manufacturing.
+sidebar_label: Robotics
+slug: /industries/robotics
+keywords: [robotics ai open source, vision language action model, robot learning github, ai defect detection manufacturing]
+---
+
 # 🤖 Robotics & Manufacturing — AI-native open source
 
 > Robotics has shifted from hand-tuned controllers to *learned* policies: open

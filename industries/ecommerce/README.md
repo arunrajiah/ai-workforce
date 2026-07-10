@@ -1,3 +1,11 @@
+---
+title: E-commerce / Retail — AI-native open source
+description: Open-source AI for online retail — browser agents, AI recommenders, and sales agents that replace scripted automation.
+sidebar_label: E-commerce
+slug: /industries/ecommerce
+keywords: [ecommerce ai open source, ai shopping agent, open source recommender system, retail ai tools, ai sales agent github]
+---
+
 # 🛒 E-commerce / Retail — AI-native open source
 
 > Most retail AI is either an agent that acts on a storefront or a model that

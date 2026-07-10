@@ -1,3 +1,11 @@
+---
+title: Scientific Research & Academia — AI-native open source
+description: Open-source AI for research — literature-review agents, autonomous lab agents, and RAG over scientific papers.
+sidebar_label: Scientific Research
+slug: /industries/scientific-research
+keywords: [ai research agent open source, literature review ai, autonomous science agent, rag scientific papers, ai lab assistant]
+---
+
 # 🧪 Scientific Research & Academia — AI-native open source
 
 > AI is moving into the research loop itself: agents that read the literature,

@@ -1,3 +1,11 @@
+---
+title: Film & Video Production — AI-native open source
+description: Open-source AI video generation, upscaling, and frame interpolation — self-hosted alternatives to Runway, Pika, and Topaz Video AI.
+sidebar_label: Film & Video
+slug: /industries/film
+keywords: [ai video generator open source, open source runway alternative, ai video upscaler, frame interpolation ai github, text to video open source]
+---
+
 # 🎥 Film & Video Production — AI-native open source
 
 > Searching for an open-source Runway or Pika alternative, an AI video

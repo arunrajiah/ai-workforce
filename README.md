@@ -16,7 +16,7 @@ Sales. Marketing. Support. HR. Finance. Legal. Engineering. Data. Design. Ops. P
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 [![Good first issues](https://img.shields.io/github/issues/arunrajiah/ai-workforce/good%20first%20issue?label=good%20first%20issues&color=7057ff)](https://github.com/arunrajiah/ai-workforce/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 
-[**📚 Docs & Tutorials**](https://hub.arunrajiah.com) · [**🏭 By Industry**](industries/) · [**🚀 Flagship apps**](apps/) · [**🤝 Contribute**](CONTRIBUTING.md)
+[**📚 Docs & Tutorials**](https://hub.arunrajiah.com/docs) · [**🏭 By Industry**](industries/) · [**🚀 Flagship apps**](apps/) · [**🤝 Contribute**](CONTRIBUTING.md)
 
 </div>
 
@@ -128,7 +128,7 @@ How submissions are reviewed — the rubric, approval thresholds, and verificati
 
 <br/>
 
-**Maintained by [Arun Rajiah](https://hub.arunrajiah.com)** · Docs on [hub.arunrajiah.com](https://hub.arunrajiah.com)
+**Maintained by [Arun Rajiah](https://hub.arunrajiah.com)** · Docs on [hub.arunrajiah.com/docs](https://hub.arunrajiah.com/docs)
 
 </div>
 

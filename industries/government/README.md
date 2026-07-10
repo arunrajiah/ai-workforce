@@ -1,3 +1,11 @@
+---
+title: Government & Public Sector — AI-native open source
+description: Open-source AI for the public sector — civic-data assistants, RAG over public records, and policy research agents.
+sidebar_label: Government
+slug: /industries/government
+keywords: [government ai open source, civic ai tools, public sector rag, policy analysis ai, open data ai assistant]
+---
+
 # 🏛️ Government & Public Sector — AI-native open source
 
 > Most public-sector AI work is document- and records-shaped: answer questions

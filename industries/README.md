@@ -1,3 +1,11 @@
+---
+title: Industries — AI-native open source by vertical
+description: AI-native open-source tools organized by industry — 18 verticals from healthcare to music production.
+sidebar_label: Industries
+slug: /industries
+keywords: [ai tools by industry, open source ai directory, ai native software list]
+---
+
 # 🏭 Industries — AI-native open source by vertical
 
 The [departments](../departments) are the primary map. This index re-slices the

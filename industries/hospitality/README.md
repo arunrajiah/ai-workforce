@@ -1,3 +1,11 @@
+---
+title: Hospitality & Restaurants — AI-native open source
+description: Open-source AI voice agents and assistants for hotels and restaurants — reservations, guest FAQs, and review analysis.
+sidebar_label: Hospitality
+slug: /industries/hospitality
+keywords: [hospitality ai open source, ai reservation agent, restaurant ai assistant, voice ai hotel, guest experience ai]
+---
+
 # 🏨 Hospitality & Restaurants — AI-native open source
 
 > AI in hospitality is mostly conversational: voice agents that answer the phone and take reservations, and LLM assistants that answer guest questions and turn reviews and menus into content.

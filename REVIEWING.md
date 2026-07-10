@@ -36,6 +36,7 @@ reviewers score against, so self-check before you submit:
 | 4 | **Shippable fast** — working deploy in ~a day or less | Reviewer sanity-checks the setup steps |
 | 5 | **Verified & honest** — link resolves, stars ~right, assessment names rough edges | CI link-check + reviewer spot-check |
 | 6 | **Correct placement & format** — right department/industry, exact card format | `CONTRIBUTING.md` card format; the CI linter |
+| 7 | **Hub frontmatter present** — new/edited industry pages and deploy guides keep valid `title`/`description`/`sidebar_label`/`slug`/`keywords` frontmatter | Reviewer checks the file still parses as valid YAML frontmatter; see [Hub publishing](CONTRIBUTING.md#hub-publishing-hubarunrajiahcomdocs) |
 
 Anything that can't clear the bar is closed with a short reason — not a judgment on the
 project, just a fit call for this list.

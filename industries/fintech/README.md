@@ -1,3 +1,11 @@
+---
+title: Fintech — AI-native open source
+description: Open-source AI for finance — multi-agent trading frameworks, financial LLMs, and document extraction for statements and filings.
+sidebar_label: Fintech
+slug: /industries/fintech
+keywords: [fintech ai open source, ai trading agent github, financial llm open source, ai document extraction finance, open source ai analyst]
+---
+
 # 💳 Fintech — AI-native open source
 
 > Finance is the vertical where AI-native OSS is deepest: LLM analyst agents, multi-agent trading frameworks, purpose-built financial models, and LLM document extraction that turns statements and filings into structured data. Everything below has an LLM, agent, or trained model at its core — not a ledger with a chatbot bolted on.
