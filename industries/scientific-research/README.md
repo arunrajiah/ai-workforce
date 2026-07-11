@@ -3,7 +3,7 @@ title: Scientific Research & Academia — AI-native open source
 description: Open-source AI for research — literature-review agents, autonomous lab agents, and RAG over scientific papers.
 sidebar_label: Scientific Research
 slug: /industries/scientific-research
-keywords: [ai research agent open source, literature review ai, autonomous science agent, rag scientific papers, ai lab assistant]
+keywords: [ai research agent open source, literature review ai, autonomous science agent, rag scientific papers, ai lab assistant, autonomous research pipeline open source]
 ---
 
 # 🧪 Scientific Research & Academia — AI-native open source
@@ -66,14 +66,40 @@ keywords: [ai research agent open source, literature review ai, autonomous scien
 | **Self-host** | Easy — pip install pretrained models |
 | **License** | Apache-2.0 |
 
+### [AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)
+
+> A fully autonomous, 23-stage research pipeline — literature discovery, hypothesis generation via multi-agent debate, experiment design and execution, statistical analysis, and LaTeX paper writing, with self-healing when experiments or hypotheses fail.
+
+| | |
+|---|---|
+| **Stars** | ~13.8k |
+| **AI** | multi-agent LLM pipeline (idea to paper); swappable LLM providers |
+| **Replaces** | a research assistant's full literature-to-draft workflow |
+| **Self-host** | Medium — Python, Docker (sandboxed experiment execution), LaTeX |
+| **License** | MIT |
+
+### [Open Science Desktop](https://github.com/ai4s-research/open-science)
+
+> A local-first desktop research workbench that chains literature-survey, experiment, and writing "agent skills" end to end via MCP connectors to arXiv, PubMed, and scientific datasets — producing source-traceable papers and figures, not just chat responses.
+
+| | |
+|---|---|
+| **Stars** | ~610 |
+| **AI** | LLM agent orchestrating research-stage skills via MCP, runs local-first |
+| **Replaces** | manual literature review plus provenance tracking across disconnected tools |
+| **Self-host** | Easy — desktop installer (macOS/Windows/Linux) or build from source |
+| **License** | MIT |
+
 ---
 
 Honest note: dedicated, well-licensed AI-native OSS for autonomous research is
-still thin — several high-profile "AI scientist" projects ship under restrictive
-or unspecified licenses, so we left them off. The four above are the ones we could
-verify as genuinely open and AI-native: autonomous research (GPT Researcher),
-grounded literature Q&A (PaperQA2), domain agents (ChemCrow), and scientific NLP
-(scispaCy). See also [Biomni](../healthcare/) for a biomedical research agent.
+still thin — several high-profile "AI scientist" projects (e.g. SakanaAI's
+AI-Scientist, HKUDS/AI-Researcher) ship under restrictive or unspecified
+licenses, so we left them off. The six above are the ones we could verify as
+genuinely open and AI-native: autonomous research (GPT Researcher, AutoResearchClaw),
+grounded literature Q&A (PaperQA2), domain agents (ChemCrow), a local-first
+research workbench (Open Science Desktop), and scientific NLP (scispaCy). See
+also [Biomni](../healthcare/) for a biomedical research agent.
 
 Related departments: [Product & Research](../../departments/product/) · [Data](../../departments/data/) (analysis pipelines).
 🏭 Back to the [industry index](../README.md).

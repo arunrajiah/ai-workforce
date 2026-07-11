@@ -3,7 +3,7 @@ title: Logistics & Supply Chain — AI-native open source
 description: Open-source AI for supply chain — demand-forecasting models, warehouse vision, and document extraction for invoices and BOLs.
 sidebar_label: Logistics
 slug: /industries/logistics
-keywords: [logistics ai open source, supply chain ai github, demand forecasting open source, warehouse vision ai, ai invoice extraction]
+keywords: [logistics ai open source, supply chain ai github, demand forecasting open source, warehouse vision ai, ai invoice extraction, multi-agent warehouse ai]
 ---
 
 # 🚚 Logistics & Supply Chain — AI-native open source
@@ -58,8 +58,20 @@ keywords: [logistics ai open source, supply chain ai github, demand forecasting 
 | **Self-host** | Medium |
 | **License** | GPL-3.0 (dual-licensed) |
 
+### [Multi-Agent Intelligent Warehouse](https://github.com/NVIDIA-AI-Blueprints/Multi-Agent-Intelligent-Warehouse)
+
+> A LangGraph-orchestrated multi-agent system for warehouse operations — equipment/asset tracking, operations coordination, safety compliance, forecasting, and document-processing agents coordinating together, not a chatbot bolted onto a WMS.
+
+| | |
+|---|---|
+| **Stars** | ~101 |
+| **AI** | Multi-agent LLM orchestration (LangGraph) + GPU-accelerated forecasting |
+| **Replaces** | manual warehouse-ops coordination, siloed WMS dashboards |
+| **Self-host** | Hard — Docker/Kubernetes infra is open (Apache-2.0), but the conversational agents need NVIDIA NIM/API keys |
+| **License** | Apache-2.0 |
+
 ---
 
-> 🚚 This vertical is the least sparse: forecasting (Nixtla), warehouse vision (YOLO), and document extraction (Unstract, Sparrow) are all genuinely AI-native. Note: route optimization is well served by open engines like VROOM, but those are OR/heuristic solvers rather than LLM/ML-model-at-the-core AI, so they're out of scope here.
+> 🚚 This vertical is the least sparse: forecasting (Nixtla), warehouse vision (YOLO), document extraction (Unstract, Sparrow), and now multi-agent warehouse orchestration (Multi-Agent Intelligent Warehouse) are all genuinely AI-native. Note: route optimization is well served by open engines like VROOM, but those are OR/heuristic solvers rather than LLM/ML-model-at-the-core AI, so they're out of scope here.
 
 Related departments: [Data](../../departments/data/) · [Support](../../departments/support/)

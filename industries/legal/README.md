@@ -54,13 +54,38 @@ keywords: [legal ai open source, open source harvey alternative, ai contract rev
 | **Self-host** | Medium — Python + JS |
 | **License** | MIT |
 
+### [Mike](https://github.com/Open-Legal-Products/mike)
+
+> Self-hostable legal document assistant built as a zero-cost alternative to Harvey — document-aware chat scoped to a matter, plus tabular extraction where every cell cites back to a page and verbatim quote.
+
+| | |
+|---|---|
+| **Stars** | ~3.9k |
+| **AI** | LLM document chat + citation-grounded structured extraction (multi-provider) |
+| **Replaces** | Harvey/Legora-style paid legal-AI platforms |
+| **Self-host** | Medium — Next.js + Express, Postgres, S3-compatible storage |
+| **License** | AGPL-3.0 |
+
+### [ContractGuard](https://github.com/he-yufeng/ContractGuard)
+
+> An AI agent that reads every clause of an uploaded contract and flags red flags, unfair terms, and missing protections in plain English, with an A+-to-F fairness score.
+
+| | |
+|---|---|
+| **Stars** | ~180 |
+| **AI** | LLM clause-by-clause contract analysis (OpenAI/OpenRouter/local Ollama) |
+| **Replaces** | a first-pass contract read from paid counsel or contract-review SaaS |
+| **Self-host** | Easy — CLI, bring your own LLM key |
+| **License** | MIT |
+
 ---
 
-Honest note: AI-native legal OSS is sparse. Beyond OpenContracts, the field is
-early-stage and low-star, and the highest-traction legal LLMs are locked to a
-single jurisdiction. For private "chat with our contracts" the general RAG stacks
-in the [Legal department](../../departments/legal/) (AnythingLLM, Onyx, PrivateGPT)
-are often the more practical starting point.
+Honest note: AI-native legal OSS is still thin, but it's growing — Mike's rapid
+rise as a self-hostable Harvey alternative shows real momentum. Beyond that, the
+field is mostly early-stage and low-star, and the highest-traction legal LLMs are
+locked to a single jurisdiction. For private "chat with our contracts" the general
+RAG stacks in the [Legal department](../../departments/legal/) (AnythingLLM, Onyx,
+PrivateGPT) are often the more practical starting point.
 
 Related departments: [Legal & Compliance](../../departments/legal/).
 🏭 Back to the [industry index](../README.md).

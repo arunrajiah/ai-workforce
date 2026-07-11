@@ -3,7 +3,7 @@ title: E-commerce / Retail — AI-native open source
 description: Open-source AI for online retail — browser agents, AI recommenders, and sales agents that replace scripted automation.
 sidebar_label: E-commerce
 slug: /industries/ecommerce
-keywords: [ecommerce ai open source, ai shopping agent, open source recommender system, retail ai tools, ai sales agent github]
+keywords: [ecommerce ai open source, ai shopping agent, open source recommender system, retail ai tools, ai sales agent github, ai catalog enrichment open source]
 ---
 
 # 🛒 E-commerce / Retail — AI-native open source
@@ -69,10 +69,25 @@ keywords: [ecommerce ai open source, ai shopping agent, open source recommender 
 
 ---
 
-> ⚠️ **Sparse vertical.** Beyond agents and recommenders, most retail AI OSS
-> (product-description generators, review-sentiment, catalog tagging) is small
-> hobby-scale code, not production projects. Store platforms and CMSs are
-> deliberately excluded — they're infrastructure, not AI-native.
+### [Enthusiast](https://github.com/upsidelab/enthusiast)
+
+> An open-source agentic AI framework built for e-commerce — RAG-based product search, catalog enrichment, order-intake extraction from unstructured documents, and support agents on top of your own catalog data.
+
+| | |
+|---|---|
+| **Stars** | ~160 |
+| **AI** | LLM agents + RAG (OpenAI or self-hosted Mistral/LLaMA/DeepSeek) |
+| **Replaces** | catalog-enrichment vendors, scripted product search, first-tier support tooling |
+| **Self-host** | Medium — Python/Django/PostgreSQL/React stack |
+| **License** | MIT |
+
+---
+
+> ⚠️ **Sparse vertical.** Beyond agents, recommenders, and catalog-automation
+> tooling like Enthusiast, most retail AI OSS (visual/reverse-image search,
+> review-sentiment) is small hobby-scale code, not production projects. Store
+> platforms and CMSs are deliberately excluded — they're infrastructure, not
+> AI-native.
 
 ---
 Related departments: [Support](../../departments/support/) · [Marketing](../../departments/marketing/) · [Data](../../departments/data/)

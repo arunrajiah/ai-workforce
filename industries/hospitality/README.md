@@ -58,8 +58,20 @@ keywords: [hospitality ai open source, ai reservation agent, restaurant ai assis
 | **Self-host** | Easy |
 | **License** | MIT |
 
+### [Jack The Butler](https://github.com/JackTheButler/JackTheButler)
+
+> Self-hosted AI concierge that handles guest communication across WhatsApp, SMS, email, and web chat, routing complex requests to staff — one Docker container, guest data never leaves your server.
+
+| | |
+|---|---|
+| **Stars** | ~5 (new, actively developed — 300+ commits, 80+ releases) |
+| **AI** | LLM guest-chat agent (multi-provider, incl. local Ollama) with knowledge base and escalation logic |
+| **Replaces** | a 24/7 front-desk phone/chat attendant; paid hotel-chatbot SaaS |
+| **Self-host** | Easy — single Docker container, SQLite |
+| **License** | Elastic License 2.0 (source-available; free for own-property use) |
+
 ---
 
-> 🏨 **Sparse vertical.** There is almost no *dedicated* AI-native OSS for hospitality — most restaurant chatbots and review-sentiment repos are small tutorials, not production tools. The genuinely AI-native path is voice agents (Vocode/LiveKit) for reservations and reception, plus general LLM assistants (AnythingLLM, Onyx) for guest FAQ, review analysis, and menu/marketing content.
+> 🏨 **Sparse vertical, still.** There is almost no *dedicated* AI-native OSS for hospitality — most restaurant chatbots and review-sentiment repos are small tutorials, not production tools. Jack The Butler is a genuine exception on the hotel side (purpose-built, well-documented, source-available) despite a low star count so far — it's a very recent launch. The genuinely AI-native path is voice agents (Vocode/LiveKit) for reservations and reception, Jack The Butler for self-hosted guest chat, plus general LLM assistants (AnythingLLM, Onyx) for guest FAQ, review analysis, and menu/marketing content.
 
 Related departments: [Support](../../departments/support/) · [Sales](../../departments/sales/)

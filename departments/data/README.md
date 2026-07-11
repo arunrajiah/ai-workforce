@@ -66,5 +66,20 @@ is our [AI Analyst](../../apps/ai-analyst) + Vanna/Wren AI (text-to-SQL).
 
 **Why it's on the list:** actively developed text-to-SQL with a semantic layer — the maintained alternative to Vanna.
 
+### [DB-GPT](https://github.com/eosphoros-ai/DB-GPT)
+
+> Agentic AI data assistant: connects to your databases and autonomously plans SQL, runs code, and generates reports from natural language.
+
+| | |
+|---|---|
+| **Stars** | ~19k |
+| **Replaces** | a data analyst chaining SQL + Python for a report |
+| **Self-host** | Medium — Docker Compose |
+| **Ship in** | 2–4 hours |
+| **Stack** | Python |
+| **License** | MIT |
+
+**Why it's on the list:** goes beyond single-query text-to-SQL into multi-step agentic analysis (plan, query, execute, chart) — the pick when the ask is a full report, not one query.
+
 ---
 

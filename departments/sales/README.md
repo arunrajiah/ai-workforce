@@ -25,6 +25,21 @@ keeps the pipeline clean — the core loop of a sales development team.
 
 **Why it's on the list:** the sales-stage agent loop, product-knowledge tools, email follow-ups, and meeting/payment handoffs are the core product. It is more of an agent framework than a polished CRM, so pair it with a pipeline system rather than expecting a full sales suite.
 
+### [OpenOutreach](https://github.com/eracle/OpenOutreach)
+
+> Self-hosted, email-first AI SDR: discovers B2B leads, qualifies them, and runs multi-turn agentic outreach from a mailbox you own.
+
+| | |
+|---|---|
+| **Stars** | ~2.4k |
+| **Replaces** | an SDR doing lead discovery + cold email outreach |
+| **Self-host** | Easy — one-command Docker deploy |
+| **Ship in** | ~1–2 hours |
+| **Stack** | Python (Django) |
+| **License** | GPL-3.0 |
+
+**Why it's on the list:** AI qualification and personalized multi-turn email generation are the core loop, not a bolted-on send step — pair it with SalesGPT if you also want a live-conversation agent.
+
 ### [Veska](https://github.com/arunrajiah/veska)
 
 > AI-native ERP that configures a CRM (plus support, finance, and HR) from a plain-English description of your business, then runs from Slack/WhatsApp/Email. Covers this whole department, not just sales.

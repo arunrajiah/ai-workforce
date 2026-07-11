@@ -58,6 +58,36 @@ starter stack" is Dify (content/SEO agents) + Activepieces (AI-first campaign au
 
 **Why it's on the list:** build a branded content pipeline with prompts, knowledge, and review steps — no code.
 
+### [GPT Researcher](https://github.com/assafelovic/gpt-researcher)
+
+> Autonomous research agent that aggregates 20+ sources into a cited report — the engine behind fast SEO/content research.
+
+| | |
+|---|---|
+| **Stars** | ~28k |
+| **Replaces** | a content researcher doing manual competitive/SEO research |
+| **Self-host** | Easy — pip install or Docker |
+| **Ship in** | ~30 min |
+| **Stack** | Python |
+| **License** | Apache-2.0 |
+
+**Why it's on the list:** research, not scheduling, is the core product — feed it a topic and it plans queries, scrapes sources, and writes a cited brief a content or SEO agent can work from.
+
+### [Social Media Agent](https://github.com/langchain-ai/social-media-agent)
+
+> Agent that turns a URL into curated LinkedIn/Twitter posts, with a human-in-the-loop approval inbox before anything ships.
+
+| | |
+|---|---|
+| **Stars** | ~2.7k |
+| **Replaces** | a social-media manager drafting and scheduling posts |
+| **Self-host** | Medium — LangGraph deployment, Supabase for state |
+| **Ship in** | 2–4 hours |
+| **Stack** | TypeScript |
+| **License** | MIT |
+
+**Why it's on the list:** content generation and curation is the core loop, not a caption-writer bolted onto a scheduler — the approval-inbox pattern keeps a human in control of what actually posts.
+
 ### [Activepieces](https://github.com/activepieces/activepieces)
 
 > Open-source Zapier alternative with AI agents/MCP — automate email, social, and publishing.

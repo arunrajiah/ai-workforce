@@ -58,8 +58,20 @@ keywords: [real estate ai open source, ai lead qualification voice agent, proper
 | **Self-host** | Easy |
 | **License** | MIT |
 
+### [AI Real Estate Assistant](https://github.com/AleksNeStu/ai-real-estate-assistant)
+
+> Conversational property search and market-analytics platform — natural-language search plus LLM-generated valuation estimates with multi-year forecasts, confidence bands, and key drivers.
+
+| | |
+|---|---|
+| **Stars** | ~280 |
+| **AI** | Multi-provider LLM routing (OpenAI/Google/Grok/DeepSeek/Ollama) for search, analytics, and valuation narratives |
+| **Replaces** | a buyer's-agent research session; paid property-analytics SaaS |
+| **Self-host** | Medium — FastAPI + Next.js + ChromaDB, Docker |
+| **License** | MIT |
+
 ---
 
-> 🏠 **Sparse vertical.** There is little *dedicated* AI-native OSS for real estate (no strong open valuation-ML model or listing-generation app with real traction). The genuinely AI-native path is voice agents (Vocode/LiveKit) for lead and showing work, plus general LLM tools (Unstract for docs, AnythingLLM for listing/contract Q&A and description drafting).
+> 🏠 **Sparse vertical, less so now.** Dedicated AI-native OSS for real estate was thin — no strong open valuation-ML model or listing-generation app with real traction. AI Real Estate Assistant now covers conversational search and LLM-generated valuation narratives, though a dedicated open valuation-ML model (the "Zestimate" equivalent) still doesn't exist as a genuinely AI-native, self-hostable product — the closest analog we could verify (a mass-appraisal toolkit) treats ML as one optional module rather than the core, so it didn't clear this list's bar. The genuinely AI-native path today is voice agents (Vocode/LiveKit) for lead and showing work, conversational search/analytics (AI Real Estate Assistant), plus general LLM tools (Unstract for docs, AnythingLLM for listing/contract Q&A and description drafting).
 
 Related departments: [Sales](../../departments/sales/) · [Support](../../departments/support/)
