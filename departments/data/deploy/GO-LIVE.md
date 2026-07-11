@@ -138,5 +138,6 @@ semantic layer. See the [Data & Analytics directory](../README.md).
 ## Swap a component
 
 Prefer a different text-to-SQL engine? Every piece is replaceable — see the
-[Data & Analytics directory](../README.md) for alternatives (Vanna, Wren AI) and
-the [flagship app](../../../apps/ai-analyst) you can run standalone.
+[Data & Analytics directory](../README.md) for alternatives (Vanna, Wren AI,
+or DB-GPT for a fuller agentic data assistant) and the
+[flagship app](../../../apps/ai-analyst) you can run standalone.

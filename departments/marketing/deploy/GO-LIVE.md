@@ -150,7 +150,9 @@ You're live. 🎉
 ## Swap a component
 
 Prefer a different platform or a lighter footprint? Every piece is replaceable —
-see the [Marketing & Growth directory](../README.md) for alternatives (Activepieces).
+see the [Marketing & Growth directory](../README.md) for alternatives (GPT
+Researcher for content/SEO research, Social Media Agent for curated social
+posts, Activepieces for campaign automation).
 
 ---
 
