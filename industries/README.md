@@ -10,7 +10,7 @@ keywords: [ai tools by industry, open source ai directory, ai native software li
 
 The [departments](../departments) are the primary map. This index re-slices the
 world by **industry**, pointing to the best **AI-native** open-source projects
-(an LLM, AI agent, or ML model at the core) for each one — **95 tools across 18
+(an LLM, AI agent, or ML model at the core) for each one — **107 tools across 18
 verticals**.
 
 These pages focus on AI-native tools unique to each industry. For general
@@ -30,7 +30,7 @@ back-office ops (CRM, support, finance, HR), see the [departments](../department
 |---|---|---|
 | 🏥 **Healthcare & Life Sciences** | MONAI · Meditron · Biomni · AI scribes | [→](healthcare/) |
 | ⚖️ **Legal** | Mike · OpenContracts · ContractGuard · LawGlance | [→](legal/) |
-| 💳 **Fintech & Finance** | TradingAgents · OpenBB · FinGPT · FinRobot | [→](fintech/) |
+| 💳 **Fintech & Finance** | TradingAgents · OpenBB · Qlib · FinRobot | [→](fintech/) |
 | 🛡️ **Insurance** | Unstract · MinerU · Zerox · Onyx | [→](insurance/) |
 | 🛒 **E-commerce & Retail** | browser-use · Enthusiast · Gorse · SalesGPT | [→](ecommerce/) |
 | 🎬 **Media & Creative** | ComfyUI · Whisper · Open-Sora · Chatterbox | [→](media/) |
@@ -45,7 +45,7 @@ back-office ops (CRM, support, finance, HR), see the [departments](../department
 | 🔐 **Cybersecurity** | PentestGPT · garak · Vulnhuntr · Nebula | [→](cybersecurity/) |
 | 🧪 **Scientific Research** | AutoResearchClaw · GPT Researcher · PaperQA2 · ChemCrow | [→](scientific-research/) |
 | 🎮 **Game Development** | Voyager · AI Town · Generative Agents · PettingZoo | [→](gamedev/) |
-| 🤖 **Robotics & Manufacturing** | LeRobot · OpenVLA · Isaac GR00T · Ultralytics YOLO | [→](robotics/) |
+| 🤖 **Robotics & Manufacturing** | LeRobot · Ultralytics YOLO · OpenPi · Isaac GR00T | [→](robotics/) |
 
 ---
 

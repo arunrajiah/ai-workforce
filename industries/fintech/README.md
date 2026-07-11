@@ -79,4 +79,32 @@ keywords: [fintech ai open source, ai trading agent github, financial llm open s
 | **License** | AGPL-3.0 |
 
 ---
+
+### [Qlib](https://github.com/microsoft/qlib)
+
+> Microsoft's AI-oriented quant investment platform — the full ML pipeline from alpha seeking to portfolio optimization and order execution, covering supervised learning, market-dynamics modeling, and reinforcement learning in one framework.
+
+| | |
+|---|---|
+| **Stars** | ~46k |
+| **AI** | Supervised (LightGBM/LSTM/Transformer), market-dynamics, and RL models for quant research |
+| **Replaces** | fragmented quant-research stacks; proprietary factor/backtesting platforms |
+| **Self-host** | Medium — Python, bring your own market data |
+| **License** | MIT |
+
+---
+
+### [PIXIU](https://github.com/The-FinAI/PIXIU)
+
+> An open financial-LLM stack — the FinMA models fine-tuned on LLaMA for financial NLP and prediction tasks, plus FinMem, an LLM trading agent with profiling, hierarchical memory, and decision modules.
+
+| | |
+|---|---|
+| **Stars** | ~870 |
+| **AI** | Domain financial LLMs (FinMA) + LLM-based trading agent (FinMem) with memory and decision-making modules |
+| **Replaces** | closed financial-NLP models; ad hoc discretionary single-stock decision workflows |
+| **Self-host** | Hard — model fine-tuning/inference, GPU expected; Docker for FinMem |
+| **License** | MIT |
+
+---
 Related departments: [Data](../../departments/data/) · [Product](../../departments/product/)

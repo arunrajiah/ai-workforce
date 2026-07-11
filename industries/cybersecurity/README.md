@@ -3,7 +3,7 @@ title: Cybersecurity — AI-native open source
 description: Open-source AI for security — autonomous pentest agents, LLM vulnerability scanners, and AI red-teaming tools you can self-host.
 sidebar_label: Cybersecurity
 slug: /industries/cybersecurity
-keywords: [ai pentesting open source, llm security scanner, ai red team tools, jailbreak detection open source, cybersecurity ai agent]
+keywords: [ai pentesting open source, llm security scanner, ai red team tools, jailbreak detection open source, cybersecurity ai agent, ai soc agent open source]
 ---
 
 # 🔐 Cybersecurity — AI-native open source
@@ -77,13 +77,37 @@ keywords: [ai pentesting open source, llm security scanner, ai red team tools, j
 | **Self-host** | Medium — Python; supports local models |
 | **License** | BSD-2-Clause |
 
+### [AiSOC](https://github.com/beenuar/AiSOC)
+
+> A self-hostable AI SOC platform that ingests alerts, correlates them, and runs an LLM-agent investigation loop — its prompts, tool calls, and conclusions are logged step-by-step for audit.
+
+| | |
+|---|---|
+| **Stars** | ~1.5k |
+| **AI** | LangGraph-orchestrated LLM agent that investigates alerts end-to-end across 69+ data connectors |
+| **Replaces** | manual tier-1 alert triage; commercial AI SOC platforms |
+| **Self-host** | Medium — self-hosted stack; bring your own LLM |
+| **License** | MIT |
+
+### [RepoAudit](https://github.com/PurCL/RepoAudit)
+
+> An autonomous multi-agent system that audits entire repositories for real, exploitable bugs — LLM agents scan and trace data flow across a whole codebase without requiring it to compile.
+
+| | |
+|---|---|
+| **Stars** | ~420 |
+| **AI** | multi-agent LLM system (scan agent + data-flow-analysis agent) that mimics manual code auditing |
+| **Replaces** | manual repo-wide security review; single-file SAST scanning |
+| **Self-host** | Easy — Python CLI; bring your own LLM |
+| **License** | Source-available — non-commercial (Purdue) |
+
 ---
 
 Cybersecurity has genuine AI-native depth on both sides of the line: offensive
-agents (PentestGPT, Nebula), LLM-driven code auditing (Vulnhuntr), and — the
-fastest-growing slice — tools that secure the models themselves (garak,
-agentic_security). If you deploy LLMs in production, treat the last two as
-table stakes.
+agents (PentestGPT, Nebula), LLM-driven code and repo auditing (Vulnhuntr,
+RepoAudit), agentic alert triage (AiSOC), and — the fastest-growing slice —
+tools that secure the models themselves (garak, agentic_security). If you
+deploy LLMs in production, treat the last two as table stakes.
 
 Related departments: [Engineering](../../departments/engineering/) (code review, CI) · [Data](../../departments/data/) (log and alert analytics).
 🏭 Back to the [industry index](../README.md).

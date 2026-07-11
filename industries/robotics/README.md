@@ -3,7 +3,7 @@ title: Robotics & Manufacturing — AI-native open source
 description: Open-source AI for robotics — vision-language-action models, imitation learning, and defect-detection vision for manufacturing.
 sidebar_label: Robotics
 slug: /industries/robotics
-keywords: [robotics ai open source, vision language action model, robot learning github, ai defect detection manufacturing]
+keywords: [robotics ai open source, vision language action model, robot learning github, ai defect detection manufacturing, open source robot foundation model]
 ---
 
 # 🤖 Robotics & Manufacturing — AI-native open source
@@ -86,12 +86,36 @@ keywords: [robotics ai open source, vision language action model, robot learning
 | **Self-host** | Easy — pip-installable Python library |
 | **License** | MIT |
 
+### [OpenPi](https://github.com/Physical-Intelligence/openpi)
+
+> Physical Intelligence's open-source vision-language-action models (π₀, π₀-FAST, π₀.₅) — pretrained flow-matching and autoregressive policies you fine-tune on your own robot and task data.
+
+| | |
+|---|---|
+| **Stars** | ~12.7k |
+| **AI** | flow-matching / autoregressive vision-language-action foundation models |
+| **Replaces** | task-specific policy engineering; closed commercial robot-foundation-model APIs |
+| **Self-host** | Hard — GPU for training/inference |
+| **License** | Apache-2.0 |
+
+### [Octo](https://github.com/octo-models/octo)
+
+> An open-source generalist robot policy trained on 800k trajectories from Open X-Embodiment — a transformer-diffusion policy that fine-tunes quickly to new robots and tasks.
+
+| | |
+|---|---|
+| **Stars** | ~1.7k |
+| **AI** | transformer-based diffusion policy trained across many robot embodiments |
+| **Replaces** | bespoke per-robot imitation-learning pipelines built from scratch |
+| **Self-host** | Medium — Python + JAX; GPU recommended |
+| **License** | MIT |
+
 ---
 
 Robotics has genuine AI-native depth: robot-learning stacks (LeRobot),
-vision-language-action models (OpenVLA, Isaac GR00T), imitation learning
-(Diffusion Policy), factory-floor vision (Ultralytics YOLO), and RL training
-(Stable-Baselines3). Note that some VLA *model weights* carry
+vision-language-action models (OpenVLA, Isaac GR00T, OpenPi, Octo), imitation
+learning (Diffusion Policy), factory-floor vision (Ultralytics YOLO), and RL
+training (Stable-Baselines3). Note that some VLA *model weights* carry
 source-available (not fully open) licenses even where the code is Apache/MIT.
 
 Related departments: [Engineering](../../departments/engineering/) · [Data](../../departments/data/) (sensor and telemetry analytics).

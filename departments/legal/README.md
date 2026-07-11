@@ -83,6 +83,21 @@ it fully local with Ollama for confidential matters.
 
 **Why it's on the list:** when confidentiality is absolute — nothing leaves your network.
 
+### [Mike](https://github.com/Open-Legal-Products/mike)
+
+> Self-hostable legal document assistant built as a zero-cost alternative to Harvey — matter-scoped document chat plus citation-grounded structured extraction, checked against real case law.
+
+| | |
+|---|---|
+| **Stars** | ~3.9k |
+| **Replaces** | Harvey/Legora-style paid legal-AI platforms |
+| **Self-host** | Medium — Next.js + Express, Postgres, S3-compatible storage |
+| **Ship in** | 2–4 hours |
+| **Stack** | TypeScript |
+| **License** | AGPL-3.0 |
+
+**Why it's on the list:** the options above are general-purpose RAG over documents; Mike is purpose-built for legal work — every extracted cell cites back to a page and verbatim quote, and citations get verified against CourtListener case law instead of trusted blindly.
+
 ---
 
 🏭 **Industry cross-links:** [Legal](../../industries/README.md#legal)

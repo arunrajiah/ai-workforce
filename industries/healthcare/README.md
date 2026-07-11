@@ -65,6 +65,30 @@ keywords: [healthcare ai open source, medical imaging ai github, ai scribe open 
 | **Self-host** | Medium — Python + viewer integration |
 | **License** | Apache-2.0 |
 
+### [RadFM](https://github.com/chaoyi-wu/RadFM)
+
+> A generalist radiology foundation model trained on MedMD, a 16-million-image corpus of 2D and 3D scans — one multimodal model for visual question-answering, report generation, and diagnostic reasoning across imaging types.
+
+| | |
+|---|---|
+| **Stars** | ~560 |
+| **AI** | Multimodal generative vision-language model for 2D/3D radiology scans |
+| **Replaces** | task-specific imaging-AI point solutions; manual first-pass reads |
+| **Self-host** | Hard — A100-class GPU recommended for inference |
+| **License** | MIT |
+
+### [SAM-Med2D](https://github.com/OpenGVLab/SAM-Med2D)
+
+> Segment Anything, fine-tuned for medicine — adapts Meta's SAM with medical-domain adapter layers, trained on 4.6M images and 19.7M masks across 10 imaging modalities and 31 organs.
+
+| | |
+|---|---|
+| **Stars** | ~1.1k |
+| **AI** | Domain-adapted segmentation foundation model (SAM + learnable adapters) |
+| **Replaces** | manual/semi-automated segmentation in radiology workflows |
+| **Self-host** | Medium — Python + GPU, ONNX export available |
+| **License** | Apache-2.0 |
+
 ### [Phlox](https://github.com/bloodworks-io/phlox)
 
 > Local-first AI medical scribe — transcribes the encounter, generates the clinical note, and adds RAG + agentic tool-calling, all runnable offline via Ollama.

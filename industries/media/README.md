@@ -96,4 +96,32 @@ keywords: [generative ai open source, ai image generation github, open source te
 | **License** | Apache-2.0 |
 
 ---
+
+### [Qwen-Image](https://github.com/QwenLM/Qwen-Image)
+
+> A 20B diffusion-transformer foundation model for image generation and editing, notable for accurate complex text rendering (including non-Latin scripts) — ranked the strongest open-source image model on Elo-based arena leaderboards.
+
+| | |
+|---|---|
+| **Stars** | ~8.1k |
+| **AI** | Multimodal diffusion transformer (MMDiT) for text-to-image generation and instruction-guided editing |
+| **Replaces** | Midjourney / DALL-E subscriptions, especially for text-in-image work |
+| **Self-host** | Hard — NVIDIA GPU (bfloat16); as little as 4GB VRAM with offloading/FP8 quantization |
+| **License** | Apache-2.0 |
+
+---
+
+### [Podcastfy](https://github.com/souzatharsis/podcastfy)
+
+> An open alternative to NotebookLM's podcast feature — turns text, PDFs, websites, and YouTube videos into multilingual multi-speaker audio conversations, from 2-minute clips to 30-minute longform episodes.
+
+| | |
+|---|---|
+| **Stars** | ~6.4k |
+| **AI** | LLM transcript generation (multi-provider) + TTS synthesis (multi-provider, including local models) |
+| **Replaces** | NotebookLM podcast feature; manual podcast scripting and production |
+| **Self-host** | Easy — Python/CLI or Docker, bring your own LLM + TTS keys |
+| **License** | Apache-2.0 |
+
+---
 Related departments: [Design](../../departments/design/) · [Marketing](../../departments/marketing/)

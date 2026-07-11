@@ -42,6 +42,21 @@ interviews, run payroll, and sign offer letters without a stack of SaaS seats.
 
 **Why it's on the list:** the AI interviewer, follow-up questions, resume import, and post-interview scoring are core to the product. It is newer and much smaller than FoloUp, but covers structured chat/video/coding interviews instead of only phone screens.
 
+### [Hiring Agent](https://github.com/interviewstreet/hiring-agent)
+
+> AI resume screener from HackerRank's parent company: parses a resume PDF, enriches it with the candidate's GitHub signal, and produces an evidence-backed score.
+
+| | |
+|---|---|
+| **Stars** | ~5.5k |
+| **Replaces** | first-pass resume screening / an ATS scoring rubric |
+| **Self-host** | Easy — Python CLI, local or hosted LLM |
+| **Ship in** | ~30 min |
+| **Stack** | Python |
+| **License** | MIT |
+
+**Why it's on the list:** covers the funnel stage before FoloUp/Aural's interviews — automated, evidence-backed resume scoring with GitHub-signal enrichment. Honest caveat: independent testing found scores can vary noticeably run-to-run on the identical resume, so treat it as a first-pass filter, not a final verdict.
+
 ### [Veska](https://github.com/arunrajiah/veska)
 
 > AI-native ERP with built-in HR that configures from a plain-English description of your business, then runs from Slack/WhatsApp/Email. Covers this whole department, not just HR.

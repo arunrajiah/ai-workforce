@@ -18,7 +18,7 @@ Sales. Marketing. Support. HR. Finance. Legal. Engineering. Data. Design. Ops. P
 <br/>
 
 [![Departments](https://img.shields.io/badge/departments-12-6C5CE7)](departments/)
-[![Industries](https://img.shields.io/badge/industries-18_verticals_·_95_tools-0984E3)](industries/)
+[![Industries](https://img.shields.io/badge/industries-18_verticals_·_107_tools-0984E3)](industries/)
 [![AI-native](https://img.shields.io/badge/AI--native-only-00B894)](#-the-departments)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
@@ -64,11 +64,11 @@ AI-native ERP — is listed there as an all-in-one option alongside the individu
 |---|---|
 | [📈 Sales & Revenue](departments/sales/) | SalesGPT · OpenOutreach · our [AI SDR](apps/ai-sdr) · [Veska](apps/veska/) (all-in-one) |
 | [📣 Marketing & Growth](departments/marketing/) | [Dify](departments/marketing/deploy/) · GPT Researcher · Social Media Agent · Activepieces |
-| [🎧 Customer Support](departments/support/) | Onyx · AnythingLLM · Botpress · [Veska](apps/veska/) (all-in-one) |
-| [🧑‍💼 Human Resources](departments/hr/) | FoloUp · Aural · [Veska](apps/veska/) (all-in-one) |
+| [🎧 Customer Support](departments/support/) | Onyx · AnythingLLM · Botpress · Parlant · [Veska](apps/veska/) (all-in-one) |
+| [🧑‍💼 Human Resources](departments/hr/) | FoloUp · Aural · Hiring Agent · [Veska](apps/veska/) (all-in-one) |
 | [💰 Finance & Accounting](departments/finance/) | Unstract · FinRobot · [Veska](apps/veska/) (all-in-one) |
-| [⚖️ Legal & Compliance](departments/legal/) | [AnythingLLM](departments/legal/deploy/) · Onyx · PrivateGPT |
-| [🛠️ Engineering / DevOps](departments/engineering/) | [OpenHands](departments/engineering/deploy/) · Aider |
+| [⚖️ Legal & Compliance](departments/legal/) | [AnythingLLM](departments/legal/deploy/) · Onyx · Mike · PrivateGPT |
+| [🛠️ Engineering / DevOps](departments/engineering/) | [OpenHands](departments/engineering/deploy/) · Aider · PR-Agent |
 | [📊 Data & Analytics](departments/data/) | [AI Analyst](departments/data/deploy/) · DB-GPT · Vanna · Wren AI |
 | [🎨 Design & Creative](departments/design/) | [ComfyUI](departments/design/deploy/) · InvokeAI |
 | [⚙️ Operations & PM](departments/operations/) | Skyvern (browser automation) · [Veska](apps/veska/) (all-in-one) |
@@ -79,7 +79,7 @@ AI-native ERP — is listed there as an all-in-one option alongside the individu
 
 ## 🏭 Browse by industry
 
-Same AI-native tools, re-sliced by vertical — **95 tools across 18 industries**. Each page lists the best AI-native OSS for that sector (and flags where a vertical is still thin).
+Same AI-native tools, re-sliced by vertical — **107 tools across 18 industries**. Each page lists the best AI-native OSS for that sector (and flags where a vertical is still thin).
 
 | | | | |
 |---|---|---|---|

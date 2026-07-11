@@ -53,6 +53,21 @@ ROI-positive department to automate.
 
 **Why it's on the list:** a full conversational-AI builder when you need more control than a widget gives you.
 
+### [Parlant](https://github.com/emcie-co/parlant)
+
+> Interaction-control framework for building rule-bound, explainable customer-facing AI agents — governs tone, policy, and compliance turn-by-turn instead of relying on prompt engineering alone.
+
+| | |
+|---|---|
+| **Stars** | ~18k |
+| **Replaces** | a support-agent behavior/QA layer on top of your LLM |
+| **Self-host** | Medium — Python service, bring your own LLM |
+| **Ship in** | 2–4 hours |
+| **Stack** | Python |
+| **License** | Apache-2.0 |
+
+**Why it's on the list:** where Onyx/AnythingLLM answer from your docs and Botpress builds the conversation flow, Parlant is for when you need auditable, guideline-bound behavior — regulated industries, compliance-critical answers, journeys that must not drift off-script.
+
 ### [Veska](https://github.com/arunrajiah/veska)
 
 > AI-native ERP with a built-in support desk that configures from a plain-English description of your business, then runs from Slack/WhatsApp/Email. Covers this whole department, not just support.

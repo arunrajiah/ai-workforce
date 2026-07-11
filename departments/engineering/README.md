@@ -65,5 +65,20 @@ is OpenHands or Aider (autonomous/pair coding).
 
 **Why it's on the list:** the fastest ROI in this whole repo — installed and productive in minutes.
 
+### [PR-Agent](https://github.com/The-PR-Agent/pr-agent)
+
+> Automated PR reviewer: `/review`, `/improve`, `/describe`, and `/ask` commands post AI feedback directly on your pull requests.
+
+| | |
+|---|---|
+| **Stars** | ~12k |
+| **Replaces** | a senior engineer's first-pass code review |
+| **Self-host** | Easy — GitHub Action, Docker, or CLI |
+| **Ship in** | ~30 min |
+| **Stack** | Python |
+| **License** | MIT |
+
+**Why it's on the list:** OpenHands and Aider write code; PR-Agent reviews it — drop it into CI and every pull request gets an automated first pass before a human looks at it. Community-maintained since its spinout from Qodo.
+
 ---
 

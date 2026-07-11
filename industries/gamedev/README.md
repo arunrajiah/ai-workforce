@@ -3,7 +3,7 @@ title: Game Development — AI-native open source
 description: Open-source AI for games — LLM-driven NPCs, embodied learning agents, and multi-agent RL frameworks for training and playtesting.
 sidebar_label: Game Dev
 slug: /industries/gamedev
-keywords: [ai npc open source, generative agents github, game ai open source, llm game agent, reinforcement learning game bots]
+keywords: [ai npc open source, generative agents github, game ai open source, llm game agent, reinforcement learning game bots, llm procedural content generation]
 ---
 
 # 🎮 Game Development — AI-native open source
@@ -86,13 +86,36 @@ keywords: [ai npc open source, generative agents github, game ai open source, ll
 | **Self-host** | Hard — multi-model pipeline with heavy dependencies |
 | **License** | MIT |
 
+### [Cradle](https://github.com/BAAI-Agents/Cradle)
+
+> A general computer-control agent that plays games the way a human would — screenshot in, keyboard/mouse action out, with no game-specific API required.
+
+| | |
+|---|---|
+| **Stars** | ~2.6k |
+| **AI** | vision-language foundation-model agent mapping raw screenshots to keyboard/mouse actions |
+| **Replaces** | hand-coded game bots and API-based playtesting harnesses |
+| **Self-host** | Medium — Python; bring your own vision-language model |
+| **License** | MIT |
+
+### [MarioGPT](https://github.com/shyamsn97/mario-gpt)
+
+> A fine-tuned GPT-2 language model that generates playable Super Mario levels from text prompts — a reference implementation for LLM-driven procedural content generation.
+
+| | |
+|---|---|
+| **Stars** | ~1.1k |
+| **AI** | fine-tuned transformer language model generating level tokens from text conditioning |
+| **Replaces** | hand-authored level design; rule-based PCG algorithms |
+| **Self-host** | Easy — Python; pretrained checkpoints included |
+| **License** | MIT |
+
 ---
 
 Game dev has real AI-native depth: believable NPCs (Generative Agents, AI Town,
-Interactive NPCs), embodied learning agents (Voyager, MineDojo), and RL
-training/playtesting (PettingZoo). Dedicated open-source *procedural content
-generation* driven by ML is still mostly hobby-scale demos — we left those out
-rather than pad the list.
+Interactive NPCs), embodied learning agents (Voyager, MineDojo, Cradle), RL
+training/playtesting (PettingZoo), and LLM-driven procedural content generation
+(MarioGPT).
 
 Related departments: [Engineering](../../departments/engineering/) · [Design](../../departments/design/) (asset and content generation).
 🏭 Back to the [industry index](../README.md).
