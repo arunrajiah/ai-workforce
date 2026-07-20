@@ -71,7 +71,7 @@ AI-native ERP — is listed there as an all-in-one option alongside the individu
 | [🛠️ Engineering / DevOps](departments/engineering/) | [OpenHands](departments/engineering/deploy/) · Aider · PR-Agent |
 | [📊 Data & Analytics](departments/data/) | [AI Analyst](departments/data/deploy/) · DB-GPT · Vanna · Wren AI |
 | [🎨 Design & Creative](departments/design/) | [ComfyUI](departments/design/deploy/) · InvokeAI |
-| [⚙️ Operations & PM](departments/operations/) | Skyvern (browser automation) · [Veska](apps/veska/) (all-in-one) |
+| [⚙️ Operations & PM](departments/operations/) | Skyvern · Coworker · [Veska](apps/veska/) (all-in-one) |
 | [🔬 Product & Research](departments/product/) | [GPT Researcher](departments/product/deploy/) · Open Deep Research |
 | [🧭 Executive / Assistant](departments/executive/) | [Khoj](departments/executive/deploy/) · Fabric · Meetily |
 
